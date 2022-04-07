@@ -4,7 +4,7 @@ import { Button } from "react-bootstrap";
 import { Semester } from "../interfaces/Semester";
 import { Course } from "../interfaces/Course";
 
-export function MultipleChoice({
+export function ViewSemester({
     semester
 }: {
     semester: Semester;

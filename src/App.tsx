@@ -1,5 +1,6 @@
 import React from "react";
 import "./App.css";
+import sketch from "./sketch.jpg";
 
 function App(): JSX.Element {
     return (
@@ -14,6 +15,7 @@ function App(): JSX.Element {
             <div>Connor Nagle</div>
             <div>Brandon Aguiar</div>
             <div>Jan Ahmed</div>
+            <img src={sketch} alt="Sketch" />
         </div>
     );
 }

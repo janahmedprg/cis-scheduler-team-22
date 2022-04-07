@@ -2,7 +2,7 @@ import { Degree } from "./Degree";
 import { Semester } from "./Semester";
 
 export interface DegreePlan {
-    id: string;
+    id: number;
     degree: Degree;
     name: string;
     semesters: Semester[];

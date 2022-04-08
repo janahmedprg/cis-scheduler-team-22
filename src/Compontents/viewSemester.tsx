@@ -1,8 +1,7 @@
-import React, { useState } from "react";
-import Form from "react-bootstrap/Form";
-import { Button } from "react-bootstrap";
+import React from "react";
 import { Semester } from "../interfaces/Semester";
 import { Course } from "../interfaces/Course";
+import { ViewCourse } from "./viewCourse";
 
 export function ViewSemester({
     semester
@@ -22,7 +21,7 @@ export function ViewSemester({
                             "course"
                         }
                     >
-                        {course}
+                        <ViewCourse course={course} />
                     </p>
                 )
             )}

@@ -4,6 +4,5 @@ export interface Semester {
     id: number;
     courses: Course[];
     session: string;
-    length: number;
     year: number;
 }

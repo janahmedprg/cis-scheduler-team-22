@@ -1,15 +1,14 @@
-import React, { useState } from "react";
-import Form from "react-bootstrap/Form";
-import { Button } from "react-bootstrap";
+import React from "react";
 import { DegreePlan } from "../interfaces/DegreePlan";
 
 export function DegreePlans({
-    degreePlan
+    degreePlansList
 }: {
-    degreePlan: DegreePlan;
+    degreePlansList: DegreePlan[];
 }): JSX.Element {
     //keep the array here?
-    let degreePlansList: DegreePlan[] = [];
+    //no - array will be a useState in app and be passed into this component
+    //let degreePlansList: DegreePlan[] = [];
 
     return (
         <div>

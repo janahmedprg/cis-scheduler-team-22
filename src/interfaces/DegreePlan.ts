@@ -8,6 +8,13 @@ export interface DegreePlan {
     semesters: Semester[];
 }
 
+export const EMPTY_PLAN: DegreePlan = {
+    id: 0,
+    degree: { id: 0, name: "", requirements: [], requiredCredits: 0 },
+    name: "",
+    semesters: []
+};
+
 export const TEST_PLANS: DegreePlan[] = [
     {
         id: 0,
@@ -70,7 +77,7 @@ export const TEST_PLANS: DegreePlan[] = [
             requirements: [],
             requiredCredits: 124
         },
-        name: "CS test plan",
+        name: "Math test plan",
         semesters: [
             {
                 id: 9,
@@ -121,7 +128,7 @@ export const TEST_PLANS: DegreePlan[] = [
                         name: "calculus 3",
                         courseNumber: "MATH243",
                         credits: 3,
-                        prereqs: ["MATH241"],
+                        prereqs: ["MATH241", "MATH242"],
                         requirementsFulfilled: [],
                         sections: []
                     }

@@ -1,7 +1,7 @@
 import React from "react";
 import { DegreePlan } from "../interfaces/DegreePlan";
 
-export function DegreePlans({
+export function ViewDegreePlansList({
     degreePlansList
 }: {
     degreePlansList: DegreePlan[];

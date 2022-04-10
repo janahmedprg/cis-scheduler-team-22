@@ -10,6 +10,9 @@ export function ViewSemester({
 }): JSX.Element {
     return (
         <div>
+            <h4>
+                {semester.session} {semester.year} semester
+            </h4>
             {semester.courses.map(
                 (course: Course): JSX.Element => (
                     <p

@@ -5,7 +5,7 @@ export function ViewCourse({ course }: { course: Course }) {
     return (
         <div>
             <b>{course.courseNumber}: </b>
-            {course.name}
+            {course.name} <br />
             Credits: {course.credits}
             {course.requirementsFulfilled.length > 0 && (
                 <div>

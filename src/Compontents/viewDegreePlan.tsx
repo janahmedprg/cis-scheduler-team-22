@@ -1,6 +1,7 @@
 import React from "react";
 import { Semester } from "../interfaces/Semester";
 import { DegreePlan } from "../interfaces/DegreePlan";
+import { ViewSemester } from "./viewSemester";
 
 export function ViewDegreePlan({
     degreePlan
@@ -9,6 +10,7 @@ export function ViewDegreePlan({
 }): JSX.Element {
     return (
         <div>
+            <h3>{degreePlan.name}</h3>
             {degreePlan.semesters.map(
                 (semester: Semester): JSX.Element => (
                     <p
@@ -20,7 +22,7 @@ export function ViewDegreePlan({
                             "course"
                         }
                     >
-                        {semester}
+                        <ViewSemester semester={semester} />
                     </p>
                 )
             )}

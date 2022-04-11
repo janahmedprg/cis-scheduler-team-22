@@ -32,9 +32,13 @@ export const TEST_PLANS: DegreePlan[] = [
                     {
                         id: 3,
                         name: "intro to computer science",
-                        courseNumber: "CISC108",
+                        descr: "Introductory CS course for python basics",
                         credits: 3,
                         prereqs: [],
+                        restrict: [],
+                        breadth: [],
+                        type: [],
+                        code: "CISC108",
                         requirementsFulfilled: [],
                         sections: []
                     }
@@ -48,18 +52,26 @@ export const TEST_PLANS: DegreePlan[] = [
                     {
                         id: 5,
                         name: "intro to computer science 2",
-                        courseNumber: "CISC181",
+                        descr: "An introduction to data structures and complex datat types",
                         credits: 3,
                         prereqs: ["CISC108"],
+                        restrict: [],
+                        breadth: [],
+                        type: [],
+                        code: "CISC181",
                         requirementsFulfilled: [],
                         sections: []
                     },
                     {
                         id: 6,
                         name: "systems programming",
-                        courseNumber: "CISC210",
+                        descr: "Objected oriented programming with java",
                         credits: 3,
                         prereqs: ["CISC108"],
+                        restrict: [],
+                        breadth: [],
+                        type: [],
+                        code: "CISC210",
                         requirementsFulfilled: [],
                         sections: []
                     }
@@ -85,9 +97,13 @@ export const TEST_PLANS: DegreePlan[] = [
                     {
                         id: 10,
                         name: "CALCULUS 1",
-                        courseNumber: "MATH241",
+                        descr: "Basics of calculus 1",
                         credits: 3,
                         prereqs: [],
+                        restrict: [],
+                        breadth: [],
+                        type: [],
+                        code: "MATH241",
                         requirementsFulfilled: [],
                         sections: []
                     }
@@ -101,18 +117,26 @@ export const TEST_PLANS: DegreePlan[] = [
                     {
                         id: 12,
                         name: "calculus 2",
-                        courseNumber: "MATH242",
+                        descr: "Basics of Calculus 2",
                         credits: 3,
                         prereqs: ["MATH241"],
+                        restrict: [],
+                        breadth: [],
+                        type: [],
+                        code: "MATH242",
                         requirementsFulfilled: [],
                         sections: []
                     },
                     {
                         id: 13,
                         name: "discrete math",
-                        courseNumber: "MATH210",
+                        descr: "An intro to discrete mathematics and graph theory",
                         credits: 3,
                         prereqs: [],
+                        restrict: [],
+                        breadth: [],
+                        type: [],
+                        code: "MATH210",
                         requirementsFulfilled: [],
                         sections: []
                     }
@@ -126,9 +150,13 @@ export const TEST_PLANS: DegreePlan[] = [
                     {
                         id: 15,
                         name: "calculus 3",
-                        courseNumber: "MATH243",
+                        descr: "Intro to calculus 3",
                         credits: 3,
                         prereqs: ["MATH241", "MATH242"],
+                        restrict: [],
+                        breadth: [],
+                        type: [],
+                        code: "MATH243",
                         requirementsFulfilled: [],
                         sections: []
                     }

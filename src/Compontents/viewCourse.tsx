@@ -3,6 +3,7 @@ import { Button } from "react-bootstrap";
 import { Course } from "../interfaces/Course";
 import { DegreePlan } from "../interfaces/DegreePlan";
 import { Semester } from "../interfaces/Semester";
+import { EditCourse } from "./editCourse";
 
 export function ViewCourse({
     course,
@@ -20,7 +21,7 @@ export function ViewCourse({
     const [editing, setEditing] = useState<boolean>(false);
     return (
         <div>
-            <b>{course.id}: </b>
+            <b>{course.code}: </b>
             {course.name} <br />
             Credits: {course.credits}
             {course.requirementsFulfilled.length > 0 && (
@@ -49,7 +50,16 @@ export function ViewCourse({
                     </ul>
                 </div>
             )}
-            <Button onClick={() => setEditing(!Editing)}>
+            {editing && (
+                <EditCourse
+                    course={course}
+                    semester={semester}
+                    degreePlan={degreePlan}
+                    degreePlans={degreePlans}
+                    setDegreePlans={setDegreePlans}
+                />
+            )}
+            <Button onClick={() => setEditing(!editing)}>
                 {editing ? "Close" : "Edit"}
             </Button>
         </div>

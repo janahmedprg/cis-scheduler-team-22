@@ -2,6 +2,7 @@ import React from "react";
 import { Semester } from "../interfaces/Semester";
 import { Course } from "../interfaces/Course";
 import { ViewCourse } from "./viewCourse";
+import { DegreePlan } from "../interfaces/DegreePlan";
 
 export function ViewSemester({
     semester,
@@ -30,7 +31,13 @@ export function ViewSemester({
                             "course"
                         }
                     >
-                        <ViewCourse course={course} />
+                        <ViewCourse
+                            course={course}
+                            semester={semester}
+                            degreePlan={degreePlan}
+                            degreePlans={degreePlans}
+                            setDegreePlans={setDegreePlans}
+                        />
                     </p>
                 )
             )}

@@ -21,7 +21,7 @@ export function EditCourse({
     course: Course;
     setDegreePlans: (plans: DegreePlan[]) => void;
 }) {
-    function updateCourse(courseId: string, name: string, credits: number) {
+    function updateCourse(courseCode: string, name: string, credits: number) {
         const foundDegreePlan = degreePlans.find(
             (plan: DegreePlan): boolean => plan.id === degreePlan.id
         );
@@ -42,7 +42,7 @@ export function EditCourse({
         }
         const newCourse: Course = {
             ...foundCourse,
-            courseNumber: courseId,
+            code: courseCode,
             name: name,
             credits: credits
         };
@@ -66,15 +66,15 @@ export function EditCourse({
         );
         setDegreePlans(newPlans);
     }
-    function updateCourseNumber(event: ChangeEvent) {
+    function updateCourseCode(event: ChangeEvent) {
         updateCourse(event.target.value, course.name, course.credits);
     }
     function updateCourseName(event: ChangeEvent) {
-        updateCourse(course.courseNumber, event.target.value, course.credits);
+        updateCourse(course.code, event.target.value, course.credits);
     }
     function updateCourseCredits(event: ChangeEvent) {
         updateCourse(
-            course.courseNumber,
+            course.code,
             course.name,
             parseInt(event.target.value) || 0
         );
@@ -82,17 +82,17 @@ export function EditCourse({
 
     return (
         <div>
-            <h3>Editing {course.courseNumber}</h3>
+            <h3>Editing {course.code}</h3>
             <Form.Group controlId="formCourseNumber">
                 <Form.Label>Course Number:</Form.Label>
-                <Form.Control value={course.id} onChange={updateCourseNumber} />
+                <Form.Control value={course.code} onChange={updateCourseCode} />
             </Form.Group>
             <Form.Group controlId="formCourseName">
-                <Form.Label>Course Number:</Form.Label>
+                <Form.Label>Course Name:</Form.Label>
                 <Form.Control value={course.name} onChange={updateCourseName} />
             </Form.Group>
             <Form.Group controlId="formCourseCredits">
-                <Form.Label>Course Number:</Form.Label>
+                <Form.Label>Credits</Form.Label>
                 <Form.Control
                     value={course.credits}
                     onChange={updateCourseCredits}

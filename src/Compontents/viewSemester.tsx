@@ -4,9 +4,15 @@ import { Course } from "../interfaces/Course";
 import { ViewCourse } from "./viewCourse";
 
 export function ViewSemester({
-    semester
+    semester,
+    degreePlan,
+    degreePlans,
+    setDegreePlans
 }: {
     semester: Semester;
+    degreePlan: DegreePlan;
+    degreePlans: DegreePlan[];
+    setDegreePlans: (plans: DegreePlan[]) => void;
 }): JSX.Element {
     return (
         <div>

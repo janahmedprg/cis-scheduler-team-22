@@ -27,7 +27,11 @@ function App(): JSX.Element {
             <h2>Degree Plans List</h2>
             <ViewDegreePlansList degreePlansList={degreePlans} />
             <h2>Degree Plan View</h2>
-            <ViewDegreePlan degreePlan={findDegreePlan(selectedPlanId)} />
+            <ViewDegreePlan
+                degreePlan={findDegreePlan(selectedPlanId)}
+                degreePlans={degreePlans}
+                setDegreePlans={setDegreePlans}
+            />
             <hr />
             <div>Connor Nagle</div>
             <div>Brandon Aguiar</div>

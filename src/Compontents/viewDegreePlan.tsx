@@ -4,9 +4,13 @@ import { DegreePlan } from "../interfaces/DegreePlan";
 import { ViewSemester } from "./viewSemester";
 
 export function ViewDegreePlan({
-    degreePlan
+    degreePlan,
+    degreePlans,
+    setDegreePlans
 }: {
     degreePlan: DegreePlan;
+    degreePlans: DegreePlan[];
+    setDegreePlans: (plans: DegreePlan[]) => void;
 }): JSX.Element {
     return (
         <div>
@@ -22,7 +26,12 @@ export function ViewDegreePlan({
                             "course"
                         }
                     >
-                        <ViewSemester semester={semester} />
+                        <ViewSemester
+                            semester={semester}
+                            degreePlan={degreePlan}
+                            degreePlans={degreePlans}
+                            setDegreePlans={setDegreePlans}
+                        />
                     </p>
                 )
             )}

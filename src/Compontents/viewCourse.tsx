@@ -4,7 +4,7 @@ import { Course } from "../interfaces/Course";
 export function ViewCourse({ course }: { course: Course }) {
     return (
         <div>
-            <b>{course.courseNumber}: </b>
+            <b>{course.id}: </b>
             {course.name} <br />
             Credits: {course.credits}
             {course.requirementsFulfilled.length > 0 && (

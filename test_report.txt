@@ -6,7 +6,7 @@
     Warning: validateDOMNesting(...): <h4> cannot appear as a descendant of <p>.
         at h4
         at div
-        at ViewSemester (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewSemester.tsx:7:5)
+        at ViewSemester (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewSemester.tsx:8:5)
         at p
         at div
         at ViewDegreePlan (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewDegreePlan.tsx:7:5)
@@ -24,10 +24,10 @@
   console.error
     Warning: validateDOMNesting(...): <div> cannot appear as a descendant of <p>.
         at div
-        at ViewCourse (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewCourse.tsx:4:30)
+        at ViewCourse (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewCourse.tsx:9:5)
         at p
         at div
-        at ViewSemester (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewSemester.tsx:7:5)
+        at ViewSemester (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewSemester.tsx:8:5)
         at p
         at div
         at ViewDegreePlan (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewDegreePlan.tsx:7:5)
@@ -46,7 +46,7 @@
     Warning: validateDOMNesting(...): <p> cannot appear as a descendant of <p>.
         at p
         at div
-        at ViewSemester (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewSemester.tsx:7:5)
+        at ViewSemester (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewSemester.tsx:8:5)
         at p
         at div
         at ViewDegreePlan (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewDegreePlan.tsx:7:5)
@@ -66,10 +66,10 @@
         at ul
         at div
         at div
-        at ViewCourse (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewCourse.tsx:4:30)
+        at ViewCourse (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewCourse.tsx:9:5)
         at p
         at div
-        at ViewSemester (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewSemester.tsx:7:5)
+        at ViewSemester (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewSemester.tsx:8:5)
         at p
         at div
         at ViewDegreePlan (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewDegreePlan.tsx:7:5)
@@ -85,16 +85,17 @@
       at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22787:5)
 
 PASS src/App.test.tsx
-  ✓ renders the course name somewhere (110 ms)
+  ✓ renders the course name somewhere (113 ms)
 
 --------------------------|---------|----------|---------|---------|-------------------
 File                      | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 --------------------------|---------|----------|---------|---------|-------------------
-All files                 |   80.95 |    66.66 |   84.61 |   80.95 |                   
+All files                 |   38.29 |       25 |      44 |   38.29 |                   
  src                      |      70 |       50 |      75 |      70 |                   
-  App.tsx                 |      70 |       50 |      75 |      70 | 17,39-40          
- src/Compontents          |   88.88 |       75 |   88.88 |   88.88 |                   
-  viewCourse.tsx          |   66.66 |       75 |   66.66 |   66.66 | 16                
+  App.tsx                 |      70 |       50 |      75 |      70 | 17,43-44          
+ src/Compontents          |   25.71 |    22.72 |   38.09 |   25.71 |                   
+  editCourse.tsx          |       0 |        0 |       0 |       0 | 25-83             
+  viewCourse.tsx          |      60 |     62.5 |      50 |      60 | 33,62             
   viewDegreePlan.tsx      |     100 |      100 |     100 |     100 |                   
   viewDegreePlansList.tsx |     100 |      100 |     100 |     100 |                   
   viewSemester.tsx        |     100 |      100 |     100 |     100 |                   
@@ -108,5 +109,5 @@ All files                 |   80.95 |    66.66 |   84.61 |   80.95 |
 Test Suites: 1 passed, 1 total
 Tests:       1 passed, 1 total
 Snapshots:   0 total
-Time:        2.06 s
+Time:        2.2 s
 Ran all test suites.

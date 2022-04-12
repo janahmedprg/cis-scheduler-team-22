@@ -9,7 +9,11 @@
         at ViewSemester (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewSemester.tsx:8:5)
         at p
         at div
-        at ViewDegreePlan (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewDegreePlan.tsx:7:5)
+        at /home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/node_modules/react-bootstrap/cjs/Col.js:72:8
+        at div
+        at /home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/node_modules/react-bootstrap/cjs/Row.js:22:3
+        at div
+        at ViewDegreePlan (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewDegreePlan.tsx:8:5)
         at div
         at App (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/App.tsx:10:43)
 
@@ -30,7 +34,11 @@
         at ViewSemester (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewSemester.tsx:8:5)
         at p
         at div
-        at ViewDegreePlan (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewDegreePlan.tsx:7:5)
+        at /home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/node_modules/react-bootstrap/cjs/Col.js:72:8
+        at div
+        at /home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/node_modules/react-bootstrap/cjs/Row.js:22:3
+        at div
+        at ViewDegreePlan (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewDegreePlan.tsx:8:5)
         at div
         at App (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/App.tsx:10:43)
 
@@ -49,7 +57,11 @@
         at ViewSemester (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewSemester.tsx:8:5)
         at p
         at div
-        at ViewDegreePlan (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewDegreePlan.tsx:7:5)
+        at /home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/node_modules/react-bootstrap/cjs/Col.js:72:8
+        at div
+        at /home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/node_modules/react-bootstrap/cjs/Row.js:22:3
+        at div
+        at ViewDegreePlan (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewDegreePlan.tsx:8:5)
         at div
         at App (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/App.tsx:10:43)
 
@@ -72,7 +84,11 @@
         at ViewSemester (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewSemester.tsx:8:5)
         at p
         at div
-        at ViewDegreePlan (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewDegreePlan.tsx:7:5)
+        at /home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/node_modules/react-bootstrap/cjs/Col.js:72:8
+        at div
+        at /home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/node_modules/react-bootstrap/cjs/Row.js:22:3
+        at div
+        at ViewDegreePlan (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewDegreePlan.tsx:8:5)
         at div
         at App (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/App.tsx:10:43)
 
@@ -85,7 +101,7 @@
       at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22787:5)
 
 PASS src/App.test.tsx
-  ✓ renders the course name somewhere (119 ms)
+  ✓ renders the course name somewhere (145 ms)
 
 --------------------------|---------|----------|---------|---------|-------------------
 File                      | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
@@ -109,5 +125,5 @@ All files                 |   38.29 |       25 |      44 |   38.29 |
 Test Suites: 1 passed, 1 total
 Tests:       1 passed, 1 total
 Snapshots:   0 total
-Time:        2.171 s
+Time:        2.211 s
 Ran all test suites.

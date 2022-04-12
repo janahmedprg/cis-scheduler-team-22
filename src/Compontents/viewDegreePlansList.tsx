@@ -6,10 +6,6 @@ export function ViewDegreePlansList({
 }: {
     degreePlansList: DegreePlan[];
 }): JSX.Element {
-    //keep the array here?
-    //no - array will be a useState in app and be passed into this component
-    //let degreePlansList: DegreePlan[] = [];
-
     return (
         <div>
             <div>

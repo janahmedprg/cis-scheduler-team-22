@@ -41,7 +41,7 @@
     Warning: validateDOMNesting(...): <h4> cannot appear as a descendant of <p>.
         at h4
         at div
-        at ViewSemester (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewSemester.tsx:8:5)
+        at ViewSemester (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewSemester.tsx:10:5)
         at p
         at div
         at /home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/node_modules/react-bootstrap/cjs/Col.js:72:8
@@ -64,7 +64,7 @@
     Warning: validateDOMNesting(...): <p> cannot appear as a descendant of <p>.
         at p
         at div
-        at ViewSemester (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewSemester.tsx:8:5)
+        at ViewSemester (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewSemester.tsx:10:5)
         at p
         at div
         at /home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/node_modules/react-bootstrap/cjs/Col.js:72:8
@@ -91,7 +91,7 @@
         at ViewCourse (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewCourse.tsx:9:5)
         at p
         at div
-        at ViewSemester (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewSemester.tsx:8:5)
+        at ViewSemester (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewSemester.tsx:10:5)
         at p
         at div
         at /home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/node_modules/react-bootstrap/cjs/Col.js:72:8
@@ -111,21 +111,22 @@
       at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22787:5)
 
 PASS src/App.test.tsx
-  ✓ renders the course name somewhere (142 ms)
+  ✓ renders the course name somewhere (138 ms)
 
 --------------------------|---------|----------|---------|---------|--------------------
 File                      | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s  
 --------------------------|---------|----------|---------|---------|--------------------
-All files                 |   29.48 |    23.91 |    27.9 |   29.48 |                    
+All files                 |    23.3 |       26 |   23.52 |    23.3 |                    
  src                      |   72.72 |       50 |      75 |   72.72 |                    
   App.tsx                 |   72.72 |       50 |      75 |   72.72 | 25,58-59           
- src/Compontents          |      20 |    22.72 |   23.07 |      20 |                    
+ src/Compontents          |   15.55 |       25 |   19.14 |   15.55 |                    
   editCourse.tsx          |       0 |        0 |       0 |       0 | 25-83              
   editDegreePlan.tsx      |       0 |        0 |       0 |       0 | 21-45              
+  editSemester.tsx        |       0 |      100 |       0 |       0 | 18-53              
   viewCourse.tsx          |      60 |     62.5 |      50 |      60 | 33,62              
   viewDegreePlan.tsx      |     100 |      100 |     100 |     100 |                    
   viewDegreePlansList.tsx |   28.57 |    31.25 |   21.42 |   28.57 | 40-44,59,67,94-216 
-  viewSemester.tsx        |     100 |      100 |     100 |     100 |                    
+  viewSemester.tsx        |      75 |       50 |   66.66 |      75 | 55                 
  src/interfaces           |     100 |      100 |     100 |     100 |                    
   Course.ts               |       0 |        0 |       0 |       0 |                    
   Degree.ts               |       0 |        0 |       0 |       0 |                    
@@ -136,5 +137,5 @@ All files                 |   29.48 |    23.91 |    27.9 |   29.48 |
 Test Suites: 1 passed, 1 total
 Tests:       1 passed, 1 total
 Snapshots:   0 total
-Time:        2.337 s
+Time:        2.478 s
 Ran all test suites.

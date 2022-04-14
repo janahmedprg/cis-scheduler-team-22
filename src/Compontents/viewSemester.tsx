@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { Semester } from "../interfaces/Semester";
 import { Course } from "../interfaces/Course";
 import { ViewCourse } from "./viewCourse";
 import { DegreePlan } from "../interfaces/DegreePlan";
+import { Button } from "react-bootstrap";
+import { EditSemester } from "./editSemester";
 
 export function ViewSemester({
     semester,
@@ -15,6 +17,7 @@ export function ViewSemester({
     degreePlans: DegreePlan[];
     setDegreePlans: (plans: DegreePlan[]) => void;
 }): JSX.Element {
+    const [editing, setEditing] = useState<boolean>(false);
     return (
         <div>
             <h4>
@@ -41,6 +44,17 @@ export function ViewSemester({
                     </p>
                 )
             )}
+            {editing && (
+                <EditSemester
+                    degreePlans={degreePlans}
+                    degreePlan={degreePlan}
+                    semester={semester}
+                    setDegreePlans={setDegreePlans}
+                />
+            )}
+            <Button onClick={() => setEditing(!editing)}>
+                {editing ? "Close" : "Edit Semester"}
+            </Button>
         </div>
     );
 }

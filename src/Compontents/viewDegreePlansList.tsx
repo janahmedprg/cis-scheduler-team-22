@@ -36,10 +36,9 @@ export function ViewDegreePlansList({
     const [editing, setEditing] = useState<boolean>(false);
     const [addingDegreePlan, setAddingDegreePlan] = useState<boolean>(false);
 
-    function removeQuizByTitle(degreePlanOption: string) {
+    function removeQuizByTitle(degreePlanId: number) {
         const modifiedDegreePlansList = degreePlansList.filter(
-            (degreeplan: DegreePlan): boolean =>
-                degreeplan.name !== degreePlanOption
+            (degreeplan: DegreePlan): boolean => degreeplan.id !== degreePlanId
         );
         // Update the movies array to be the new version
         setDegreePlans(modifiedDegreePlansList);
@@ -92,7 +91,7 @@ export function ViewDegreePlansList({
                                         backgroundColor: "black"
                                     }}
                                     onClick={() =>
-                                        removeQuizByTitle(degreePlanOption.name)
+                                        removeQuizByTitle(degreePlanOption.id)
                                     }
                                 >
                                     Click to delete this Degree Plan

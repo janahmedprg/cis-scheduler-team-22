@@ -1,22 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import { Form } from "react-bootstrap";
-import { Course } from "../interfaces/Course";
 import { DegreePlan } from "../interfaces/DegreePlan";
 import { Semester, SemesterSession } from "../interfaces/Semester";
-
-const EMPTY_COURSE: Course = {
-    id: 0,
-    name: "New Course",
-    descr: "Description",
-    credits: 0,
-    prereqs: [],
-    restrict: [],
-    breadth: [],
-    type: [],
-    code: "CODE",
-    requirementsFulfilled: [],
-    sections: []
-};
 
 export function EditSemester({
     degreePlans,
@@ -29,7 +14,6 @@ export function EditSemester({
     semester: Semester;
     setDegreePlans: (plans: DegreePlan[]) => void;
 }): JSX.Element {
-    const [course] = useState<Course>(EMPTY_COURSE);
     function updateSemesterSession(event: React.ChangeEvent<HTMLInputElement>) {
         const indexOfDegreePlan = degreePlans.findIndex(
             (idxDegPlan: DegreePlan): boolean => idxDegPlan.id === degreePlan.id

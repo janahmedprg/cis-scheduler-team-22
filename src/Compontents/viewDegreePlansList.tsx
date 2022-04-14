@@ -22,11 +22,15 @@ type ChangeEvent = React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>;
 export function ViewDegreePlansList({
     degreePlansList,
     setDegreePlans,
-    setSelectedPlanId
+    setSelectedPlanId,
+    nextId,
+    setNextId
 }: {
     degreePlansList: DegreePlan[];
     setDegreePlans: (plans: DegreePlan[]) => void;
     setSelectedPlanId: (id: number) => void;
+    nextId: number;
+    setNextId: (id: number) => void;
 }): JSX.Element {
     const [editMode, setEditMode] = useState<boolean>(false);
     const [editing, setEditing] = useState<boolean>(false);
@@ -119,6 +123,8 @@ export function ViewDegreePlansList({
                 <AddToDegreePlansList
                     degreePlansList={degreePlansList}
                     setDegreePlans={setDegreePlans}
+                    nextId={nextId}
+                    setNextId={setNextId}
                 />
             )}
             {editMode && (
@@ -139,19 +145,21 @@ export function ViewDegreePlansList({
 
 export function AddToDegreePlansList({
     degreePlansList,
-    setDegreePlans
+    setDegreePlans,
+    nextId,
+    setNextId
 }: {
     degreePlansList: DegreePlan[];
     setDegreePlans: (plans: DegreePlan[]) => void;
+    nextId: number;
+    setNextId: (id: number) => void;
 }): JSX.Element {
-    const [id, setId] = useState<number>(0);
     //const [degree, setDegree] = useState<Degree>();
     const [name, setName] = useState<string>("New Degree Plan");
     //const [semesters, setSemesters] = useState<Semester[]>([]);
     //const [questionCount, setquestionCount] = useState<number>(0);
 
     function appendDegreePlanToList(
-        id: number,
         degree: Degree,
         name: string,
         semesters: Semester[]
@@ -160,34 +168,19 @@ export function AddToDegreePlansList({
         const modifiedDegreePlanList = [
             ...degreePlansList,
             {
-                id: id,
-                degree: degree,
+                id: nextId,
+                degree: { ...degree, id: nextId + 1 },
                 name: name,
                 semesters: semesters
             }
         ];
         // Update the movies array to be the new version
         setDegreePlans(modifiedDegreePlanList);
+        setNextId(nextId + 2);
     }
 
     return (
         <div>
-            <Form.Group
-                controlId="formDegreePlanId"
-                style={{
-                    marginLeft: "200px",
-                    marginRight: "200px",
-                    marginTop: "20px"
-                }}
-            >
-                <Form.Label>New Degree Plan Id:</Form.Label>
-                <Form.Control
-                    value={id}
-                    onChange={(event: ChangeEvent) =>
-                        setId(parseInt(event.target.value))
-                    }
-                />
-            </Form.Group>
             <Form.Group
                 controlId="formDegreePlanDegree"
                 style={{
@@ -216,25 +209,12 @@ export function AddToDegreePlansList({
                     }
                 />
             </Form.Group>
-            <Form.Group
-                controlId="formDegreePlanSemesters"
-                style={{
-                    marginLeft: "200px",
-                    marginRight: "200px",
-                    marginTop: "20px"
-                }}
-            >
-                <Form.Label>New Degree Plan Semesters:</Form.Label>
-                <Form.Control /**value={semesters} //onChange={(event: ChangeEvent) => setSemesters(event.target.value)} */
-                />
-            </Form.Group>
             <Button
                 style={{
                     backgroundColor: "black"
                 }}
                 onClick={() =>
                     appendDegreePlanToList(
-                        id,
                         {
                             id: 0,
                             name: "",

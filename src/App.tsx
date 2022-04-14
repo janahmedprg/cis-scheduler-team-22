@@ -9,6 +9,7 @@ import { Button } from "react-bootstrap";
 function App(): JSX.Element {
     const [degreePlans, setDegreePlans] = useState<DegreePlan[]>(TEST_PLANS);
     const [selectedPlanId, setSelectedPlanId] = useState<number>(7);
+    const [nextId, setNextId] = useState<number>(1000);
     function findDegreePlan(id: number): DegreePlan {
         const foundPlan = degreePlans.find(
             (plan: DegreePlan): boolean => plan.id === id
@@ -29,7 +30,10 @@ function App(): JSX.Element {
                 degreePlansList={degreePlans}
                 setDegreePlans={setDegreePlans}
                 setSelectedPlanId={setSelectedPlanId}
+                nextId={nextId}
+                setNextId={setNextId}
             />
+            <hr />
             <h2>Degree Plan View</h2>
             <ViewDegreePlan
                 degreePlan={findDegreePlan(selectedPlanId)}

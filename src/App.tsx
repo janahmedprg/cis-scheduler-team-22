@@ -25,7 +25,10 @@ function App(): JSX.Element {
             </header>
             <h1>Scheduler</h1>
             <h2>Degree Plans List</h2>
-            <ViewDegreePlansList degreePlansList={degreePlans} />
+            <ViewDegreePlansList
+                degreePlansList={degreePlans}
+                setDegreePlans={setDegreePlans}
+            />
             <h2>Degree Plan View</h2>
             <ViewDegreePlan
                 degreePlan={findDegreePlan(selectedPlanId)}

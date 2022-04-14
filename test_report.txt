@@ -3,17 +3,12 @@
 > react-scripts test "--coverage"
 
   console.error
-    Warning: validateDOMNesting(...): <h4> cannot appear as a descendant of <p>.
-        at h4
+    Warning: validateDOMNesting(...): <h3> cannot appear as a descendant of <p>.
+        at h3
         at div
-        at ViewSemester (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewSemester.tsx:8:5)
         at p
         at div
-        at /home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/node_modules/react-bootstrap/cjs/Col.js:72:8
-        at div
-        at /home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/node_modules/react-bootstrap/cjs/Row.js:22:3
-        at div
-        at ViewDegreePlan (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewDegreePlan.tsx:8:5)
+        at ViewDegreePlansList (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewDegreePlansList.tsx:23:5)
         at div
         at App (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/App.tsx:10:43)
 
@@ -28,8 +23,23 @@
   console.error
     Warning: validateDOMNesting(...): <div> cannot appear as a descendant of <p>.
         at div
-        at ViewCourse (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewCourse.tsx:9:5)
         at p
+        at div
+        at ViewDegreePlansList (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewDegreePlansList.tsx:23:5)
+        at div
+        at App (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/App.tsx:10:43)
+
+      at printWarning (node_modules/react-dom/cjs/react-dom.development.js:67:30)
+      at error (node_modules/react-dom/cjs/react-dom.development.js:43:5)
+      at validateDOMNesting (node_modules/react-dom/cjs/react-dom.development.js:10083:7)
+      at createInstance (node_modules/react-dom/cjs/react-dom.development.js:10181:5)
+      at completeWork (node_modules/react-dom/cjs/react-dom.development.js:19464:28)
+      at completeUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22812:16)
+      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22787:5)
+
+  console.error
+    Warning: validateDOMNesting(...): <h4> cannot appear as a descendant of <p>.
+        at h4
         at div
         at ViewSemester (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewSemester.tsx:8:5)
         at p
@@ -101,29 +111,30 @@
       at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22787:5)
 
 PASS src/App.test.tsx
-  ✓ renders the course name somewhere (124 ms)
+  ✓ renders the course name somewhere (147 ms)
 
---------------------------|---------|----------|---------|---------|-------------------
-File                      | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
---------------------------|---------|----------|---------|---------|-------------------
-All files                 |    37.5 |       25 |    42.3 |    37.5 |                   
- src                      |      70 |       50 |      75 |      70 |                   
-  App.tsx                 |      70 |       50 |      75 |      70 | 17,46-47          
- src/Compontents          |      25 |    22.72 |   36.36 |      25 |                   
-  editCourse.tsx          |       0 |        0 |       0 |       0 | 25-83             
-  viewCourse.tsx          |      60 |     62.5 |      50 |      60 | 33,62             
-  viewDegreePlan.tsx      |     100 |      100 |     100 |     100 |                   
-  viewDegreePlansList.tsx |   66.66 |      100 |   66.66 |   66.66 | 21                
-  viewSemester.tsx        |     100 |      100 |     100 |     100 |                   
- src/interfaces           |     100 |      100 |     100 |     100 |                   
-  Course.ts               |       0 |        0 |       0 |       0 |                   
-  Degree.ts               |       0 |        0 |       0 |       0 |                   
-  DegreePlan.ts           |     100 |      100 |     100 |     100 |                   
-  Section.ts              |       0 |        0 |       0 |       0 |                   
-  Semester.ts             |       0 |        0 |       0 |       0 |                   
---------------------------|---------|----------|---------|---------|-------------------
+--------------------------|---------|----------|---------|---------|--------------------
+File                      | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s  
+--------------------------|---------|----------|---------|---------|--------------------
+All files                 |    28.2 |    23.91 |   27.27 |    28.2 |                    
+ src                      |      70 |       50 |      75 |      70 |                    
+  App.tsx                 |      70 |       50 |      75 |      70 | 17,47-48           
+ src/Compontents          |   19.69 |    22.72 |    22.5 |   19.69 |                    
+  editCourse.tsx          |       0 |        0 |       0 |       0 | 25-83              
+  editDegreePlan.tsx      |       0 |        0 |       0 |       0 | 21-45              
+  viewCourse.tsx          |      60 |     62.5 |      50 |      60 | 33,62              
+  viewDegreePlan.tsx      |     100 |      100 |     100 |     100 |                    
+  viewDegreePlansList.tsx |   27.27 |    31.25 |      20 |   27.27 | 36-41,56,64,91-236 
+  viewSemester.tsx        |     100 |      100 |     100 |     100 |                    
+ src/interfaces           |     100 |      100 |     100 |     100 |                    
+  Course.ts               |       0 |        0 |       0 |       0 |                    
+  Degree.ts               |       0 |        0 |       0 |       0 |                    
+  DegreePlan.ts           |     100 |      100 |     100 |     100 |                    
+  Section.ts              |       0 |        0 |       0 |       0 |                    
+  Semester.ts             |       0 |        0 |       0 |       0 |                    
+--------------------------|---------|----------|---------|---------|--------------------
 Test Suites: 1 passed, 1 total
 Tests:       1 passed, 1 total
 Snapshots:   0 total
-Time:        2.236 s
+Time:        2.54 s
 Ran all test suites.

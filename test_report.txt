@@ -101,19 +101,19 @@
       at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22787:5)
 
 PASS src/App.test.tsx
-  ✓ renders the course name somewhere (145 ms)
+  ✓ renders the course name somewhere (124 ms)
 
 --------------------------|---------|----------|---------|---------|-------------------
 File                      | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 --------------------------|---------|----------|---------|---------|-------------------
-All files                 |   38.29 |       25 |      44 |   38.29 |                   
+All files                 |    37.5 |       25 |    42.3 |    37.5 |                   
  src                      |      70 |       50 |      75 |      70 |                   
-  App.tsx                 |      70 |       50 |      75 |      70 | 17,43-44          
- src/Compontents          |   25.71 |    22.72 |   38.09 |   25.71 |                   
+  App.tsx                 |      70 |       50 |      75 |      70 | 17,46-47          
+ src/Compontents          |      25 |    22.72 |   36.36 |      25 |                   
   editCourse.tsx          |       0 |        0 |       0 |       0 | 25-83             
   viewCourse.tsx          |      60 |     62.5 |      50 |      60 | 33,62             
   viewDegreePlan.tsx      |     100 |      100 |     100 |     100 |                   
-  viewDegreePlansList.tsx |     100 |      100 |     100 |     100 |                   
+  viewDegreePlansList.tsx |   66.66 |      100 |   66.66 |   66.66 | 21                
   viewSemester.tsx        |     100 |      100 |     100 |     100 |                   
  src/interfaces           |     100 |      100 |     100 |     100 |                   
   Course.ts               |       0 |        0 |       0 |       0 |                   
@@ -125,5 +125,5 @@ All files                 |   38.29 |       25 |      44 |   38.29 |
 Test Suites: 1 passed, 1 total
 Tests:       1 passed, 1 total
 Snapshots:   0 total
-Time:        2.211 s
+Time:        2.236 s
 Ran all test suites.

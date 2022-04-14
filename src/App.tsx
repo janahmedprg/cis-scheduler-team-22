@@ -6,6 +6,13 @@ import { ViewDegreePlansList } from "./Compontents/viewDegreePlansList";
 import { ViewDegreePlan } from "./Compontents/viewDegreePlan";
 import { Button } from "react-bootstrap";
 
+/**
+ * Importing Course Catalog
+ * - use record nested within record
+ * c:Record<string, Record<string, Course>> = "input";
+ * c["Cisc"]["Cisc275"]
+ */
+
 function App(): JSX.Element {
     const [degreePlans, setDegreePlans] = useState<DegreePlan[]>(TEST_PLANS);
     const [selectedPlanId, setSelectedPlanId] = useState<number>(7);

@@ -21,10 +21,12 @@ type ChangeEvent = React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>;
 
 export function ViewDegreePlansList({
     degreePlansList,
-    setDegreePlans
+    setDegreePlans,
+    setSelectedPlanId
 }: {
     degreePlansList: DegreePlan[];
     setDegreePlans: (plans: DegreePlan[]) => void;
+    setSelectedPlanId: (id: number) => void;
 }): JSX.Element {
     const [editMode, setEditMode] = useState<boolean>(false);
     const [editing, setEditing] = useState<boolean>(false);
@@ -47,12 +49,26 @@ export function ViewDegreePlansList({
                 <Form.Check
                     style={{ marginLeft: "575px", marginRight: "575px" }}
                     type="switch"
-                    id="can-edit-quizzes"
-                    role="can-edit-quizzes"
+                    id="can-edit-degreePlansList"
+                    role="can-edit-degreePlansList"
                     label={<h5>Click to edit Degree Plans</h5>}
                     checked={editMode}
                     onChange={() => setEditMode(!editMode)}
                 />
+                {degreePlansList.map(
+                    (degreePlanOption: DegreePlan): JSX.Element => (
+                        <p key={degreePlanOption.id.toString()}>
+                            {degreePlanOption.name}{" "}
+                            <Button
+                                onClick={() =>
+                                    setSelectedPlanId(degreePlanOption.id)
+                                }
+                            >
+                                View Plan
+                            </Button>
+                        </p>
+                    )
+                )}
             </div>
             {degreePlansList.map(
                 (degreePlanOption: DegreePlan): JSX.Element => (
@@ -78,6 +94,7 @@ export function ViewDegreePlansList({
                                     Click to delete this Degree Plan
                                 </Button>
                             )}
+                            {/**Get rid of ID later*/}
                             {<h3>{degreePlanOption.id}</h3>}
                             {"Length of plan: " +
                                 degreePlanOption.semesters.length +

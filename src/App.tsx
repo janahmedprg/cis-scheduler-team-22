@@ -28,6 +28,7 @@ function App(): JSX.Element {
             <ViewDegreePlansList
                 degreePlansList={degreePlans}
                 setDegreePlans={setDegreePlans}
+                setSelectedPlanId={setSelectedPlanId}
             />
             <h2>Degree Plan View</h2>
             <ViewDegreePlan

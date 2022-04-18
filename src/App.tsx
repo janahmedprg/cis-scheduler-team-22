@@ -4,7 +4,6 @@ import sketch from "./sketch.jpg";
 import { DegreePlan, TEST_PLANS, EMPTY_PLAN } from "./interfaces/DegreePlan";
 import { ViewDegreePlansList } from "./Compontents/viewDegreePlansList";
 import { ViewDegreePlan } from "./Compontents/viewDegreePlan";
-import { Button } from "react-bootstrap";
 
 /**
  * Importing Course Catalog

@@ -2,7 +2,7 @@ import React from "react";
 import { Semester } from "../interfaces/Semester";
 import { DegreePlan } from "../interfaces/DegreePlan";
 import { ViewSemester } from "./viewSemester";
-import { Col, Row } from "react-bootstrap";
+import { Button, Col, Row } from "react-bootstrap";
 
 export function ViewDegreePlan({
     degreePlan,
@@ -13,6 +13,25 @@ export function ViewDegreePlan({
     degreePlans: DegreePlan[];
     setDegreePlans: (plans: DegreePlan[]) => void;
 }): JSX.Element {
+    function clearPlan() {
+        const foundDegreePlan = degreePlans.find(
+            (plan: DegreePlan): boolean => plan.id === degreePlan.id
+        );
+        if (foundDegreePlan === undefined) {
+            return;
+        }
+        const newPlan: DegreePlan = {
+            ...foundDegreePlan,
+            semesters: foundDegreePlan.semesters.map(
+                (semester: Semester): Semester => ({ ...semester, courses: [] })
+            )
+        };
+        const newPlans: DegreePlan[] = degreePlans.map(
+            (plan: DegreePlan): DegreePlan =>
+                plan.id === newPlan.id ? newPlan : plan
+        );
+        setDegreePlans(newPlans);
+    }
     return (
         <div>
             <h3>{degreePlan.name}</h3>
@@ -40,6 +59,12 @@ export function ViewDegreePlan({
                     )
                 )}
             </Row>
+            <Button
+                style={{ backgroundColor: "red" }}
+                onClick={() => clearPlan()}
+            >
+                Clear All Semesters
+            </Button>
         </div>
     );
 }

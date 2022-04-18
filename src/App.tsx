@@ -53,15 +53,6 @@ function App(): JSX.Element {
             <div>Jan Ahmed</div>
             <img src={sketch} alt="Sketch" />
             <br />
-            <Button
-                onClick={() => {
-                    setDegreePlans(degreePlans);
-                    setSelectedPlanId(selectedPlanId);
-                }}
-            >
-                this button only exists so we don&apos;t get unused errors, will
-                remove later
-            </Button>
         </div>
     );
 }

@@ -5,7 +5,6 @@ import UDHeader from "./UDHeader.jpg";
 import { DegreePlan, TEST_PLANS, EMPTY_PLAN } from "./interfaces/DegreePlan";
 import { ViewDegreePlansList } from "./Compontents/viewDegreePlansList";
 import { ViewDegreePlan } from "./Compontents/viewDegreePlan";
-import { Button } from "react-bootstrap";
 
 /**
  * Importing Course Catalog
@@ -66,15 +65,6 @@ function App(): JSX.Element {
             <div>Jan Ahmed</div>
             <img src={sketch} alt="Sketch" />
             <br />
-            <Button
-                onClick={() => {
-                    setDegreePlans(degreePlans);
-                    setSelectedPlanId(selectedPlanId);
-                }}
-            >
-                this button only exists so we don&apos;t get unused errors, will
-                remove later
-            </Button>
         </div>
     );
 }

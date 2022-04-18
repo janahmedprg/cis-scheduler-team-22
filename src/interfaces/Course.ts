@@ -25,3 +25,19 @@ export interface Course {
     requirementsFulfilled: string[];
     sections: Section[];
 }
+
+export function convertCourse(course: ImportCourse): Course {
+    return {
+        id: 0,
+        name: course.name,
+        descr: course.descr,
+        credits: parseInt(course.credits) | 0,
+        prereqs: course.preReq === "" ? [] : [course.preReq],
+        breadth: course.breadth === "" ? [] : [course.breadth],
+        restrict: course.restrict === "" ? [] : [course.restrict],
+        type: course.typ === "" ? [] : [course.typ],
+        code: course.code,
+        requirementsFulfilled: [],
+        sections: []
+    };
+}

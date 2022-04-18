@@ -1,5 +1,16 @@
 import { Section } from "./Section";
 
+export interface ImportCourse {
+    code: string;
+    name: string;
+    descr: string;
+    credits: string;
+    preReq: string;
+    restrict: string;
+    breadth: string;
+    typ: string;
+}
+
 export interface Course {
     id: number; //unique number being given
     name: string; //Actual course name (ex: Data structures)

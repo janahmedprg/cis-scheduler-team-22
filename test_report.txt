@@ -111,12 +111,12 @@
       at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22787:5)
 
 PASS src/App.test.tsx
-  ✓ renders the course name somewhere (216 ms)
+  ✓ renders the course name somewhere (191 ms)
 
 --------------------------|---------|----------|---------|---------|--------------------
 File                      | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s  
 --------------------------|---------|----------|---------|---------|--------------------
-All files                 |      16 |    18.05 |   17.14 |      16 |                    
+All files                 |   15.89 |    16.25 |    16.9 |   15.89 |                    
  src                      |   88.88 |       50 |     100 |   88.88 |                    
   App.tsx                 |   88.88 |       50 |     100 |   88.88 | 24                 
  src/Compontents          |   10.07 |    17.14 |   13.43 |   10.07 |                    
@@ -127,8 +127,8 @@ All files                 |      16 |    18.05 |   17.14 |      16 |
   viewDegreePlan.tsx      |    9.52 |        0 |   18.18 |    9.52 | 17-50,81-87        
   viewDegreePlansList.tsx |   28.57 |    31.25 |   21.42 |   28.57 | 40-44,59,67,94-216 
   viewSemester.tsx        |    8.82 |    11.11 |   14.28 |    8.82 | 22-71,101-120      
- src/interfaces           |     100 |      100 |     100 |     100 |                    
-  Course.ts               |       0 |        0 |       0 |       0 |                    
+ src/interfaces           |   66.66 |        0 |       0 |   66.66 |                    
+  Course.ts               |       0 |        0 |       0 |       0 | 30                 
   Degree.ts               |       0 |        0 |       0 |       0 |                    
   DegreePlan.ts           |     100 |      100 |     100 |     100 |                    
   Section.ts              |       0 |        0 |       0 |       0 |                    
@@ -137,5 +137,5 @@ All files                 |      16 |    18.05 |   17.14 |      16 |
 Test Suites: 1 passed, 1 total
 Tests:       1 passed, 1 total
 Snapshots:   0 total
-Time:        2.727 s
+Time:        3.428 s
 Ran all test suites.

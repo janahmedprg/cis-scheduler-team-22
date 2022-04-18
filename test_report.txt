@@ -111,22 +111,22 @@
       at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22787:5)
 
 PASS src/App.test.tsx
-  ✓ renders the course name somewhere (147 ms)
+  ✓ renders the course name somewhere (216 ms)
 
 --------------------------|---------|----------|---------|---------|--------------------
 File                      | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s  
 --------------------------|---------|----------|---------|---------|--------------------
-All files                 |   19.04 |    20.96 |   19.67 |   19.04 |                    
+All files                 |      16 |    18.05 |   17.14 |      16 |                    
  src                      |   88.88 |       50 |     100 |   88.88 |                    
   App.tsx                 |   88.88 |       50 |     100 |   88.88 | 24                 
- src/Compontents          |   12.17 |       20 |   15.51 |   12.17 |                    
+ src/Compontents          |   10.07 |    17.14 |   13.43 |   10.07 |                    
   editCourse.tsx          |       0 |        0 |       0 |       0 | 25-83              
   editDegreePlan.tsx      |       0 |        0 |       0 |       0 | 21-45              
   editSemester.tsx        |       0 |      100 |       0 |       0 | 18-53              
   viewCourse.tsx          |      60 |     62.5 |      50 |      60 | 33,62              
-  viewDegreePlan.tsx      |   16.66 |        0 |   28.57 |   16.66 | 17-33,64           
+  viewDegreePlan.tsx      |    9.52 |        0 |   18.18 |    9.52 | 17-50,81-87        
   viewDegreePlansList.tsx |   28.57 |    31.25 |   21.42 |   28.57 | 40-44,59,67,94-216 
-  viewSemester.tsx        |   15.78 |    16.66 |   22.22 |   15.78 | 22-46,76-89        
+  viewSemester.tsx        |    8.82 |    11.11 |   14.28 |    8.82 | 22-71,101-120      
  src/interfaces           |     100 |      100 |     100 |     100 |                    
   Course.ts               |       0 |        0 |       0 |       0 |                    
   Degree.ts               |       0 |        0 |       0 |       0 |                    
@@ -137,5 +137,5 @@ All files                 |   19.04 |    20.96 |   19.67 |   19.04 |
 Test Suites: 1 passed, 1 total
 Tests:       1 passed, 1 total
 Snapshots:   0 total
-Time:        2.675 s
+Time:        2.727 s
 Ran all test suites.

@@ -45,6 +45,31 @@ export function ViewSemester({
         );
         setDegreePlans(newPlans);
     }
+    function removeSemester() {
+        const foundDegreePlan = degreePlans.find(
+            (plan: DegreePlan): boolean => plan.id === degreePlan.id
+        );
+        if (foundDegreePlan === undefined) {
+            return;
+        }
+        const foundSemester = foundDegreePlan.semesters.findIndex(
+            (semester1: Semester): boolean => semester1.id === semester.id
+        );
+        if (foundSemester === undefined) {
+            return;
+        }
+        const newSemesterList = [...foundDegreePlan.semesters];
+        newSemesterList.splice(foundSemester, 1);
+        const newPlan: DegreePlan = {
+            ...foundDegreePlan,
+            semesters: [...newSemesterList]
+        };
+        const newPlans: DegreePlan[] = degreePlans.map(
+            (plan: DegreePlan): DegreePlan =>
+                plan.id === newPlan.id ? newPlan : plan
+        );
+        setDegreePlans(newPlans);
+    }
     return (
         <div>
             <h4>
@@ -76,6 +101,12 @@ export function ViewSemester({
                 onClick={() => clearSemester()}
             >
                 Clear Semester
+            </Button>
+            <Button
+                style={{ backgroundColor: "red" }}
+                onClick={() => removeSemester()}
+            >
+                Remove Semester
             </Button>
             <br />
             {editing && (

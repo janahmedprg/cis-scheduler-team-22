@@ -32,6 +32,23 @@ export function ViewDegreePlan({
         );
         setDegreePlans(newPlans);
     }
+    function removePlan() {
+        const foundDegreePlan = degreePlans.find(
+            (plan: DegreePlan): boolean => plan.id === degreePlan.id
+        );
+        if (foundDegreePlan === undefined) {
+            return;
+        }
+        const newPlan: DegreePlan = {
+            ...foundDegreePlan,
+            semesters: []
+        };
+        const newPlans: DegreePlan[] = degreePlans.map(
+            (plan: DegreePlan): DegreePlan =>
+                plan.id === newPlan.id ? newPlan : plan
+        );
+        setDegreePlans(newPlans);
+    }
     return (
         <div>
             <h3>{degreePlan.name}</h3>
@@ -64,6 +81,12 @@ export function ViewDegreePlan({
                 onClick={() => clearPlan()}
             >
                 Clear All Semesters
+            </Button>
+            <Button
+                style={{ backgroundColor: "red" }}
+                onClick={() => removePlan()}
+            >
+                Remove All Semesters
             </Button>
         </div>
     );

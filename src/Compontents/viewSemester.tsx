@@ -18,6 +18,33 @@ export function ViewSemester({
     setDegreePlans: (plans: DegreePlan[]) => void;
 }): JSX.Element {
     const [editing, setEditing] = useState<boolean>(false);
+    function clearSemester() {
+        const foundDegreePlan = degreePlans.find(
+            (plan: DegreePlan): boolean => plan.id === degreePlan.id
+        );
+        if (foundDegreePlan === undefined) {
+            return;
+        }
+        const foundSemester = foundDegreePlan.semesters.find(
+            (semester1: Semester): boolean => semester1.id === semester.id
+        );
+        if (foundSemester === undefined) {
+            return;
+        }
+        const newSemester = { ...foundSemester, courses: [] };
+        const newPlan: DegreePlan = {
+            ...foundDegreePlan,
+            semesters: foundDegreePlan.semesters.map(
+                (semester: Semester): Semester =>
+                    semester.id === newSemester.id ? newSemester : semester
+            )
+        };
+        const newPlans: DegreePlan[] = degreePlans.map(
+            (plan: DegreePlan): DegreePlan =>
+                plan.id === newPlan.id ? newPlan : plan
+        );
+        setDegreePlans(newPlans);
+    }
     return (
         <div>
             <h4>
@@ -44,6 +71,13 @@ export function ViewSemester({
                     </p>
                 )
             )}
+            <Button
+                style={{ backgroundColor: "red" }}
+                onClick={() => clearSemester()}
+            >
+                Clear Semester
+            </Button>
+            <br />
             {editing && (
                 <EditSemester
                     degreePlans={degreePlans}

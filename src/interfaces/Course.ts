@@ -17,9 +17,9 @@ export interface Course {
     descr: string;
     credits: number;
     prereqs: string[];
-    restrict: string[];
+    restrict: string;
     breadth: string[];
-    type: string[];
+    typ: string[];
     //additional attributes to be added to classes
     id: number;
     requirementsFulfilled: string[];
@@ -31,11 +31,11 @@ export function convertCourse(course: ImportCourse): Course {
         id: 0,
         name: course.name,
         descr: course.descr,
-        credits: parseInt(course.credits) | 0,
+        credits: parseInt(course.credits[course.credits.length - 1]) || 0,
         prereqs: course.preReq === "" ? [] : course.preReq.split(","),
         breadth: course.breadth === "" ? [] : course.breadth.split(","),
-        restrict: course.restrict === "" ? [] : course.restrict.split(","),
-        type: course.typ === "" ? [] : course.typ.split(","),
+        restrict: course.restrict,
+        typ: course.typ === "" ? [] : course.typ.split(","),
         code: course.code,
         requirementsFulfilled: [],
         sections: []

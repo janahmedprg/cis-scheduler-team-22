@@ -7,11 +7,15 @@ import { Button, Col, Row } from "react-bootstrap";
 export function ViewDegreePlan({
     degreePlan,
     degreePlans,
-    setDegreePlans
+    setDegreePlans,
+    nextId,
+    setNextId
 }: {
     degreePlan: DegreePlan;
     degreePlans: DegreePlan[];
     setDegreePlans: (plans: DegreePlan[]) => void;
+    nextId: number;
+    setNextId: (id: number) => void;
 }): JSX.Element {
     function clearPlan() {
         const foundDegreePlan = degreePlans.find(
@@ -56,14 +60,8 @@ export function ViewDegreePlan({
         if (foundDegreePlan === undefined) {
             return;
         }
-        let highestID = 0;
-        if (foundDegreePlan.semesters.length !== 0) {
-            highestID = foundDegreePlan.semesters.reduce((prev, current) =>
-                prev.id > current.id ? prev : current
-            ).id;
-        }
         const emptySemester = {
-            id: highestID + 1,
+            id: nextId,
             courses: [],
             session: "winter" as SemesterSession,
             year: 0
@@ -76,6 +74,7 @@ export function ViewDegreePlan({
             (plan: DegreePlan): DegreePlan =>
                 plan.id === newPlan.id ? newPlan : plan
         );
+        setNextId(nextId + 1);
         setDegreePlans(newPlans);
     }
     return (
@@ -99,18 +98,15 @@ export function ViewDegreePlan({
                                     degreePlan={degreePlan}
                                     degreePlans={degreePlans}
                                     setDegreePlans={setDegreePlans}
+                                    nextId={nextId}
+                                    setNextId={setNextId}
                                 />
                             </p>
                         </Col>
                     )
                 )}
             </Row>
-            <Button
-                style={{ backgroundColor: "red" }}
-                onClick={() => addNewSemester()}
-            >
-                Add New Semester
-            </Button>
+            <Button onClick={() => addNewSemester()}>Add New Semester</Button>
             <Button
                 style={{ backgroundColor: "red" }}
                 onClick={() => clearPlan()}

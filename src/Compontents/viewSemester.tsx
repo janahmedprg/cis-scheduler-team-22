@@ -10,12 +10,16 @@ export function ViewSemester({
     semester,
     degreePlan,
     degreePlans,
-    setDegreePlans
+    setDegreePlans,
+    nextId,
+    setNextId
 }: {
     semester: Semester;
     degreePlan: DegreePlan;
     degreePlans: DegreePlan[];
     setDegreePlans: (plans: DegreePlan[]) => void;
+    nextId: number;
+    setNextId: (id: number) => void;
 }): JSX.Element {
     const [editing, setEditing] = useState<boolean>(false);
     function clearSemester() {
@@ -70,6 +74,45 @@ export function ViewSemester({
         );
         setDegreePlans(newPlans);
     }
+    function addCourse() {
+        const foundDegreePlan = degreePlans.find(
+            (plan: DegreePlan): boolean => plan.id === degreePlan.id
+        );
+        if (foundDegreePlan === undefined) {
+            return;
+        }
+        const emptyCourse = {
+            id: nextId,
+            name: "New course",
+            descr: "",
+            credits: 0,
+            prereqs: [],
+            restrict: "",
+            breadth: [],
+            typ: [],
+            code: "",
+            requirementsFulfilled: [],
+            sections: []
+        };
+        const newSemester: Semester = {
+            ...semester,
+            courses: [...semester.courses, emptyCourse]
+        };
+        const newSemesterList: Semester[] = degreePlan.semesters.map(
+            (s: Semester): Semester =>
+                s.id === newSemester.id ? newSemester : s
+        );
+        const newPlan: DegreePlan = {
+            ...foundDegreePlan,
+            semesters: [...newSemesterList]
+        };
+        const newPlans: DegreePlan[] = degreePlans.map(
+            (plan: DegreePlan): DegreePlan =>
+                plan.id === newPlan.id ? newPlan : plan
+        );
+        setNextId(nextId + 1);
+        setDegreePlans(newPlans);
+    }
     return (
         <div>
             <h4>
@@ -92,10 +135,13 @@ export function ViewSemester({
                             degreePlan={degreePlan}
                             degreePlans={degreePlans}
                             setDegreePlans={setDegreePlans}
+                            nextId={nextId}
+                            setNextId={setNextId}
                         />
                     </p>
                 )
             )}
+            <Button onClick={() => addCourse()}>Add course</Button>
             <Button
                 style={{ backgroundColor: "red" }}
                 onClick={() => clearSemester()}

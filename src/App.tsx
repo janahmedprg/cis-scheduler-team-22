@@ -58,6 +58,8 @@ function App(): JSX.Element {
                 degreePlan={findDegreePlan(selectedPlanId)}
                 degreePlans={degreePlans}
                 setDegreePlans={setDegreePlans}
+                nextId={nextId}
+                setNextId={setNextId}
             />
             <hr />
             <div>Connor Nagle</div>

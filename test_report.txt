@@ -64,6 +64,9 @@
     Warning: validateDOMNesting(...): <p> cannot appear as a descendant of <p>.
         at p
         at div
+        at ViewCourse (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewCourse.tsx:9:5)
+        at p
+        at div
         at ViewSemester (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewSemester.tsx:10:5)
         at p
         at div
@@ -111,22 +114,22 @@
       at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22787:5)
 
 PASS src/App.test.tsx
-  ✓ renders the course name somewhere (203 ms)
+  ✓ renders the course name somewhere (205 ms)
 
 --------------------------|---------|----------|---------|---------|--------------------
 File                      | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s  
 --------------------------|---------|----------|---------|---------|--------------------
-All files                 |   14.54 |    14.77 |   15.78 |   14.54 |                    
+All files                 |   12.43 |    13.54 |   13.95 |   12.43 |                    
  src                      |   88.88 |       50 |     100 |   88.88 |                    
   App.tsx                 |   88.88 |       50 |     100 |   88.88 | 24                 
- src/Compontents          |    9.15 |    15.38 |    12.5 |    9.15 |                    
+ src/Compontents          |    7.73 |    13.95 |   10.97 |    7.73 |                    
   editCourse.tsx          |       0 |        0 |       0 |       0 | 25-83              
   editDegreePlan.tsx      |       0 |        0 |       0 |       0 | 21-45              
   editSemester.tsx        |       0 |      100 |       0 |       0 | 18-53              
-  viewCourse.tsx          |      60 |     62.5 |      50 |      60 | 33,62              
-  viewDegreePlan.tsx      |    5.71 |        0 |    12.5 |    5.71 | 17-79,110-122      
+  viewCourse.tsx          |   13.63 |    35.71 |      20 |   13.63 | 28-51,64,96-100    
+  viewDegreePlan.tsx      |    6.25 |        0 |   13.33 |    6.25 | 21-78,109-118      
   viewDegreePlansList.tsx |   28.57 |    31.25 |   21.42 |   28.57 | 40-44,59,67,94-216 
-  viewSemester.tsx        |    8.82 |    11.11 |   14.28 |    8.82 | 22-71,101-120      
+  viewSemester.tsx        |    6.25 |     8.33 |   10.52 |    6.25 | 26-114,144-166     
  src/interfaces           |   66.66 |        0 |       0 |   66.66 |                    
   Course.ts               |       0 |        0 |       0 |       0 | 30                 
   Degree.ts               |       0 |        0 |       0 |       0 |                    
@@ -137,5 +140,5 @@ All files                 |   14.54 |    14.77 |   15.78 |   14.54 |
 Test Suites: 1 passed, 1 total
 Tests:       1 passed, 1 total
 Snapshots:   0 total
-Time:        2.589 s
+Time:        3.748 s
 Ran all test suites.

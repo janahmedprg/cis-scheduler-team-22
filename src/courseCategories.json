@@ -1,0 +1,24 @@
+{
+    "CISC Core": [
+        "CISC 108",
+        "CISC 181",
+        "CISC 210",
+        "CISC 220",
+        "CISC 260",
+        "CISC 275",
+        "CISC 303",
+        "CISC 320",
+        "MATH 210",
+        "MATH 241"
+    ],
+    "Lab Requirements": [
+        "BISC 207",
+        "BISC 208",
+        "CHEM 103",
+        "CHEM 104",
+        "GEOL 105",
+        "GEOL 107",
+        "PHYS 207",
+        "PHYS 208"
+    ]
+}

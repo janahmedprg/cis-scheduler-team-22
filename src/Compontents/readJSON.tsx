@@ -1,25 +1,26 @@
-import { Course } from "../interfaces/Course";
+import { ImportCourse } from "../interfaces/Course";
 import catalogData from "../catalog.json";
+//import courseCategoriesData from "../courseCategories.json";
+
+//reads in catalog data as hashmap of hashmaps
+const catalog = catalogData as Record<string, Record<string, ImportCourse>>;
+
+export { catalog };
+//const courseCategories = courseCategoriesData as Record<string, string[]>;
 
 /**
-//reads in catalog data as hashmap of hashmaps
-const catalog = catalogData as Record<string, Record<string, Course>>;
-
 //Get department keys
-const departments = Object.keys(catalog);
+const categories = Object.keys(courseCategories);
 
 //Map department keys to values. Gives array of arrays of courses
-const courseInfo = departments.map((dept: string): Course[] =>
-    Object.values(catalog[dept])
-);
-
-const courseList = courseInfo.reduce(
-    (fullList: Course[], currentList: Course[]) => [
+const courseList = catalog.reduce(
+    (fullList: ImportCourse[], currentList: ImportCourse[]) => [
         ...fullList,
         ...currentList
     ],
     []
 );
-
-console.log(courseList[0]);
 */
+
+//test
+//console.log(courseList[0]);

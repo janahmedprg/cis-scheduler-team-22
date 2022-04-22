@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import "./App.css";
 import sketch from "./sketch.jpg";
+import UDHeader from "./UDHeader.jpg";
 import { DegreePlan, TEST_PLANS, EMPTY_PLAN } from "./interfaces/DegreePlan";
 import { ViewDegreePlansList } from "./Compontents/viewDegreePlansList";
 import { ViewDegreePlan } from "./Compontents/viewDegreePlan";
+import { SearchCourses } from "./Compontents/searchCourse";
 
 /**
  * Importing Course Catalog
@@ -26,11 +28,24 @@ function App(): JSX.Element {
         return foundPlan;
     }
     return (
-        <div className="App">
-            <header className="App-header">
-                Hello, welcome to your UD CIS course scheduler!
+        <div
+            className="App"
+            //style={{
+            //    backgroundColor: "gold"
+            //}}
+        >
+            <header
+                style={{
+                    backgroundImage: `url(${UDHeader})`,
+                    backgroundPosition: "center",
+                    backgroundSize: "1600px 270px"
+                }}
+                className="App-header"
+            >
+                <h3>Hello, welcome to your UD CIS course scheduler!</h3>
             </header>
-            <h1>Scheduler</h1>
+            <h1 style={{ backgroundColor: "gold" }}> Course Scheduler</h1>
+            <SearchCourses></SearchCourses>
             <h2>Degree Plans List</h2>
             <ViewDegreePlansList
                 degreePlansList={degreePlans}

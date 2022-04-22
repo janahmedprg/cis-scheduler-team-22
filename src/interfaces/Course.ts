@@ -12,7 +12,7 @@ export interface ImportCourse {
 }
 
 export interface Course {
-    id: number; //unique number being given
+    code: string; //Given course code (ex: CISC210)
     name: string; //Actual course name (ex: Data structures)
     descr: string;
     credits: number;
@@ -21,7 +21,7 @@ export interface Course {
     breadth: string[];
     typ: string[];
     //additional attributes to be added to classes
-    code: string; //Given course code (ex: CISC210)
+    id: number;
     requirementsFulfilled: string[];
     sections: Section[];
 }

@@ -78,7 +78,13 @@ export function ViewDegreePlan({
         setDegreePlans(newPlans);
     }
     return (
-        <div>
+        <div
+            style={{
+                marginLeft: "20px",
+                marginRight: "20px",
+                marginTop: "20px"
+            }}
+        >
             <h3>{degreePlan.name}</h3>
             <Row>
                 {degreePlan.semesters.map(

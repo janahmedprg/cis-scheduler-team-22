@@ -54,8 +54,10 @@ export function ViewCourse({
         <div>
             <b>{course.code}: </b>
             {course.name} <br />
+            <b>Description: </b>
+            {course.descr} <br />
             Credits: {course.credits}
-            {course.requirementsFulfilled.length > 0 && (
+            {/* {course.requirementsFulfilled.length > 0 && (
                 <div>
                     Fulfills requirements:{" "}
                     <ul>
@@ -68,7 +70,7 @@ export function ViewCourse({
                         )}
                     </ul>
                 </div>
-            )}
+            )} */}
             {course.prereqs.length > 0 && (
                 <div>
                     Prerequisites:{" "}

@@ -6,6 +6,7 @@ import { DegreePlan } from "../interfaces/DegreePlan";
 import { Semester } from "../interfaces/Semester";
 import { Form } from "react-bootstrap";
 import { EditDegreePlan } from "./editDegreePlan";
+import { EMPTY_REQUIREMENTS } from "../interfaces/Requirements";
 
 export interface AddDegreePlanToList {
     // Consumes a function that consumes data and returns nothing, passes to a React State Setter).
@@ -217,7 +218,8 @@ export function AddToDegreePlansList({
                         {
                             id: 0,
                             name: "",
-                            requirements: [],
+                            requirements: EMPTY_REQUIREMENTS,
+                            requiredCourses: [],
                             requiredCredits: 0
                         },
                         name,

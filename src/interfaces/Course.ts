@@ -94,6 +94,15 @@ export function convertCourse(course: ImportCourse): Course {
             }
         };
     }
+    if (CIS_CAPSTONE.includes(course.code.replace(/\s/g, ""))) {
+        convertedCourse = {
+            ...convertedCourse,
+            requirementsFulfilled: {
+                ...convertedCourse.requirementsFulfilled,
+                CSCapstone: convertedCourse.credits
+            }
+        };
+    }
     return convertedCourse;
 }
 
@@ -131,4 +140,10 @@ export const FOREIGN_LANGUAGE: string[] = [
     "RUSS107",
     "SPAN107",
     "LATN202"
+];
+export const CIS_CAPSTONE: string[] = [
+    "UNIV401",
+    "UNIV402",
+    "CISC498",
+    "CISC499"
 ];

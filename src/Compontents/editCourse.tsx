@@ -3,6 +3,7 @@ import { Form } from "react-bootstrap";
 import { Course } from "../interfaces/Course";
 import { DegreePlan } from "../interfaces/DegreePlan";
 import { Semester } from "../interfaces/Semester";
+import { EditCourseRequirements } from "./editCourseRequirements";
 
 type ChangeEvent = React.ChangeEvent<
     HTMLTextAreaElement | HTMLInputElement | HTMLSelectElement
@@ -117,7 +118,7 @@ export function EditCourse({
                 <Form.Control value={course.name} onChange={updateCourseName} />
             </Form.Group>
             <Form.Group controlId="formCourseDescription">
-                <Form.Label>Course Name:</Form.Label>
+                <Form.Label>Course Description:</Form.Label>
                 <Form.Control
                     as={"textarea"}
                     rows={5}
@@ -133,6 +134,13 @@ export function EditCourse({
                     type={"number"}
                 />
             </Form.Group>
+            <EditCourseRequirements
+                course={course}
+                semester={semester}
+                degreePlan={degreePlan}
+                degreePlans={degreePlans}
+                setDegreePlans={setDegreePlans}
+            />
         </div>
     );
 }

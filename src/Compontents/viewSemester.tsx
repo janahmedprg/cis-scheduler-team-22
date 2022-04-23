@@ -114,7 +114,11 @@ export function ViewSemester({
         setDegreePlans(newPlans);
     }
     return (
-        <div>
+        <div
+            style={{
+                border: "1px solid black"
+            }}
+        >
             <h4>
                 {semester.session} {semester.year} semester
             </h4>
@@ -163,7 +167,10 @@ export function ViewSemester({
                     setDegreePlans={setDegreePlans}
                 />
             )}
-            <Button onClick={() => setEditing(!editing)}>
+            <Button
+                onClick={() => setEditing(!editing)}
+                style={{ marginBottom: "20px" }}
+            >
                 {editing ? "Close" : "Edit Semester"}
             </Button>
         </div>

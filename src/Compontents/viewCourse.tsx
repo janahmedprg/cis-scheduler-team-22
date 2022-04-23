@@ -54,6 +54,8 @@ export function ViewCourse({
         <div>
             <b>{course.code}: </b>
             {course.name} <br />
+            <b>Description: </b>
+            {course.descr} <br />
             Credits: {course.credits}
             {course.requirementsFulfilled.length > 0 && (
                 <div>

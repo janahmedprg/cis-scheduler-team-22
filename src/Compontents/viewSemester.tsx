@@ -5,6 +5,7 @@ import { ViewCourse } from "./viewCourse";
 import { DegreePlan } from "../interfaces/DegreePlan";
 import { Button } from "react-bootstrap";
 import { EditSemester } from "./editSemester";
+import { EMPTY_REQUIREMENTS } from "../interfaces/Requirements";
 
 export function ViewSemester({
     semester,
@@ -88,10 +89,9 @@ export function ViewSemester({
             credits: 0,
             prereqs: [],
             restrict: "",
-            breadth: [],
             typ: [],
             code: "",
-            requirementsFulfilled: [],
+            requirementsFulfilled: EMPTY_REQUIREMENTS,
             sections: []
         };
         const newSemester: Semester = {

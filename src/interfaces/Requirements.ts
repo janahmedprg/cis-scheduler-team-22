@@ -14,3 +14,16 @@ export interface Requirements {
     TechnicalElective: number;
     CSCapstone: number;
 }
+
+/* these constants exist for easier use in other files */
+
+export const EMPTY_REQUIREMENTS: Requirements = {
+    CAHBreadth: 0,
+    HCCBreadth: 0,
+    SBSBreadth: 0,
+    ForeignLanguage: 0,
+    LabScience: 0,
+    CSCore: 0,
+    TechnicalElective: 0,
+    CSCapstone: 0
+};

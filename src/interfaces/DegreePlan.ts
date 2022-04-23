@@ -1,4 +1,5 @@
 import { Degree } from "./Degree";
+import { EMPTY_REQUIREMENTS } from "./Requirements";
 import { Semester } from "./Semester";
 
 export interface DegreePlan {
@@ -36,10 +37,9 @@ export const TEST_PLANS: DegreePlan[] = [
                         credits: 3,
                         prereqs: [],
                         restrict: "",
-                        breadth: [],
                         typ: [],
                         code: "CISC108",
-                        requirementsFulfilled: [],
+                        requirementsFulfilled: EMPTY_REQUIREMENTS,
                         sections: []
                     }
                 ],
@@ -56,10 +56,9 @@ export const TEST_PLANS: DegreePlan[] = [
                         credits: 3,
                         prereqs: ["CISC108"],
                         restrict: "",
-                        breadth: [],
                         typ: [],
                         code: "CISC181",
-                        requirementsFulfilled: [],
+                        requirementsFulfilled: EMPTY_REQUIREMENTS,
                         sections: []
                     },
                     {
@@ -69,10 +68,9 @@ export const TEST_PLANS: DegreePlan[] = [
                         credits: 3,
                         prereqs: ["CISC108"],
                         restrict: "",
-                        breadth: [],
                         typ: [],
                         code: "CISC210",
-                        requirementsFulfilled: [],
+                        requirementsFulfilled: EMPTY_REQUIREMENTS,
                         sections: []
                     }
                 ],
@@ -101,10 +99,9 @@ export const TEST_PLANS: DegreePlan[] = [
                         credits: 3,
                         prereqs: [],
                         restrict: "",
-                        breadth: [],
                         typ: [],
                         code: "MATH241",
-                        requirementsFulfilled: [],
+                        requirementsFulfilled: EMPTY_REQUIREMENTS,
                         sections: []
                     }
                 ],
@@ -121,10 +118,9 @@ export const TEST_PLANS: DegreePlan[] = [
                         credits: 3,
                         prereqs: ["MATH241"],
                         restrict: "",
-                        breadth: [],
                         typ: [],
                         code: "MATH242",
-                        requirementsFulfilled: [],
+                        requirementsFulfilled: EMPTY_REQUIREMENTS,
                         sections: []
                     },
                     {
@@ -134,10 +130,9 @@ export const TEST_PLANS: DegreePlan[] = [
                         credits: 3,
                         prereqs: [],
                         restrict: "",
-                        breadth: [],
                         typ: [],
                         code: "MATH210",
-                        requirementsFulfilled: [],
+                        requirementsFulfilled: EMPTY_REQUIREMENTS,
                         sections: []
                     }
                 ],
@@ -154,10 +149,9 @@ export const TEST_PLANS: DegreePlan[] = [
                         credits: 3,
                         prereqs: ["MATH241", "MATH242"],
                         restrict: "",
-                        breadth: [],
                         typ: [],
                         code: "MATH243",
-                        requirementsFulfilled: [],
+                        requirementsFulfilled: EMPTY_REQUIREMENTS,
                         sections: []
                     }
                 ],

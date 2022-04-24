@@ -21,6 +21,7 @@ export interface Course {
     breadth: string[];
     typ: string[];
     //additional attributes to be added to classes
+    //degreeCategory: string[];
     id: number;
     requirementsFulfilled: string[];
     sections: Section[];
@@ -37,6 +38,7 @@ export function convertCourse(course: ImportCourse): Course {
         restrict: course.restrict,
         typ: course.typ === "" ? [] : course.typ.split(","),
         code: course.code,
+        //degreeCategory: [],
         requirementsFulfilled: [],
         sections: []
     };

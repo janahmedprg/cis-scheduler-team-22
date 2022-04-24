@@ -5,6 +5,7 @@ import { ViewCourse } from "./viewCourse";
 import { DegreePlan } from "../interfaces/DegreePlan";
 import { Button } from "react-bootstrap";
 import { EditSemester } from "./editSemester";
+import { EMPTY_REQUIREMENTS } from "../interfaces/Requirements";
 
 export function ViewSemester({
     semester,
@@ -88,10 +89,9 @@ export function ViewSemester({
             credits: 0,
             prereqs: [],
             restrict: "",
-            breadth: [],
             typ: [],
             code: "",
-            requirementsFulfilled: [],
+            requirementsFulfilled: EMPTY_REQUIREMENTS,
             sections: []
         };
         const newSemester: Semester = {
@@ -114,7 +114,11 @@ export function ViewSemester({
         setDegreePlans(newPlans);
     }
     return (
-        <div>
+        <div
+            style={{
+                border: "1px solid black"
+            }}
+        >
             <h4>
                 {semester.session} {semester.year} semester
             </h4>
@@ -163,7 +167,10 @@ export function ViewSemester({
                     setDegreePlans={setDegreePlans}
                 />
             )}
-            <Button onClick={() => setEditing(!editing)}>
+            <Button
+                onClick={() => setEditing(!editing)}
+                style={{ marginBottom: "20px" }}
+            >
                 {editing ? "Close" : "Edit Semester"}
             </Button>
         </div>

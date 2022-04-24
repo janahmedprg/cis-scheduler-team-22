@@ -3,6 +3,7 @@ import { Form } from "react-bootstrap";
 import { Course } from "../interfaces/Course";
 import { DegreePlan } from "../interfaces/DegreePlan";
 import { Semester } from "../interfaces/Semester";
+import { EditCourseRequirements } from "./editCourseRequirements";
 
 type ChangeEvent = React.ChangeEvent<
     HTMLTextAreaElement | HTMLInputElement | HTMLSelectElement
@@ -21,7 +22,12 @@ export function EditCourse({
     course: Course;
     setDegreePlans: (plans: DegreePlan[]) => void;
 }) {
-    function updateCourse(courseCode: string, name: string, credits: number) {
+    function updateCourse(
+        courseCode: string,
+        name: string,
+        description: string,
+        credits: number
+    ) {
         const foundDegreePlan = degreePlans.find(
             (plan: DegreePlan): boolean => plan.id === degreePlan.id
         );
@@ -44,6 +50,7 @@ export function EditCourse({
             ...foundCourse,
             code: courseCode,
             name: name,
+            descr: description,
             credits: credits
         };
         const newSemester: Semester = {
@@ -67,15 +74,34 @@ export function EditCourse({
         setDegreePlans(newPlans);
     }
     function updateCourseCode(event: ChangeEvent) {
-        updateCourse(event.target.value, course.name, course.credits);
+        updateCourse(
+            event.target.value,
+            course.name,
+            course.descr,
+            course.credits
+        );
     }
     function updateCourseName(event: ChangeEvent) {
-        updateCourse(course.code, event.target.value, course.credits);
+        updateCourse(
+            course.code,
+            event.target.value,
+            course.descr,
+            course.credits
+        );
+    }
+    function updateCourseDescription(event: ChangeEvent) {
+        updateCourse(
+            course.code,
+            course.name,
+            event.target.value,
+            course.credits
+        );
     }
     function updateCourseCredits(event: ChangeEvent) {
         updateCourse(
             course.code,
             course.name,
+            course.descr,
             parseInt(event.target.value) || 0
         );
     }
@@ -91,6 +117,15 @@ export function EditCourse({
                 <Form.Label>Course Name:</Form.Label>
                 <Form.Control value={course.name} onChange={updateCourseName} />
             </Form.Group>
+            <Form.Group controlId="formCourseDescription">
+                <Form.Label>Course Description:</Form.Label>
+                <Form.Control
+                    as={"textarea"}
+                    rows={5}
+                    value={course.descr}
+                    onChange={updateCourseDescription}
+                />
+            </Form.Group>
             <Form.Group controlId="formCourseCredits">
                 <Form.Label>Credits</Form.Label>
                 <Form.Control
@@ -99,6 +134,13 @@ export function EditCourse({
                     type={"number"}
                 />
             </Form.Group>
+            <EditCourseRequirements
+                course={course}
+                semester={semester}
+                degreePlan={degreePlan}
+                degreePlans={degreePlans}
+                setDegreePlans={setDegreePlans}
+            />
         </div>
     );
 }

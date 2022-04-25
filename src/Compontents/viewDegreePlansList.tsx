@@ -72,7 +72,10 @@ export function ViewDegreePlansList({
                             >
                                 View Plan
                             </Button>
-                            <CSVLink data={createCSVTable(degreePlanOption)}>
+                            <CSVLink
+                                data={createCSVTable(degreePlanOption)}
+                                filename={degreePlanOption.name + ".csv"}
+                            >
                                 Download Plan as CSV
                             </CSVLink>
                         </p>

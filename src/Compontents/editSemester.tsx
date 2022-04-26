@@ -3,6 +3,10 @@ import { Form } from "react-bootstrap";
 import { DegreePlan } from "../interfaces/DegreePlan";
 import { Semester, SemesterSession } from "../interfaces/Semester";
 
+type ChangeEvent = React.ChangeEvent<
+    HTMLTextAreaElement | HTMLInputElement | HTMLSelectElement
+>;
+
 export function EditSemester({
     degreePlans,
     degreePlan,
@@ -14,7 +18,7 @@ export function EditSemester({
     semester: Semester;
     setDegreePlans: (plans: DegreePlan[]) => void;
 }): JSX.Element {
-    function updateSemesterSession(event: React.ChangeEvent<HTMLInputElement>) {
+    function updateSemesterSession(event: ChangeEvent) {
         const indexOfDegreePlan = degreePlans.findIndex(
             (idxDegPlan: DegreePlan): boolean => idxDegPlan.id === degreePlan.id
         );
@@ -53,12 +57,15 @@ export function EditSemester({
     return (
         <div>
             <Form.Label>Change Semester Session</Form.Label>
-            <Form.Control
-                key={semester.id.toString() + "-semester"}
+            <Form.Select
+                value={semester.session}
                 onChange={updateSemesterSession}
-                id={semester.id.toString() + "-semester"}
-                data-testid={semester.id.toString() + "-semester"}
-            ></Form.Control>
+            >
+                <option value="winter">Winter</option>
+                <option value="spring">Spring</option>
+                <option value="summer">Summer</option>
+                <option value="fall">Fall</option>
+            </Form.Select>
             <Form.Label>Change Semester Year</Form.Label>
             <Form.Control
                 key={semester.id.toString() + "-semester"}

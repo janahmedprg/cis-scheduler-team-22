@@ -6,11 +6,24 @@ import catalogData from "../catalog.json";
 //reads in catalog data as hashmap of hashmaps
 const catalog = catalogData as Record<string, Record<string, ImportCourse>>;
 
-//const categories = Object.keys(courseCategoriesData);
+const departments = Object.keys(catalog);
 
-//const courseCategories = courseCategoriesData as Record<string, string[]>;
+const courseMaps = departments.map((dept: string): ImportCourse[] =>
+    Object.values(catalog[dept])
+);
 
+const courseList = courseMaps.reduce(
+    (fullList: ImportCourse[], currentList: ImportCourse[]) => [
+        ...fullList,
+        ...currentList
+    ],
+    []
+);
+
+export { courseList };
 /**
+const courseCategories = courseCategoriesData as Record<string, string[]>;
+
 const courseArrList = categories.map((category: string): Course[] =>
     courseCategories[category].map(
         (code: string): Course => ({
@@ -19,7 +32,7 @@ const courseArrList = categories.map((category: string): Course[] =>
         })
     )
 );
-*/
+**/
 
 export { catalog };
 

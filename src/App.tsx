@@ -57,11 +57,12 @@ function App(): JSX.Element {
             <hr />
             <h2
                 style={{
-                    backgroundColor: "gold",
-                    height: "60px",
-                    border: "5px solid blue",
+                    backgroundColor: "#0C3590",
+                    height: "50px",
+                    fontWeight: "5px solid blue",
                     marginLeft: "400px",
-                    marginRight: "400px"
+                    marginRight: "400px",
+                    color: "white"
                 }}
             >
                 See Selected Degree Plan Below

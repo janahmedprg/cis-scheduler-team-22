@@ -1,12 +1,6 @@
 import { Course } from "./Course";
 
-export type SemesterSession =
-    | "winter"
-    | "spring"
-    | "summer1"
-    | "summer2"
-    | "summer3"
-    | "fall";
+export type SemesterSession = "winter" | "spring" | "summer" | "fall";
 
 export interface Semester {
     id: number;

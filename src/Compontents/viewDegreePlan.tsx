@@ -118,6 +118,11 @@ export function ViewDegreePlan({
                 {degreePlan.semesters.map(
                     (semester: Semester): JSX.Element => (
                         <Col
+                            style={{
+                                minWidth: 450,
+                                maxWidth: 600,
+                                margin: "0 auto"
+                            }}
                             key={
                                 degreePlan.id.toString() +
                                 "-" +

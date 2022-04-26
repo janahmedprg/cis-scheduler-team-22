@@ -1,6 +1,8 @@
+import { convertCourse } from "./Course";
 import { CISC_BS, Degree } from "./Degree";
 import { EMPTY_REQUIREMENTS } from "./Requirements";
 import { Semester } from "./Semester";
+import { catalog } from "../Compontents/readJSON";
 
 export interface DegreePlan {
     id: number;
@@ -31,18 +33,7 @@ export const TEST_PLANS: DegreePlan[] = [
             {
                 id: 2,
                 courses: [
-                    {
-                        id: 3,
-                        name: "intro to computer science",
-                        descr: "Introductory CS course for python basics",
-                        credits: 3,
-                        prereqs: [],
-                        restrict: "",
-                        typ: [],
-                        code: "CISC108",
-                        requirementsFulfilled: EMPTY_REQUIREMENTS,
-                        sections: []
-                    }
+                    { ...convertCourse(catalog["CISC"]["CISC 108"]), id: 1 }
                 ],
                 session: "fall",
                 year: 2022
@@ -50,30 +41,8 @@ export const TEST_PLANS: DegreePlan[] = [
             {
                 id: 4,
                 courses: [
-                    {
-                        id: 5,
-                        name: "intro to computer science 2",
-                        descr: "An introduction to data structures and complex datat types",
-                        credits: 3,
-                        prereqs: ["CISC108"],
-                        restrict: "",
-                        typ: [],
-                        code: "CISC181",
-                        requirementsFulfilled: EMPTY_REQUIREMENTS,
-                        sections: []
-                    },
-                    {
-                        id: 6,
-                        name: "systems programming",
-                        descr: "Objected oriented programming with java",
-                        credits: 3,
-                        prereqs: ["CISC108"],
-                        restrict: "",
-                        typ: [],
-                        code: "CISC210",
-                        requirementsFulfilled: EMPTY_REQUIREMENTS,
-                        sections: []
-                    }
+                    { ...convertCourse(catalog["CISC"]["CISC 181"]), id: 5 },
+                    { ...convertCourse(catalog["CISC"]["CISC 210"]), id: 6 }
                 ],
                 session: "spring",
                 year: 2023
@@ -94,18 +63,7 @@ export const TEST_PLANS: DegreePlan[] = [
             {
                 id: 9,
                 courses: [
-                    {
-                        id: 10,
-                        name: "CALCULUS 1",
-                        descr: "Basics of calculus 1",
-                        credits: 3,
-                        prereqs: [],
-                        restrict: "",
-                        typ: [],
-                        code: "MATH241",
-                        requirementsFulfilled: EMPTY_REQUIREMENTS,
-                        sections: []
-                    }
+                    { ...convertCourse(catalog["MATH"]["MATH 241"]), id: 10 }
                 ],
                 session: "fall",
                 year: 2022
@@ -113,30 +71,8 @@ export const TEST_PLANS: DegreePlan[] = [
             {
                 id: 11,
                 courses: [
-                    {
-                        id: 12,
-                        name: "calculus 2",
-                        descr: "Basics of Calculus 2",
-                        credits: 3,
-                        prereqs: ["MATH241"],
-                        restrict: "",
-                        typ: [],
-                        code: "MATH242",
-                        requirementsFulfilled: EMPTY_REQUIREMENTS,
-                        sections: []
-                    },
-                    {
-                        id: 13,
-                        name: "discrete math",
-                        descr: "An intro to discrete mathematics and graph theory",
-                        credits: 3,
-                        prereqs: [],
-                        restrict: "",
-                        typ: [],
-                        code: "MATH210",
-                        requirementsFulfilled: EMPTY_REQUIREMENTS,
-                        sections: []
-                    }
+                    { ...convertCourse(catalog["MATH"]["MATH 242"]), id: 12 },
+                    { ...convertCourse(catalog["MATH"]["MATH 210"]), id: 13 }
                 ],
                 session: "spring",
                 year: 2023
@@ -144,18 +80,7 @@ export const TEST_PLANS: DegreePlan[] = [
             {
                 id: 14,
                 courses: [
-                    {
-                        id: 15,
-                        name: "calculus 3",
-                        descr: "Intro to calculus 3",
-                        credits: 3,
-                        prereqs: ["MATH241", "MATH242"],
-                        restrict: "",
-                        typ: [],
-                        code: "MATH243",
-                        requirementsFulfilled: EMPTY_REQUIREMENTS,
-                        sections: []
-                    }
+                    { ...convertCourse(catalog["MATH"]["MATH 243"]), id: 15 }
                 ],
                 session: "fall",
                 year: 2023

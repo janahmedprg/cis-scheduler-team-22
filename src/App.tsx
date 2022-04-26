@@ -30,15 +30,15 @@ function App(): JSX.Element {
     return (
         <div
             className="App"
-            //style={{
-            //    backgroundColor: "gold"
-            //}}
+            style={{
+                backgroundColor: "#EFF4FF"
+            }}
         >
             <header
                 style={{
                     backgroundImage: `url(${UDHeader})`,
                     backgroundPosition: "center",
-                    backgroundSize: "1600px 270px"
+                    backgroundSize: "1695px 300px"
                 }}
                 className="App-header"
             >
@@ -55,7 +55,17 @@ function App(): JSX.Element {
                 setNextId={setNextId}
             />
             <hr />
-            <h2>Degree Plan View</h2>
+            <h2
+                style={{
+                    backgroundColor: "gold",
+                    height: "60px",
+                    border: "5px solid blue",
+                    marginLeft: "400px",
+                    marginRight: "400px"
+                }}
+            >
+                See Selected Degree Plan Below
+            </h2>
             <ViewDegreePlan
                 degreePlan={findDegreePlan(selectedPlanId)}
                 degreePlans={degreePlans}

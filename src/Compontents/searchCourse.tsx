@@ -1,13 +1,13 @@
 import { catalog } from "../Compontents/readJSON";
 import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
-import { Course, ImportCourse } from "../interfaces/Course";
+//import { Course, ImportCourse } from "../interfaces/Course";
 
 type ChangeEvent = React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>;
 
 export function SearchCourses(): JSX.Element {
-    const [category, setCategory] = useState<string>("Ex: CISC");
-    const [code, setCode] = useState<string>("Ex: 108");
+    const [category, setCategory] = useState<string>("");
+    const [code, setCode] = useState<string>("");
     const [searched, setSearched] = useState<boolean>(false);
 
     return (
@@ -30,7 +30,9 @@ export function SearchCourses(): JSX.Element {
                                     display: "inline-block"
                                 }}
                             >
-                                <Form.Label>Enter course Code:</Form.Label>
+                                <Form.Label>
+                                    Enter course Code: (Ex: CISC)
+                                </Form.Label>
                                 <Form.Control
                                     value={category}
                                     onChange={(event: ChangeEvent) =>
@@ -46,7 +48,7 @@ export function SearchCourses(): JSX.Element {
                                 }}
                             >
                                 <Form.Label>
-                                    Enter course Code and Number:
+                                    Enter course Number: (Ex: 108)
                                 </Form.Label>
                                 <Form.Control
                                     value={code}
@@ -56,7 +58,10 @@ export function SearchCourses(): JSX.Element {
                                 />
                             </Form.Group>
                             <Button
-                                style={{ display: "inline-block" }}
+                                style={{
+                                    display: "inline-block",
+                                    marginBottom: "10px"
+                                }}
                                 onClick={() => setSearched(!searched)}
                             >
                                 {" "}
@@ -85,7 +90,8 @@ export function SearchCourses(): JSX.Element {
                         <div>
                             <Button
                                 style={{
-                                    display: "inline-block"
+                                    display: "inline-block",
+                                    marginBottom: "10px"
                                 }}
                                 onClick={() => setSearched(!searched)}
                             >
@@ -151,5 +157,5 @@ export function ShowAllCourses({
 }: {
     category: string;
 }): JSX.Element {
-    return <div>Write to map all of type</div>;
+    return <div>Write to map all of type {category}</div>;
 }

@@ -37,12 +37,7 @@ export function convertCourse(course: ImportCourse): Course {
         restrict: course.restrict,
         typ: course.typ === "" ? [] : course.typ.split(","),
         code: course.code,
-<<<<<<< HEAD
-        //degreeCategory: [],
-        requirementsFulfilled: [],
-=======
         requirementsFulfilled: EMPTY_REQUIREMENTS,
->>>>>>> a90409dd9a4789692cc6b758a14103b416d8e051
         sections: []
     };
     if (course.breadth.toLowerCase().includes("behavioral")) {

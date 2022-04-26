@@ -5,7 +5,6 @@ import { Degree } from "../interfaces/Degree";
 import { DegreePlan } from "../interfaces/DegreePlan";
 import { Semester } from "../interfaces/Semester";
 import { Form } from "react-bootstrap";
-import { EditDegreePlan } from "./editDegreePlan";
 import { EMPTY_REQUIREMENTS } from "../interfaces/Requirements";
 
 export interface AddDegreePlanToList {
@@ -34,7 +33,6 @@ export function ViewDegreePlansList({
     setNextId: (id: number) => void;
 }): JSX.Element {
     const [editMode, setEditMode] = useState<boolean>(false);
-    const [editing, setEditing] = useState<boolean>(false);
     const [addingDegreePlan, setAddingDegreePlan] = useState<boolean>(false);
 
     function removeQuizByTitle(degreePlanId: number) {
@@ -51,7 +49,7 @@ export function ViewDegreePlansList({
         <div>
             <div>
                 <Form.Check
-                    style={{ marginLeft: "575px", marginRight: "575px" }}
+                    style={{ marginLeft: "40px", marginRight: "1120px" }}
                     type="switch"
                     id="can-edit-degreePlansList"
                     role="can-edit-degreePlansList"
@@ -59,86 +57,111 @@ export function ViewDegreePlansList({
                     checked={editMode}
                     onChange={() => setEditMode(!editMode)}
                 />
+            </div>
+            <div
+                style={{
+                    border: "3px solid black",
+                    marginLeft: "50px",
+                    marginRight: "50px",
+                    backgroundColor: "#DCDCDC"
+                }}
+            >
                 {degreePlansList.map(
                     (degreePlanOption: DegreePlan): JSX.Element => (
                         <p key={degreePlanOption.id.toString()}>
-                            {degreePlanOption.name}{" "}
-                            <Button
-                                onClick={() =>
-                                    setSelectedPlanId(degreePlanOption.id)
-                                }
+                            <div
+                                style={{
+                                    border: "1px solid black",
+                                    marginLeft: "20px",
+                                    marginRight: "20px",
+                                    marginTop: "20px",
+                                    backgroundColor: "white"
+                                }}
                             >
-                                View Plan
-                            </Button>
+                                {
+                                    <text
+                                        style={{
+                                            fontWeight: "550",
+                                            fontSize: "200%"
+                                        }}
+                                    >
+                                        {degreePlanOption.name + " - "}
+                                    </text>
+                                }
+                                {
+                                    <text
+                                        style={{
+                                            fontWeight: "500",
+                                            fontSize: "200%"
+                                        }}
+                                    >
+                                        {degreePlanOption.semesters.length +
+                                            " semesters"}
+                                    </text>
+                                }
+                                <div>
+                                    <Button
+                                        onClick={() =>
+                                            setSelectedPlanId(
+                                                degreePlanOption.id
+                                            )
+                                        }
+                                        style={{
+                                            fontSize: "18px",
+                                            fontStyle: "900px",
+                                            marginBottom: "10px",
+                                            fontFamily: "Arial",
+                                            marginRight: "20px"
+                                        }}
+                                    >
+                                        View Plan
+                                    </Button>
+                                    {editMode && (
+                                        <Button
+                                            style={{
+                                                marginBottom: "10px",
+                                                backgroundColor: "red",
+                                                fontSize: "18px",
+                                                fontStyle: "900px",
+                                                fontFamily: "Arial",
+                                                display: "inline-block"
+                                            }}
+                                            onClick={() =>
+                                                removeQuizByTitle(
+                                                    degreePlanOption.id
+                                                )
+                                            }
+                                        >
+                                            Delete this Degree Plan
+                                        </Button>
+                                    )}
+                                </div>
+                            </div>
                         </p>
                     )
                 )}
+                {editMode && addingDegreePlan && (
+                    <AddToDegreePlansList
+                        degreePlansList={degreePlansList}
+                        setDegreePlans={setDegreePlans}
+                        nextId={nextId}
+                        setNextId={setNextId}
+                    />
+                )}
+                {editMode && (
+                    <Button
+                        style={{
+                            backgroundColor: "grey",
+                            marginBottom: "10px"
+                        }}
+                        onClick={() => setAddingDegreePlan(!addingDegreePlan)}
+                    >
+                        {addingDegreePlan
+                            ? "Close adding option"
+                            : "Click To Add Degree Plan"}
+                    </Button>
+                )}
             </div>
-            {degreePlansList.map(
-                (degreePlanOption: DegreePlan): JSX.Element => (
-                    <p key={degreePlanOption.id.toString()}>
-                        <div
-                            style={{
-                                border: "1px solid black",
-                                marginLeft: "20px",
-                                marginRight: "20px",
-                                marginTop: "20px"
-                            }}
-                        >
-                            {<h3>{degreePlanOption.name}</h3>}
-                            {editMode && (
-                                <Button
-                                    style={{
-                                        backgroundColor: "black"
-                                    }}
-                                    onClick={() =>
-                                        removeQuizByTitle(degreePlanOption.id)
-                                    }
-                                >
-                                    Click to delete this Degree Plan
-                                </Button>
-                            )}
-                            {/**Get rid of ID later*/}
-                            {<h3>{degreePlanOption.id}</h3>}
-                            {"Length of plan: " +
-                                degreePlanOption.semesters.length +
-                                " semesters"}
-                            {editing && editMode && (
-                                <EditDegreePlan
-                                    degreePlan={degreePlanOption}
-                                    degreePlans={degreePlansList}
-                                    setDegreePlans={setDegreePlans}
-                                />
-                            )}
-                            {editMode && (
-                                <Button onClick={() => setEditing(!editing)}>
-                                    {editing ? "Close" : "Edit"}
-                                </Button>
-                            )}
-                        </div>
-                    </p>
-                )
-            )}
-            {editMode && addingDegreePlan && (
-                <AddToDegreePlansList
-                    degreePlansList={degreePlansList}
-                    setDegreePlans={setDegreePlans}
-                    nextId={nextId}
-                    setNextId={setNextId}
-                />
-            )}
-            {editMode && (
-                <Button
-                    style={{
-                        backgroundColor: "grey"
-                    }}
-                    onClick={() => setAddingDegreePlan(!addingDegreePlan)}
-                >
-                    {addingDegreePlan
-                        ? "Close adding option"
-                        : "Click To Add Degree Plan"}
-                </Button>
-            )}
         </div>
     );
 }

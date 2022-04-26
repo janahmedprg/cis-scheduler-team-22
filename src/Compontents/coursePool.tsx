@@ -1,15 +1,15 @@
-import React, { useState } from "react";
-import { Semester } from "../interfaces/Semester";
+import React from "react";
+// import { Semester } from "../interfaces/Semester";
 import { Course } from "../interfaces/Course";
-import { ViewCourse } from "./viewCourse";
+// import { ViewCourse } from "./viewCourse";
 import { DegreePlan } from "../interfaces/DegreePlan";
 import { Button } from "react-bootstrap";
-import { EditSemester } from "./editSemester";
-import { EMPTY_REQUIREMENTS } from "../interfaces/Requirements";
+// import { EditSemester } from "./editSemester";
+// import { EMPTY_REQUIREMENTS } from "../interfaces/Requirements";
 
-type ChangeEvent = React.ChangeEvent<
-    HTMLTextAreaElement | HTMLInputElement | HTMLSelectElement
->;
+// type ChangeEvent = React.ChangeEvent<
+//     HTMLTextAreaElement | HTMLInputElement | HTMLSelectElement
+// >;
 
 export function CoursePool({
     degreePlan,
@@ -28,5 +28,17 @@ export function CoursePool({
     coursePool: Course[];
     setCoursePool: (newCList: Course[]) => void;
 }): JSX.Element {
-    return <div></div>;
+    function addCoursePool() {
+        const d = { ...degreePlan };
+        const de = [...degreePlans, d];
+        const c = [...coursePool];
+        setDegreePlans(de);
+        setCoursePool(c);
+        setNextId(nextId);
+    }
+    return (
+        <div>
+            <Button onClick={() => addCoursePool()}></Button>
+        </div>
+    );
 }

@@ -1,8 +1,9 @@
-import React from "react";
 import { Semester, SemesterSession } from "../interfaces/Semester";
 import { DegreePlan } from "../interfaces/DegreePlan";
 import { ViewSemester } from "./viewSemester";
 import { Button, Col, Row } from "react-bootstrap";
+import { EditDegreePlan } from "./editDegreePlan";
+import React, { useState } from "react";
 
 export function ViewDegreePlan({
     degreePlan,
@@ -17,6 +18,8 @@ export function ViewDegreePlan({
     nextId: number;
     setNextId: (id: number) => void;
 }): JSX.Element {
+    const [editing, setEditing] = useState<boolean>(false);
+
     function clearPlan() {
         const foundDegreePlan = degreePlans.find(
             (plan: DegreePlan): boolean => plan.id === degreePlan.id
@@ -80,12 +83,31 @@ export function ViewDegreePlan({
     return (
         <div
             style={{
-                marginLeft: "20px",
-                marginRight: "20px",
-                marginTop: "20px"
+                marginLeft: "10px",
+                marginRight: "10px",
+                marginTop: "10px",
+                border: "3px solid black"
             }}
         >
             <h3>{degreePlan.name}</h3>
+            {editing && (
+                <EditDegreePlan
+                    degreePlan={degreePlan}
+                    degreePlans={degreePlans}
+                    setDegreePlans={setDegreePlans}
+                />
+            )}
+            {
+                <Button
+                    onClick={() => setEditing(!editing)}
+                    style={{
+                        marginRight: "20px",
+                        marginBottom: "10px"
+                    }}
+                >
+                    {editing ? "Close" : "Edit this Degree Plan"}
+                </Button>
+            }
             <Row>
                 {degreePlan.semesters.map(
                     (semester: Semester): JSX.Element => (

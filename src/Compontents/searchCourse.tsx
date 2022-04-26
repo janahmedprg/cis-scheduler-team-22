@@ -1,12 +1,13 @@
 import { catalog } from "../Compontents/readJSON";
 import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
+//import { Course, ImportCourse } from "../interfaces/Course";
 
 type ChangeEvent = React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>;
 
 export function SearchCourses(): JSX.Element {
-    const [category, setCategory] = useState<string>("Ex: CISC");
-    const [code, setCode] = useState<string>("Ex: CISC 108");
+    const [category, setCategory] = useState<string>("");
+    const [code, setCode] = useState<string>("");
     const [searched, setSearched] = useState<boolean>(false);
 
     return (
@@ -29,7 +30,9 @@ export function SearchCourses(): JSX.Element {
                                     display: "inline-block"
                                 }}
                             >
-                                <Form.Label>Enter course Code:</Form.Label>
+                                <Form.Label>
+                                    Enter course Code: (Ex: CISC)
+                                </Form.Label>
                                 <Form.Control
                                     value={category}
                                     onChange={(event: ChangeEvent) =>
@@ -45,7 +48,7 @@ export function SearchCourses(): JSX.Element {
                                 }}
                             >
                                 <Form.Label>
-                                    Enter course Code and Number:
+                                    Enter course Number: (Ex: 108)
                                 </Form.Label>
                                 <Form.Control
                                     value={code}
@@ -55,7 +58,10 @@ export function SearchCourses(): JSX.Element {
                                 />
                             </Form.Group>
                             <Button
-                                style={{ display: "inline-block" }}
+                                style={{
+                                    display: "inline-block",
+                                    marginBottom: "10px"
+                                }}
                                 onClick={() => setSearched(!searched)}
                             >
                                 {" "}
@@ -66,13 +72,26 @@ export function SearchCourses(): JSX.Element {
                         <div> </div>
                     )}
                 </div>
-                {searched ? <ShowCourse category={category} code={code} /> : ""}
+                {searched && category !== "" && code !== "" ? (
+                    <ShowCourse
+                        category={category.toUpperCase()}
+                        code={category.toUpperCase() + " " + code}
+                    />
+                ) : (
+                    <div></div>
+                )}
+                {searched && category !== "" && code === "" ? (
+                    <ShowAllCourses category={category} />
+                ) : (
+                    <div></div>
+                )}
                 <div>
                     {searched === true ? (
                         <div>
                             <Button
                                 style={{
-                                    display: "inline-block"
+                                    display: "inline-block",
+                                    marginBottom: "10px"
                                 }}
                                 onClick={() => setSearched(!searched)}
                             >
@@ -98,17 +117,21 @@ export function ShowCourse({
 }): JSX.Element {
     return (
         <div>
+            {/**catalog[category].includes(code) ?? code below : nothing */}
             <h5 style={{ textAlign: "left" }}>
                 {catalog[category][code].code +
                     ": " +
                     catalog[category][code].name}
             </h5>
-            <div>
-                <h6 style={{ textAlign: "left" }}> Description: </h6>
-                <div style={{ textAlign: "left" }}>
+            <span>
+                <span style={{ textAlign: "left", fontWeight: "700" }}>
+                    {" "}
+                    Description:{" "}
+                </span>
+                <span style={{ textAlign: "left" }}>
                     {catalog[category][code].descr}{" "}
-                </div>
-            </div>
+                </span>
+            </span>
             <div style={{ textAlign: "left" }}>
                 {"Credits: " + catalog[category][code].credits}
             </div>
@@ -124,6 +147,15 @@ export function ShowCourse({
         </div>
     );
 
-    //if course not in catalog, display error message (so no crash), otehrwise show course
+    //if course not in catalog (make json of category types), display error message (so no crash),
+    //otehrwise show course
     //adjust entering code and category
+}
+
+export function ShowAllCourses({
+    category
+}: {
+    category: string;
+}): JSX.Element {
+    return <div>Write to map all of type {category}</div>;
 }

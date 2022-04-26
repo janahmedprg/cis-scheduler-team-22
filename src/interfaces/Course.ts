@@ -21,6 +21,7 @@ export interface Course {
     restrict: string;
     typ: string[];
     //additional attributes to be added to classes
+    //degreeCategory: string[];
     id: number;
     requirementsFulfilled: Requirements;
     sections: Section[];

@@ -33,7 +33,9 @@ export const TEST_PLANS: DegreePlan[] = [
             {
                 id: 2,
                 courses: [
-                    { ...convertCourse(catalog["CISC"]["CISC 108"]), id: 1 }
+                    { ...convertCourse(catalog["CISC"]["CISC 108"]), id: 1 },
+                    { ...convertCourse(catalog["CISC"]["CISC 304"]), id: 18 },
+                    { ...convertCourse(catalog["CISC"]["CISC 367"]), id: 19 }
                 ],
                 session: "fall",
                 year: 2022

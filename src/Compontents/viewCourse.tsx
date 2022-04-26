@@ -83,6 +83,16 @@ export function ViewCourse({
                     </ul>
                 </div>
             )}
+            {!course.typ.includes(semester.session) && (
+                <div>
+                    {course.typ.length > 0 && (
+                        <div style={{ color: "red" }}>
+                            WARNING: course not typically offered in{" "}
+                            {semester.session}
+                        </div>
+                    )}
+                </div>
+            )}
             {editing && (
                 <EditCourse
                     course={course}

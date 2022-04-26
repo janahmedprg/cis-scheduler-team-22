@@ -11,7 +11,7 @@
         at div
         at ViewDegreePlansList (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewDegreePlansList.tsx:25:5)
         at div
-        at App (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/App.tsx:18:43)
+        at App (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/App.tsx:19:43)
 
       at printWarning (node_modules/react-dom/cjs/react-dom.development.js:67:30)
       at error (node_modules/react-dom/cjs/react-dom.development.js:43:5)
@@ -30,7 +30,7 @@
         at div
         at ViewDegreePlansList (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewDegreePlansList.tsx:25:5)
         at div
-        at App (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/App.tsx:18:43)
+        at App (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/App.tsx:19:43)
 
       at printWarning (node_modules/react-dom/cjs/react-dom.development.js:67:30)
       at error (node_modules/react-dom/cjs/react-dom.development.js:43:5)
@@ -51,9 +51,9 @@
         at div
         at /home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/node_modules/react-bootstrap/cjs/Row.js:22:3
         at div
-        at ViewDegreePlan (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewDegreePlan.tsx:9:5)
+        at ViewDegreePlan (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewDegreePlan.tsx:11:5)
         at div
-        at App (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/App.tsx:18:43)
+        at App (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/App.tsx:19:43)
 
       at printWarning (node_modules/react-dom/cjs/react-dom.development.js:67:30)
       at error (node_modules/react-dom/cjs/react-dom.development.js:43:5)
@@ -77,9 +77,9 @@
         at div
         at /home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/node_modules/react-bootstrap/cjs/Row.js:22:3
         at div
-        at ViewDegreePlan (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewDegreePlan.tsx:9:5)
+        at ViewDegreePlan (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewDegreePlan.tsx:11:5)
         at div
-        at App (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/App.tsx:18:43)
+        at App (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/App.tsx:19:43)
 
       at printWarning (node_modules/react-dom/cjs/react-dom.development.js:67:30)
       at error (node_modules/react-dom/cjs/react-dom.development.js:43:5)
@@ -104,9 +104,9 @@
         at div
         at /home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/node_modules/react-bootstrap/cjs/Row.js:22:3
         at div
-        at ViewDegreePlan (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewDegreePlan.tsx:9:5)
+        at ViewDegreePlan (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewDegreePlan.tsx:11:5)
         at div
-        at App (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/App.tsx:18:43)
+        at App (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/App.tsx:19:43)
 
       at printWarning (node_modules/react-dom/cjs/react-dom.development.js:67:30)
       at error (node_modules/react-dom/cjs/react-dom.development.js:43:5)
@@ -117,15 +117,16 @@
       at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22787:5)
 
 PASS src/App.test.tsx
-  ✓ renders the course name somewhere (267 ms)
+  ✓ renders the course name somewhere (223 ms)
 
 -----------------------------|---------|----------|---------|---------|-------------------
 File                         | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 -----------------------------|---------|----------|---------|---------|-------------------
-All files                    |   12.89 |    12.58 |   13.63 |   12.89 |                   
- src                         |   88.88 |       50 |     100 |   88.88 |                   
-  App.tsx                    |   88.88 |       50 |     100 |   88.88 | 26                
- src/Compontents             |    8.18 |    14.04 |    8.73 |    8.18 |                   
+All files                    |    13.2 |    12.58 |   14.15 |    13.2 |                   
+ src                         |      90 |       50 |     100 |      90 |                   
+  App.tsx                    |      90 |       50 |     100 |      90 | 28                
+ src/Compontents             |    8.33 |    14.04 |    9.43 |    8.33 |                   
+  coursePool.tsx             |    12.5 |      100 |   33.33 |    12.5 | 32-37,41          
   editCourse.tsx             |       0 |        0 |       0 |       0 | 31-109            
   editCourseRequirements.tsx |       0 |        0 |       0 |       0 | 33-181            
   editDegreePlan.tsx         |       0 |        0 |       0 |       0 | 21-40             
@@ -133,7 +134,7 @@ All files                    |   12.89 |    12.58 |   13.63 |   12.89 |
   readJSON.tsx               |     100 |      100 |     100 |     100 |                   
   searchCourse.tsx           |      40 |    42.85 |   14.28 |      40 | 39-160            
   viewCourse.tsx             |   14.28 |    33.33 |   22.22 |   14.28 | 28-51,98-102      
-  viewDegreePlan.tsx         |    8.82 |     12.5 |    12.5 |    8.82 | 24-81,102,137-146 
+  viewDegreePlan.tsx         |    8.82 |     12.5 |    12.5 |    8.82 | 30-87,108,143-152 
   viewDegreePlansList.tsx    |   22.22 |    33.33 |   16.66 |   22.22 | 41-45,60,107-251  
   viewSemester.tsx           |    6.25 |     8.33 |   10.52 |    6.25 | 27-114,148-171    
  src/interfaces              |   25.92 |        0 |      75 |   25.92 |                   
@@ -148,5 +149,5 @@ All files                    |   12.89 |    12.58 |   13.63 |   12.89 |
 Test Suites: 1 passed, 1 total
 Tests:       1 passed, 1 total
 Snapshots:   0 total
-Time:        3.265 s
+Time:        3.048 s
 Ran all test suites.

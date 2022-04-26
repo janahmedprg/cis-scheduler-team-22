@@ -1,14 +1,14 @@
 import { ImportCourse } from "../interfaces/Course";
-import { Course } from "../interfaces/Course";
+//import { Course } from "../interfaces/Course";
 import catalogData from "../catalog.json";
-import courseCategoriesData from "../courseCategories.json";
+//import courseCategoriesData from "../courseCategories.json";
 
 //reads in catalog data as hashmap of hashmaps
 const catalog = catalogData as Record<string, Record<string, ImportCourse>>;
 
-const categories = Object.keys(courseCategoriesData);
+//const categories = Object.keys(courseCategoriesData);
 
-const courseCategories = courseCategoriesData as Record<string, string[]>;
+//const courseCategories = courseCategoriesData as Record<string, string[]>;
 
 /**
 const courseArrList = categories.map((category: string): Course[] =>

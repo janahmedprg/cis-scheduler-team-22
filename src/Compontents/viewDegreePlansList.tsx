@@ -6,6 +6,8 @@ import { DegreePlan } from "../interfaces/DegreePlan";
 import { Semester } from "../interfaces/Semester";
 import { Form } from "react-bootstrap";
 import { EMPTY_REQUIREMENTS } from "../interfaces/Requirements";
+import { CSVLink } from "react-csv";
+import { createCSVTable } from "../interfaces/CourseCSVTable";
 
 export interface AddDegreePlanToList {
     // Consumes a function that consumes data and returns nothing, passes to a React State Setter).
@@ -116,6 +118,15 @@ export function ViewDegreePlansList({
                                     >
                                         View Plan
                                     </Button>
+                                    <CSVLink
+                                        data={createCSVTable(degreePlanOption)}
+                                        filename={
+                                            degreePlanOption.name + ".csv"
+                                        }
+                                        style={{ marginRight: "20px" }}
+                                    >
+                                        Download Plan as CSV
+                                    </CSVLink>
                                     {editMode && (
                                         <Button
                                             style={{

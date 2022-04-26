@@ -3,19 +3,20 @@
 > react-scripts test "--coverage"
 
   console.error
-    Warning: validateDOMNesting(...): <h3> cannot appear as a descendant of <p>.
-        at h3
+    Warning: The tag <text> is unrecognized in this browser. If you meant to render a React component, start its name with an uppercase letter.
+        at text
         at div
         at p
         at div
-        at ViewDegreePlansList (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewDegreePlansList.tsx:26:5)
+        at div
+        at ViewDegreePlansList (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewDegreePlansList.tsx:25:5)
         at div
         at App (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/App.tsx:18:43)
 
       at printWarning (node_modules/react-dom/cjs/react-dom.development.js:67:30)
       at error (node_modules/react-dom/cjs/react-dom.development.js:43:5)
-      at validateDOMNesting (node_modules/react-dom/cjs/react-dom.development.js:10083:7)
-      at createInstance (node_modules/react-dom/cjs/react-dom.development.js:10181:5)
+      at createElement (node_modules/react-dom/cjs/react-dom.development.js:9027:9)
+      at createInstance (node_modules/react-dom/cjs/react-dom.development.js:10192:20)
       at completeWork (node_modules/react-dom/cjs/react-dom.development.js:19464:28)
       at completeUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22812:16)
       at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22787:5)
@@ -23,9 +24,11 @@
   console.error
     Warning: validateDOMNesting(...): <div> cannot appear as a descendant of <p>.
         at div
+        at div
         at p
         at div
-        at ViewDegreePlansList (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewDegreePlansList.tsx:26:5)
+        at div
+        at ViewDegreePlansList (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewDegreePlansList.tsx:25:5)
         at div
         at App (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/App.tsx:18:43)
 
@@ -48,7 +51,7 @@
         at div
         at /home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/node_modules/react-bootstrap/cjs/Row.js:22:3
         at div
-        at ViewDegreePlan (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewDegreePlan.tsx:8:5)
+        at ViewDegreePlan (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewDegreePlan.tsx:9:5)
         at div
         at App (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/App.tsx:18:43)
 
@@ -74,7 +77,7 @@
         at div
         at /home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/node_modules/react-bootstrap/cjs/Row.js:22:3
         at div
-        at ViewDegreePlan (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewDegreePlan.tsx:8:5)
+        at ViewDegreePlan (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewDegreePlan.tsx:9:5)
         at div
         at App (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/App.tsx:18:43)
 
@@ -101,7 +104,7 @@
         at div
         at /home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/node_modules/react-bootstrap/cjs/Row.js:22:3
         at div
-        at ViewDegreePlan (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewDegreePlan.tsx:8:5)
+        at ViewDegreePlan (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewDegreePlan.tsx:9:5)
         at div
         at App (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/App.tsx:18:43)
 
@@ -114,36 +117,36 @@
       at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22787:5)
 
 PASS src/App.test.tsx
-  ✓ renders the course name somewhere (243 ms)
+  ✓ renders the course name somewhere (267 ms)
 
------------------------------|---------|----------|---------|---------|---------------------
-File                         | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s   
------------------------------|---------|----------|---------|---------|---------------------
-All files                    |   13.22 |    10.71 |   14.41 |   13.22 |                     
- src                         |   88.88 |       50 |     100 |   88.88 |                     
-  App.tsx                    |   88.88 |       50 |     100 |   88.88 | 26                  
- src/Compontents             |    8.59 |    11.86 |    9.61 |    8.59 |                     
-  editCourse.tsx             |       0 |        0 |       0 |       0 | 31-109              
-  editCourseRequirements.tsx |       0 |        0 |       0 |       0 | 33-181              
-  editDegreePlan.tsx         |       0 |        0 |       0 |       0 | 21-45               
-  editSemester.tsx           |       0 |      100 |       0 |       0 | 18-53               
-  readJSON.tsx               |     100 |      100 |     100 |     100 |                     
-  searchCourse.tsx           |   44.44 |       50 |   16.66 |   44.44 | 36-99               
-  viewCourse.tsx             |   14.28 |    33.33 |   22.22 |   14.28 | 28-51,98-102        
-  viewDegreePlan.tsx         |    6.25 |        0 |   13.33 |    6.25 | 21-78,115-124       
-  viewDegreePlansList.tsx    |   28.57 |    31.25 |   21.42 |   28.57 | 43-47,62,70,103-225 
-  viewSemester.tsx           |    6.25 |     8.33 |   10.52 |    6.25 | 27-114,148-171      
- src/interfaces              |   25.92 |        0 |      75 |   25.92 |                     
-  Course.ts                  |       0 |        0 |       0 |       0 | 30-144              
-  CourseCSVTable.ts          |     100 |      100 |     100 |     100 |                     
-  Degree.ts                  |     100 |      100 |     100 |     100 |                     
-  DegreePlan.ts              |     100 |      100 |     100 |     100 |                     
-  Requirements.ts            |     100 |      100 |     100 |     100 |                     
-  Section.ts                 |       0 |        0 |       0 |       0 |                     
-  Semester.ts                |       0 |        0 |       0 |       0 |                     
------------------------------|---------|----------|---------|---------|---------------------
+-----------------------------|---------|----------|---------|---------|-------------------
+File                         | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+-----------------------------|---------|----------|---------|---------|-------------------
+All files                    |   12.89 |    12.58 |   13.63 |   12.89 |                   
+ src                         |   88.88 |       50 |     100 |   88.88 |                   
+  App.tsx                    |   88.88 |       50 |     100 |   88.88 | 26                
+ src/Compontents             |    8.18 |    14.04 |    8.73 |    8.18 |                   
+  editCourse.tsx             |       0 |        0 |       0 |       0 | 31-109            
+  editCourseRequirements.tsx |       0 |        0 |       0 |       0 | 33-181            
+  editDegreePlan.tsx         |       0 |        0 |       0 |       0 | 21-40             
+  editSemester.tsx           |       0 |      100 |       0 |       0 | 18-53             
+  readJSON.tsx               |     100 |      100 |     100 |     100 |                   
+  searchCourse.tsx           |      40 |    42.85 |   14.28 |      40 | 39-160            
+  viewCourse.tsx             |   14.28 |    33.33 |   22.22 |   14.28 | 28-51,98-102      
+  viewDegreePlan.tsx         |    8.82 |     12.5 |    12.5 |    8.82 | 24-81,102,137-146 
+  viewDegreePlansList.tsx    |   22.22 |    33.33 |   16.66 |   22.22 | 41-45,60,107-251  
+  viewSemester.tsx           |    6.25 |     8.33 |   10.52 |    6.25 | 27-114,148-171    
+ src/interfaces              |   25.92 |        0 |      75 |   25.92 |                   
+  Course.ts                  |       0 |        0 |       0 |       0 | 31-145            
+  CourseCSVTable.ts          |     100 |      100 |     100 |     100 |                   
+  Degree.ts                  |     100 |      100 |     100 |     100 |                   
+  DegreePlan.ts              |     100 |      100 |     100 |     100 |                   
+  Requirements.ts            |     100 |      100 |     100 |     100 |                   
+  Section.ts                 |       0 |        0 |       0 |       0 |                   
+  Semester.ts                |       0 |        0 |       0 |       0 |                   
+-----------------------------|---------|----------|---------|---------|-------------------
 Test Suites: 1 passed, 1 total
 Tests:       1 passed, 1 total
 Snapshots:   0 total
-Time:        3.015 s
+Time:        3.265 s
 Ran all test suites.

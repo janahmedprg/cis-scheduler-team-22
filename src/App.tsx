@@ -6,6 +6,7 @@ import { DegreePlan, TEST_PLANS, EMPTY_PLAN } from "./interfaces/DegreePlan";
 import { ViewDegreePlansList } from "./Compontents/viewDegreePlansList";
 import { ViewDegreePlan } from "./Compontents/viewDegreePlan";
 import { SearchCourses } from "./Compontents/searchCourse";
+import { Course } from "./interfaces/Course";
 
 /**
  * Importing Course Catalog
@@ -18,6 +19,7 @@ function App(): JSX.Element {
     const [degreePlans, setDegreePlans] = useState<DegreePlan[]>(TEST_PLANS);
     const [selectedPlanId, setSelectedPlanId] = useState<number>(7);
     const [nextId, setNextId] = useState<number>(1000);
+    const [coursePool, setCoursePool] = useState<Course[]>([]);
     function findDegreePlan(id: number): DegreePlan {
         const foundPlan = degreePlans.find(
             (plan: DegreePlan): boolean => plan.id === id
@@ -72,6 +74,8 @@ function App(): JSX.Element {
                 setDegreePlans={setDegreePlans}
                 nextId={nextId}
                 setNextId={setNextId}
+                coursePool={coursePool}
+                setCoursePool={setCoursePool}
             />
             <hr />
             <div>Connor Nagle</div>

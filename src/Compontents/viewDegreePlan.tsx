@@ -4,19 +4,25 @@ import { ViewSemester } from "./viewSemester";
 import { Button, Col, Row } from "react-bootstrap";
 import { EditDegreePlan } from "./editDegreePlan";
 import React, { useState } from "react";
+import { CoursePool } from "./coursePool";
+import { Course } from "../interfaces/Course";
 
 export function ViewDegreePlan({
     degreePlan,
     degreePlans,
     setDegreePlans,
     nextId,
-    setNextId
+    setNextId,
+    coursePool,
+    setCoursePool
 }: {
     degreePlan: DegreePlan;
     degreePlans: DegreePlan[];
     setDegreePlans: (plans: DegreePlan[]) => void;
     nextId: number;
     setNextId: (id: number) => void;
+    coursePool: Course[];
+    setCoursePool: (newCList: Course[]) => void;
 }): JSX.Element {
     const [editing, setEditing] = useState<boolean>(false);
 
@@ -112,6 +118,11 @@ export function ViewDegreePlan({
                 {degreePlan.semesters.map(
                     (semester: Semester): JSX.Element => (
                         <Col
+                            style={{
+                                minWidth: 450,
+                                maxWidth: 600,
+                                margin: "0 auto"
+                            }}
                             key={
                                 degreePlan.id.toString() +
                                 "-" +
@@ -147,6 +158,15 @@ export function ViewDegreePlan({
             >
                 Remove All Semesters
             </Button>
+            <CoursePool
+                degreePlan={degreePlan}
+                degreePlans={degreePlans}
+                setDegreePlans={setDegreePlans}
+                nextId={nextId}
+                setNextId={setNextId}
+                coursePool={coursePool}
+                setCoursePool={setCoursePool}
+            ></CoursePool>
         </div>
     );
 }

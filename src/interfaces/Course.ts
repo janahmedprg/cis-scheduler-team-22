@@ -1,5 +1,4 @@
 import { EMPTY_REQUIREMENTS, Requirements } from "./Requirements";
-import { Section } from "./Section";
 
 export interface ImportCourse {
     code: string;
@@ -24,7 +23,6 @@ export interface Course {
     //degreeCategory: string[];
     id: number;
     requirementsFulfilled: Requirements;
-    sections: Section[];
 }
 
 export function convertCourse(course: ImportCourse): Course {
@@ -35,11 +33,34 @@ export function convertCourse(course: ImportCourse): Course {
         credits: parseInt(course.credits[course.credits.length - 1]) || 0,
         prereqs: course.preReq === "" ? [] : course.preReq.split(","),
         restrict: course.restrict,
-        typ: course.typ === "" ? [] : course.typ.split(","),
+        typ: [],
         code: course.code,
-        requirementsFulfilled: EMPTY_REQUIREMENTS,
-        sections: []
+        requirementsFulfilled: EMPTY_REQUIREMENTS
     };
+    if (course.typ.toLowerCase().includes("winter")) {
+        convertedCourse = {
+            ...convertedCourse,
+            typ: [...convertedCourse.typ, "winter"]
+        };
+    }
+    if (course.typ.toLowerCase().includes("spring")) {
+        convertedCourse = {
+            ...convertedCourse,
+            typ: [...convertedCourse.typ, "spring"]
+        };
+    }
+    if (course.typ.toLowerCase().includes("fall")) {
+        convertedCourse = {
+            ...convertedCourse,
+            typ: [...convertedCourse.typ, "fall"]
+        };
+    }
+    if (course.typ.toLowerCase().includes("summer")) {
+        convertedCourse = {
+            ...convertedCourse,
+            typ: [...convertedCourse.typ, "summer"]
+        };
+    }
     if (course.breadth.toLowerCase().includes("behavioral")) {
         convertedCourse = {
             ...convertedCourse,

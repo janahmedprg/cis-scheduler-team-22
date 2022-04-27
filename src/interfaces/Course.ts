@@ -138,8 +138,8 @@ export const CIS_CORE: string[] = [
     "CISC275",
     "CISC303",
     "CISC320",
-    "MATH210",
-    "MATH241"
+    "CISC361",
+    "CISC372"
 ];
 export const LAB_SCIENCE: string[] = [
     "BISC207",

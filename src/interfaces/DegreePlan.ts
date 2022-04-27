@@ -1,6 +1,10 @@
-import { convertCourse } from "./Course";
+import { convertCourse, Course } from "./Course";
 import { CISC_BS, Degree } from "./Degree";
-import { EMPTY_REQUIREMENTS } from "./Requirements";
+import {
+    addRquirements,
+    EMPTY_REQUIREMENTS,
+    Requirements
+} from "./Requirements";
 import { Semester } from "./Semester";
 import { catalog } from "../Compontents/readJSON";
 
@@ -9,6 +13,147 @@ export interface DegreePlan {
     degree: Degree;
     name: string;
     semesters: Semester[];
+}
+
+export function getCourses(plan: DegreePlan): Course[] {
+    return plan.semesters.reduce(
+        (result: Course[], semester: Semester): Course[] => {
+            return [...result, ...semester.courses];
+        },
+        []
+    );
+}
+
+export function getUnfilledRequirements(plan: DegreePlan): string[] {
+    let result: string[] = [];
+    const totalCredits: number = getCourses(plan).reduce(
+        (credits: number, course: Course): number => credits + course.credits,
+        0
+    );
+    if (totalCredits < plan.degree.requiredCredits) {
+        result = [
+            ...result,
+            "This degree requires " +
+                plan.degree.requiredCredits +
+                " credits. Your plan has " +
+                totalCredits +
+                " credits."
+        ];
+    }
+    const totalRequirements: Requirements = getCourses(plan).reduce(
+        (requirements: Requirements, course: Course): Requirements =>
+            addRquirements(requirements, course.requirementsFulfilled),
+        EMPTY_REQUIREMENTS
+    );
+    if (totalRequirements.CAHBreadth < plan.degree.requirements.CAHBreadth) {
+        result = [
+            ...result,
+            "This degree requires " +
+                plan.degree.requirements.CAHBreadth +
+                " credits of creative arts & humanities breadth. Your plan has " +
+                totalRequirements.CAHBreadth +
+                " credits."
+        ];
+    }
+    if (totalRequirements.HCCBreadth < plan.degree.requirements.HCCBreadth) {
+        result = [
+            ...result,
+            "This degree requires " +
+                plan.degree.requirements.HCCBreadth +
+                " credits of history & cultural change breadth. Your plan has " +
+                totalRequirements.HCCBreadth +
+                " credits."
+        ];
+    }
+    if (totalRequirements.SBSBreadth < plan.degree.requirements.SBSBreadth) {
+        result = [
+            ...result,
+            "This degree requires " +
+                plan.degree.requirements.SBSBreadth +
+                " credits of social & behavioral science breadth. Your plan has " +
+                totalRequirements.SBSBreadth +
+                " credits."
+        ];
+    }
+    if (
+        totalRequirements.ForeignLanguage <
+        plan.degree.requirements.ForeignLanguage
+    ) {
+        result = [
+            ...result,
+            "This degree requires " +
+                plan.degree.requirements.ForeignLanguage +
+                " credits of foreign language. Your plan has " +
+                totalRequirements.ForeignLanguage +
+                " credits."
+        ];
+    }
+    if (totalRequirements.LabScience < plan.degree.requirements.LabScience) {
+        result = [
+            ...result,
+            "This degree requires " +
+                plan.degree.requirements.LabScience +
+                " credits of lab science. Your plan has " +
+                totalRequirements.LabScience +
+                " credits."
+        ];
+    }
+    if (totalRequirements.CSCore < plan.degree.requirements.CSCore) {
+        result = [
+            ...result,
+            "This degree requires " +
+                plan.degree.requirements.CSCore +
+                " credits of computer science core. Your plan has " +
+                totalRequirements.CSCore +
+                " credits."
+        ];
+    }
+    if (
+        totalRequirements.TechnicalElective <
+        plan.degree.requirements.TechnicalElective
+    ) {
+        result = [
+            ...result,
+            "This degree requires " +
+                plan.degree.requirements.TechnicalElective +
+                " credits of technical electives. Your plan has " +
+                totalRequirements.TechnicalElective +
+                " credits."
+        ];
+    }
+    if (totalRequirements.CSCapstone < plan.degree.requirements.CSCapstone) {
+        result = [
+            ...result,
+            "This degree requires " +
+                plan.degree.requirements.CSCapstone +
+                " credits of computer science capstone. Your plan has " +
+                totalRequirements.CSCapstone +
+                " credits."
+        ];
+    }
+    const failedCourseRequirements: string[][] =
+        plan.degree.requiredCourses.filter(
+            (requirment: string[]): boolean =>
+                !requirment.reduce(
+                    (value: boolean, string: string): boolean =>
+                        value ||
+                        getCourses(plan).find(
+                            (course: Course): boolean => course.code === string
+                        ) !== undefined,
+                    false
+                )
+        );
+    result = [
+        ...result,
+        ...failedCourseRequirements.map((requirement: string[]): string =>
+            requirement.length === 1
+                ? "this degree requires the course " + requirement[0] + "."
+                : "this degree requires one of the following courses: " +
+                  requirement.join(" or ") +
+                  "."
+        )
+    ];
+    return result;
 }
 
 export const EMPTY_PLAN: DegreePlan = {

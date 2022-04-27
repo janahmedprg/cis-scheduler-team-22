@@ -33,9 +33,9 @@ export function getUnfilledRequirements(plan: DegreePlan): string[] {
     if (totalCredits < plan.degree.requiredCredits) {
         result = [
             ...result,
-            "This plan requires " +
+            "This degree requires " +
                 plan.degree.requiredCredits +
-                " credits. Your schedule has " +
+                " credits. Your plan has " +
                 totalCredits +
                 " credits."
         ];
@@ -48,9 +48,9 @@ export function getUnfilledRequirements(plan: DegreePlan): string[] {
     if (totalRequirements.CAHBreadth < plan.degree.requirements.CAHBreadth) {
         result = [
             ...result,
-            "This plan requires " +
+            "This degree requires " +
                 plan.degree.requirements.CAHBreadth +
-                " credits of creative arts & humanities breadth. Your schedule has " +
+                " credits of creative arts & humanities breadth. Your plan has " +
                 totalRequirements.CAHBreadth +
                 " credits."
         ];
@@ -58,9 +58,9 @@ export function getUnfilledRequirements(plan: DegreePlan): string[] {
     if (totalRequirements.HCCBreadth < plan.degree.requirements.HCCBreadth) {
         result = [
             ...result,
-            "This plan requires " +
+            "This degree requires " +
                 plan.degree.requirements.HCCBreadth +
-                " credits of history & cultural change breadth. Your schedule has " +
+                " credits of history & cultural change breadth. Your plan has " +
                 totalRequirements.HCCBreadth +
                 " credits."
         ];
@@ -68,9 +68,9 @@ export function getUnfilledRequirements(plan: DegreePlan): string[] {
     if (totalRequirements.SBSBreadth < plan.degree.requirements.SBSBreadth) {
         result = [
             ...result,
-            "This plan requires " +
+            "This degree requires " +
                 plan.degree.requirements.SBSBreadth +
-                " credits of social & behavioral science breadth. Your schedule has " +
+                " credits of social & behavioral science breadth. Your plan has " +
                 totalRequirements.SBSBreadth +
                 " credits."
         ];
@@ -81,9 +81,9 @@ export function getUnfilledRequirements(plan: DegreePlan): string[] {
     ) {
         result = [
             ...result,
-            "This plan requires " +
+            "This degree requires " +
                 plan.degree.requirements.ForeignLanguage +
-                " credits of foreign language. Your schedule has " +
+                " credits of foreign language. Your plan has " +
                 totalRequirements.ForeignLanguage +
                 " credits."
         ];
@@ -91,9 +91,9 @@ export function getUnfilledRequirements(plan: DegreePlan): string[] {
     if (totalRequirements.LabScience < plan.degree.requirements.LabScience) {
         result = [
             ...result,
-            "This plan requires " +
+            "This degree requires " +
                 plan.degree.requirements.LabScience +
-                " credits of lab science. Your schedule has " +
+                " credits of lab science. Your plan has " +
                 totalRequirements.LabScience +
                 " credits."
         ];
@@ -101,9 +101,9 @@ export function getUnfilledRequirements(plan: DegreePlan): string[] {
     if (totalRequirements.CSCore < plan.degree.requirements.CSCore) {
         result = [
             ...result,
-            "This plan requires " +
+            "This degree requires " +
                 plan.degree.requirements.CSCore +
-                " credits of computer science core. Your schedule has " +
+                " credits of computer science core. Your plan has " +
                 totalRequirements.CSCore +
                 " credits."
         ];
@@ -114,9 +114,9 @@ export function getUnfilledRequirements(plan: DegreePlan): string[] {
     ) {
         result = [
             ...result,
-            "This plan requires " +
+            "This degree requires " +
                 plan.degree.requirements.TechnicalElective +
-                " credits of technical electives. Your schedule has " +
+                " credits of technical electives. Your plan has " +
                 totalRequirements.TechnicalElective +
                 " credits."
         ];
@@ -124,9 +124,9 @@ export function getUnfilledRequirements(plan: DegreePlan): string[] {
     if (totalRequirements.CSCapstone < plan.degree.requirements.CSCapstone) {
         result = [
             ...result,
-            "This plan requires " +
+            "This degree requires " +
                 plan.degree.requirements.CSCapstone +
-                " credits of computer science capstone. Your schedule has " +
+                " credits of computer science capstone. Your plan has " +
                 totalRequirements.CSCapstone +
                 " credits."
         ];

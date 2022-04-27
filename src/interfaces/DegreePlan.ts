@@ -1,4 +1,4 @@
-import { convertCourse } from "./Course";
+import { convertCourse, Course } from "./Course";
 import { CISC_BS, Degree } from "./Degree";
 import { EMPTY_REQUIREMENTS } from "./Requirements";
 import { Semester } from "./Semester";
@@ -9,6 +9,15 @@ export interface DegreePlan {
     degree: Degree;
     name: string;
     semesters: Semester[];
+}
+
+export function getCourses(plan: DegreePlan): Course[] {
+    return plan.semesters.reduce(
+        (result: Course[], semester: Semester): Course[] => {
+            return [...result, ...semester.courses];
+        },
+        []
+    );
 }
 
 export const EMPTY_PLAN: DegreePlan = {

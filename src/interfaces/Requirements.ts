@@ -27,3 +27,16 @@ export const EMPTY_REQUIREMENTS: Requirements = {
     TechnicalElective: 0,
     CSCapstone: 0
 };
+
+export function addRquirements(a: Requirements, b: Requirements) {
+    return {
+        CAHBreadth: a.CAHBreadth + b.CAHBreadth,
+        HCCBreadth: a.HCCBreadth + b.HCCBreadth,
+        SBSBreadth: a.SBSBreadth + b.SBSBreadth,
+        ForeignLanguage: a.ForeignLanguage + b.ForeignLanguage,
+        LabScience: a.LabScience + b.LabScience,
+        CSCore: a.CSCore + b.CSCore,
+        TechnicalElective: a.TechnicalElective + b.TechnicalElective,
+        CSCapstone: a.CSCapstone + b.CSCapstone
+    };
+}

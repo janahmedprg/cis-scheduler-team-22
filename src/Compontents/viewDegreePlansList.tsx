@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Button } from "react-bootstrap";
 //import { Course } from "../interfaces/Course";
 import { Degree } from "../interfaces/Degree";
-import { DegreePlan } from "../interfaces/DegreePlan";
+import { DegreePlan, getUnfilledRequirements } from "../interfaces/DegreePlan";
 import { Semester } from "../interfaces/Semester";
 import { Form } from "react-bootstrap";
 import { EMPTY_REQUIREMENTS } from "../interfaces/Requirements";
@@ -145,6 +145,48 @@ export function ViewDegreePlansList({
                                         >
                                             Delete this Degree Plan
                                         </Button>
+                                    )}
+                                    {getUnfilledRequirements(degreePlanOption)
+                                        .length === 0 && (
+                                        <div
+                                            style={{
+                                                color: "green",
+                                                maxWidth: 900,
+                                                margin: "0 auto"
+                                            }}
+                                        >
+                                            This degree plan fulfills all degree
+                                            requirements.
+                                        </div>
+                                    )}
+                                    {getUnfilledRequirements(degreePlanOption)
+                                        .length > 0 && (
+                                        <div
+                                            style={{
+                                                color: "red",
+                                                maxWidth: 900,
+                                                margin: "0 auto"
+                                            }}
+                                        >
+                                            <ul>
+                                                {getUnfilledRequirements(
+                                                    degreePlanOption
+                                                ).map(
+                                                    (
+                                                        string: string
+                                                    ): JSX.Element => (
+                                                        <li
+                                                            key={
+                                                                string +
+                                                                " requirement failed"
+                                                            }
+                                                        >
+                                                            {string}
+                                                        </li>
+                                                    )
+                                                )}
+                                            </ul>
+                                        </div>
                                     )}
                                 </div>
                             </div>

@@ -13,7 +13,9 @@ export function ViewSemester({
     degreePlans,
     setDegreePlans,
     nextId,
-    setNextId
+    setNextId,
+    coursePool,
+    setCoursePool
 }: {
     semester: Semester;
     degreePlan: DegreePlan;
@@ -21,6 +23,8 @@ export function ViewSemester({
     setDegreePlans: (plans: DegreePlan[]) => void;
     nextId: number;
     setNextId: (id: number) => void;
+    coursePool: Course[];
+    setCoursePool: (newCoursePool: Course[]) => void;
 }): JSX.Element {
     const [editing, setEditing] = useState<boolean>(false);
     function clearSemester() {
@@ -141,6 +145,8 @@ export function ViewSemester({
                             setDegreePlans={setDegreePlans}
                             nextId={nextId}
                             setNextId={setNextId}
+                            coursePool={coursePool}
+                            setCoursePool={setCoursePool}
                         />
                     </p>
                 )

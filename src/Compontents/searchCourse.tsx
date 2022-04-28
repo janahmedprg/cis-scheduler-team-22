@@ -1,7 +1,12 @@
 import { catalog, courseList } from "../Compontents/readJSON";
 import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
-import { ImportCourse, convertCourse, Course } from "../interfaces/Course";
+import {
+    ImportCourse,
+    convertCourse,
+    Course,
+    ALL_COURSE_CODES
+} from "../interfaces/Course";
 //import { Requirements } from "../interfaces/Requirements";
 
 type ChangeEvent = React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>;
@@ -21,8 +26,8 @@ export function SearchCourses(): JSX.Element {
         >
             <h2>Course Search (temporarily here)</h2>
             <h5 style={{ backgroundColor: "pink" }}>
-                REMINDER: Write code for if course code not in record or course
-                number not in list or both
+                REMINDER: Write code for if course number and code not in list
+                or both
             </h5>
             <div>
                 <div>
@@ -95,6 +100,20 @@ export function SearchCourses(): JSX.Element {
                         <div> </div>
                     )}
                 </div>
+                {searched && category === "" && code === "" ? (
+                    <div style={{ fontSize: "30px", color: "red" }}>
+                        Please enter valid course information
+                    </div>
+                ) : (
+                    <div></div>
+                )}
+                {searched && category === "" && code !== "" ? (
+                    <div style={{ fontSize: "30px", color: "red" }}>
+                        Error: No course code entered
+                    </div>
+                ) : (
+                    <div></div>
+                )}
                 {searched && category !== "" && code !== "" ? (
                     <ShowCourse
                         category={category.toUpperCase()}
@@ -120,27 +139,35 @@ export function ShowCourse({
     category: string;
     code: string;
 }): JSX.Element {
-    const adjustedCourse: Course = convertCourse(catalog[category][code]);
+    /**Here I am creating an array of courses (searchedCourses) of the entered  course category. With this array,
+     * I map it to access every course. While mapping every course of the entered course code, I push the course
+     * number (last 3 digits of course.code) to an array called numbers, which should contain all the course numbers of the
+     * entered course category. Then in the first line of the return statement I first check if the course category
+     * entered is viable (this part works and is used in the component below already) and then I try to check if the
+     * entered course number is in the array of course numbers that I created based on the catgeory passed in.
+     * Somethings going wrong though with my method for checking the course number and I couldnt get it right
+     * because 'numbers.includes(code)' keeps returning false when it shouldnt. If you delete that line from the
+     * return statement, it works but if the course number entered isnt found the web page crashes
+     * -
+     * I couldnt directly check the imported record or the catalog of courses but I may have been doing it wrong*/
 
-    /** 
-    const searchedCourses = courseList.map(
-        (course: ImportCourse): boolean => course.code === category + " " + code
+    const searchedCourses = courseList.filter((course: ImportCourse): boolean =>
+        category === "ART"
+            ? category + " " === course.code.slice(0, 4)
+            : category === course.code.slice(0, 4)
     );
-    function checkForCode(category: string, code: string): boolean {
-        const found = courseList.find(
-            (course: ImportCourse): boolean => {
-                if(course.code.slice(0, 4) === category &&
-                course.code.slice(5, 7) === code ){
-                    return true;
-                }
-        );
-    }
-    */
+
+    const numbers: string[] = [];
+
+    searchedCourses.map((course: ImportCourse): number =>
+        numbers.push(course.code.slice(-3))
+    );
+
+    const adjustedCourse: Course = convertCourse(catalog[category][code]);
 
     return (
         <div>
-            {
-                // ? (
+            {ALL_COURSE_CODES.includes(category) && numbers.includes(code) ? (
                 <div>
                     <h5 style={{ textAlign: "left" }}>
                         {adjustedCourse.code + ": " + adjustedCourse.name}
@@ -173,10 +200,9 @@ export function ShowCourse({
                         {"Typically offered: " + adjustedCourse.typ}
                     </div>
                 </div>
-                //) : (
-                //    <div>Course not found</div>
-                //)
-            }
+            ) : (
+                <div>Course not found</div>
+            )}
         </div>
     );
 
@@ -190,15 +216,17 @@ export function ShowAllCourses({
 }: {
     category: string;
 }): JSX.Element {
-    const searchedCourses = courseList.filter(
-        (course: ImportCourse): boolean => category === course.code.slice(0, 4)
+    const searchedCourses = courseList.filter((course: ImportCourse): boolean =>
+        category === "ART"
+            ? category + " " === course.code.slice(0, 4)
+            : category === course.code.slice(0, 4)
     );
     const adjustedCourses = searchedCourses.map(
         (course: ImportCourse): Course => convertCourse(course)
     );
     return (
         <div>
-            {searchedCourses !== [] ? (
+            {ALL_COURSE_CODES.includes(category) ? (
                 <div>
                     {adjustedCourses.map(
                         (course: Course): JSX.Element => (
@@ -244,7 +272,9 @@ export function ShowAllCourses({
                     )}
                 </div>
             ) : (
-                <div>Course code not Found</div>
+                <div style={{ fontSize: "30px", color: "red" }}>
+                    Error: Course code Invalid
+                </div>
             )}
         </div>
     );

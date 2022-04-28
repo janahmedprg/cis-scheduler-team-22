@@ -4,7 +4,7 @@ import { ViewSemester } from "./viewSemester";
 import { Button, Col, Row } from "react-bootstrap";
 import { EditDegreePlan } from "./editDegreePlan";
 import React, { useState } from "react";
-import { CoursePool } from "./coursePool";
+import { ViewCoursePool } from "./viewCoursePool";
 import { Course } from "../interfaces/Course";
 
 export function ViewDegreePlan({
@@ -139,6 +139,8 @@ export function ViewDegreePlan({
                                     setDegreePlans={setDegreePlans}
                                     nextId={nextId}
                                     setNextId={setNextId}
+                                    coursePool={coursePool}
+                                    setCoursePool={setCoursePool}
                                 />
                             </p>
                         </Col>
@@ -158,15 +160,10 @@ export function ViewDegreePlan({
             >
                 Remove All Semesters
             </Button>
-            <CoursePool
-                degreePlan={degreePlan}
-                degreePlans={degreePlans}
-                setDegreePlans={setDegreePlans}
-                nextId={nextId}
-                setNextId={setNextId}
+            <ViewCoursePool
                 coursePool={coursePool}
                 setCoursePool={setCoursePool}
-            ></CoursePool>
+            ></ViewCoursePool>
         </div>
     );
 }

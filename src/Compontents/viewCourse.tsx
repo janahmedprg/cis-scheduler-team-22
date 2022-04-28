@@ -12,7 +12,9 @@ export function ViewCourse({
     degreePlans,
     setDegreePlans,
     nextId,
-    setNextId
+    setNextId,
+    coursePool,
+    setCoursePool
 }: {
     course: Course;
     semester: Semester;
@@ -21,6 +23,8 @@ export function ViewCourse({
     setDegreePlans: (plans: DegreePlan[]) => void;
     nextId: number;
     setNextId: (id: number) => void;
+    coursePool: Course[];
+    setCoursePool: (newCoursePool: Course[]) => void;
 }) {
     const [editing, setEditing] = useState<boolean>(false);
 
@@ -49,6 +53,34 @@ export function ViewCourse({
         );
         setNextId(nextId + 1);
         setDegreePlans(newPlans);
+    }
+    function addToPool() {
+        const foundDegreePlan = degreePlans.find(
+            (plan: DegreePlan): boolean => plan.id === degreePlan.id
+        );
+        if (foundDegreePlan === undefined) {
+            return;
+        }
+        const courseIndex = semester.courses.findIndex(
+            (c: Course): boolean => c.id === course.id
+        );
+        const newCourseList = [...semester.courses];
+        const newPoolCourse = semester.courses[courseIndex];
+        newCourseList.splice(courseIndex, 1);
+        const newSemester = { ...semester, courses: newCourseList };
+
+        const newSemesterList: Semester[] = degreePlan.semesters.map(
+            (s: Semester): Semester =>
+                s.id === newSemester.id ? newSemester : s
+        );
+        const newPlan = { ...degreePlan, semesters: newSemesterList };
+        const newPlans: DegreePlan[] = degreePlans.map(
+            (plan: DegreePlan): DegreePlan =>
+                plan.id === newPlan.id ? newPlan : plan
+        );
+        setNextId(nextId + 1);
+        setDegreePlans(newPlans);
+        setCoursePool([...coursePool, newPoolCourse]);
     }
     return (
         <div>
@@ -112,6 +144,7 @@ export function ViewCourse({
             <Button onClick={() => setEditing(!editing)}>
                 {editing ? "Close" : "Edit"}
             </Button>
+            <Button onClick={() => addToPool()}>Add to Pool</Button>
         </div>
     );
 }

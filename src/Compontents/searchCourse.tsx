@@ -147,7 +147,10 @@ export function ShowCourse({
      * entered course number is in the array of course numbers that I created based on the catgeory passed in.
      * Somethings going wrong though with my method for checking the course number and I couldnt get it right
      * because 'numbers.includes(code)' keeps returning false when it shouldnt. If you delete that line from the
-     * return statement, it works but if the course number entered isnt found the web page crashes*/
+     * return statement, it works but if the course number entered isnt found the web page crashes
+     * -
+     * I couldnt directly check the imported record or the catalog of courses but I may have been doing it wrong*/
+
     const searchedCourses = courseList.filter((course: ImportCourse): boolean =>
         category === "ART"
             ? category + " " === course.code.slice(0, 4)

@@ -112,15 +112,15 @@
       at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22787:5)
 
 PASS src/App.test.tsx
-  ✓ renders the course name somewhere (192 ms)
+  ✓ renders the course name somewhere (196 ms)
 
 -----------------------------|---------|----------|---------|---------|--------------------------
 File                         | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s        
 -----------------------------|---------|----------|---------|---------|--------------------------
-All files                    |   28.36 |     30.8 |   21.42 |   28.36 |                          
+All files                    |   26.57 |    29.95 |   20.13 |   26.57 |                          
  src                         |      90 |       50 |     100 |      90 |                          
   App.tsx                    |      90 |       50 |     100 |      90 | 28                       
- src/Compontents             |    9.54 |    15.52 |   10.56 |    9.54 |                          
+ src/Compontents             |    8.77 |    14.97 |    9.84 |    8.77 |                          
   editCourse.tsx             |       0 |        0 |       0 |       0 | 31-109                   
   editCourseRequirements.tsx |       0 |        0 |       0 |       0 | 33-181                   
   editDegreePlan.tsx         |       0 |        0 |       0 |       0 | 21-40                    
@@ -128,7 +128,7 @@ All files                    |   28.36 |     30.8 |   21.42 |   28.36 |
   readJSON.tsx               |     100 |      100 |     100 |     100 |                          
   searchCourse.tsx           |   19.04 |    26.31 |    8.33 |   19.04 | 49-233                   
   viewCourse.tsx             |     7.5 |    22.72 |   13.33 |     7.5 | 32-83,140-147            
-  viewCoursePool.tsx         |   16.66 |        0 |   16.66 |   16.66 | 6-37,43-46               
+  viewCoursePool.tsx         |    3.44 |        0 |    6.66 |    3.44 | 23-112,118-129           
   viewDegreePlan.tsx         |    8.82 |     12.5 |    12.5 |    8.82 | 30-87,108,150-159        
   viewDegreePlansList.tsx    |   26.31 |    46.15 |   23.07 |   26.31 | 41-45,60,107-141,210-293 
   viewSemester.tsx           |    6.25 |     8.33 |   10.52 |    6.25 | 31-118,154-177           
@@ -144,5 +144,5 @@ All files                    |   28.36 |     30.8 |   21.42 |   28.36 |
 Test Suites: 1 passed, 1 total
 Tests:       1 passed, 1 total
 Snapshots:   0 total
-Time:        3.17 s
+Time:        3.256 s
 Ran all test suites.

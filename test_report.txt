@@ -73,7 +73,7 @@
         at div
         at /home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/node_modules/react-bootstrap/cjs/Row.js:22:3
         at div
-        at ViewDegreePlan (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewDegreePlan.tsx:11:5)
+        at ViewDegreePlan (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewDegreePlan.tsx:12:5)
         at div
         at App (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/App.tsx:19:43)
 
@@ -99,7 +99,7 @@
         at div
         at /home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/node_modules/react-bootstrap/cjs/Row.js:22:3
         at div
-        at ViewDegreePlan (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewDegreePlan.tsx:11:5)
+        at ViewDegreePlan (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewDegreePlan.tsx:12:5)
         at div
         at App (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/App.tsx:19:43)
 
@@ -112,24 +112,25 @@
       at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22787:5)
 
 PASS src/App.test.tsx
-  ✓ renders the course name somewhere (196 ms)
+  ✓ renders the course name somewhere (206 ms)
 
 -----------------------------|---------|----------|---------|---------|--------------------------
 File                         | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s        
 -----------------------------|---------|----------|---------|---------|--------------------------
-All files                    |   26.57 |    29.95 |   20.13 |   26.57 |                          
+All files                    |   22.73 |    24.72 |   16.75 |   22.73 |                          
  src                         |      90 |       50 |     100 |      90 |                          
   App.tsx                    |      90 |       50 |     100 |      90 | 28                       
- src/Compontents             |    8.77 |    14.97 |    9.84 |    8.77 |                          
+ src/Compontents             |     7.4 |    12.21 |    8.02 |     7.4 |                          
+  addCourse.tsx              |       0 |        0 |       0 |       0 | 28-407                   
   editCourse.tsx             |       0 |        0 |       0 |       0 | 31-109                   
   editCourseRequirements.tsx |       0 |        0 |       0 |       0 | 33-181                   
   editDegreePlan.tsx         |       0 |        0 |       0 |       0 | 21-40                    
   editSemester.tsx           |       0 |      100 |       0 |       0 | 22-57                    
   readJSON.tsx               |     100 |      100 |     100 |     100 |                          
-  searchCourse.tsx           |   19.04 |    26.31 |    8.33 |   19.04 | 49-233                   
-  viewCourse.tsx             |     7.5 |    22.72 |   13.33 |     7.5 | 32-83,140-147            
+  searchCourse.tsx           |   19.04 |    26.31 |    8.33 |   19.04 | 50-234                   
+  viewCourse.tsx             |     7.5 |    22.72 |   13.33 |     7.5 | 32-83,145-152            
   viewCoursePool.tsx         |    3.44 |        0 |    6.66 |    3.44 | 23-112,118-129           
-  viewDegreePlan.tsx         |    8.82 |     12.5 |    12.5 |    8.82 | 30-87,108,150-159        
+  viewDegreePlan.tsx         |   10.81 |       20 |   11.11 |   10.81 | 32-89,110,154-183        
   viewDegreePlansList.tsx    |   26.31 |    46.15 |   23.07 |   26.31 | 41-45,60,107-141,210-293 
   viewSemester.tsx           |    6.25 |     8.33 |   10.52 |    6.25 | 31-118,154-177           
  src/interfaces              |      90 |    81.25 |     100 |      90 |                          
@@ -144,5 +145,5 @@ All files                    |   26.57 |    29.95 |   20.13 |   26.57 |
 Test Suites: 1 passed, 1 total
 Tests:       1 passed, 1 total
 Snapshots:   0 total
-Time:        3.256 s
+Time:        3.809 s
 Ran all test suites.

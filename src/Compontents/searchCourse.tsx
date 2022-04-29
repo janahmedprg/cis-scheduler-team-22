@@ -7,6 +7,7 @@ import {
     Course,
     ALL_COURSE_CODES
 } from "../interfaces/Course";
+
 //import { Requirements } from "../interfaces/Requirements";
 
 type ChangeEvent = React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>;
@@ -231,11 +232,24 @@ export function ShowAllCourses({
                     {adjustedCourses.map(
                         (course: Course): JSX.Element => (
                             <p key={course.code.toString()}>
-                                <div>
+                                <div
+                                    style={{
+                                        border: "1px dashed black"
+                                    }}
+                                >
                                     <div style={{ textAlign: "left" }}>
+                                        <Button
+                                            style={{
+                                                marginRight: "10px",
+                                                padding: "2px 2px"
+                                            }}
+                                        >
+                                            Add {course.code}
+                                        </Button>
                                         <text
                                             style={{
-                                                marginRight: "30px"
+                                                marginRight: "30px",
+                                                fontWeight: "1px"
                                             }}
                                         >
                                             {course.code + ": " + course.name}

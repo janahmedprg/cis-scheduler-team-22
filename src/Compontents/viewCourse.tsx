@@ -83,7 +83,12 @@ export function ViewCourse({
         setCoursePool([...coursePool, newPoolCourse]);
     }
     return (
-        <div>
+        <div
+            style={{
+                display: "inline-block",
+                fontSize: "small"
+            }}
+        >
             <b>{course.code}: </b>
             {course.name} <br />
             <b>Description: </b>

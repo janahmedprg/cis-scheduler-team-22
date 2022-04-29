@@ -11,6 +11,18 @@ export interface ImportCourse {
     typ: string;
 }
 
+export const EMPTY_COURSE: Course = {
+    code: "",
+    name: "",
+    descr: "",
+    credits: 0,
+    prereqs: [],
+    restrict: "",
+    typ: [],
+    id: 0,
+    requirementsFulfilled: EMPTY_REQUIREMENTS
+};
+
 export interface Course {
     code: string; //Given course code (ex: CISC210)
     name: string; //Actual course name (ex: Data structures)

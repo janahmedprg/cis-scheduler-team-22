@@ -5,7 +5,8 @@ import {
     ImportCourse,
     convertCourse,
     Course,
-    ALL_COURSE_CODES
+    ALL_COURSE_CODES,
+    EMPTY_COURSE
 } from "../interfaces/Course";
 
 //import { Requirements } from "../interfaces/Requirements";
@@ -158,17 +159,20 @@ export function ShowCourse({
             : category === course.code.slice(0, 4)
     );
 
-    const numbers: string[] = [];
-
-    searchedCourses.map((course: ImportCourse): number =>
-        numbers.push(course.code.slice(-3))
+    const numbers: string[] = searchedCourses.map(
+        (course: ImportCourse): string => course.code.slice(-3)
     );
 
-    const adjustedCourse: Course = convertCourse(catalog[category][code]);
+    const courseFound: boolean =
+        ALL_COURSE_CODES.includes(category) && numbers.includes(code.slice(-3));
+
+    const adjustedCourse: Course = courseFound
+        ? convertCourse(catalog[category][code])
+        : EMPTY_COURSE;
 
     return (
         <div>
-            {ALL_COURSE_CODES.includes(category) && numbers.includes(code) ? (
+            {courseFound ? (
                 <div>
                     <h5 style={{ textAlign: "left" }}>
                         {adjustedCourse.code + ": " + adjustedCourse.name}

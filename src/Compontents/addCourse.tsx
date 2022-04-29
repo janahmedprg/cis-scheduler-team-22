@@ -5,7 +5,8 @@ import {
     ImportCourse,
     convertCourse,
     Course,
-    ALL_COURSE_CODES
+    ALL_COURSE_CODES,
+    EMPTY_COURSE
 } from "../interfaces/Course";
 import { DegreePlan } from "../interfaces/DegreePlan";
 import { Semester } from "../interfaces/Semester";
@@ -367,38 +368,43 @@ export function ListSingleCourse({
             : category === course.code.slice(0, 4)
     );
 
-    const numbers: string[] = [];
-
-    searchedCourses.map((course: ImportCourse): number =>
-        numbers.push(course.code.slice(-3))
+    const numbers: string[] = searchedCourses.map(
+        (course: ImportCourse): string => course.code.slice(-3)
     );
 
-    const adjustedCourse: Course = convertCourse(catalog[category][code]);
+    const courseFound: boolean =
+        ALL_COURSE_CODES.includes(category) && numbers.includes(code.slice(-3));
+
+    const adjustedCourse: Course = courseFound
+        ? convertCourse(catalog[category][code])
+        : EMPTY_COURSE; //prevents crashing if invalide code entered
 
     function updateChoice(event: React.ChangeEvent<HTMLSelectElement>) {
         setChoice(event.target.value);
     }
     return (
         <div>
-            <Form.Group controlId="currentChoice">
-                <Form.Label>Select the semester to add to</Form.Label>
-                <Form.Select value={choice} onChange={updateChoice}>
-                    {degreePlan.semesters.map((semester: Semester) => (
-                        <option
-                            key={
-                                degreePlan.id.toString() +
-                                "-" +
-                                semester.id.toString()
-                            }
-                            value={semester.id}
-                        >
-                            {semester.session + semester.year + " semester"}
-                        </option>
-                    ))}
-                </Form.Select>
-            </Form.Group>
-            {ALL_COURSE_CODES.includes(category) ? (
+            {courseFound ? (
                 <div>
+                    <Form.Group controlId="currentChoice">
+                        <Form.Label>Select the semester to add to</Form.Label>
+                        <Form.Select value={choice} onChange={updateChoice}>
+                            {degreePlan.semesters.map((semester: Semester) => (
+                                <option
+                                    key={
+                                        degreePlan.id.toString() +
+                                        "-" +
+                                        semester.id.toString()
+                                    }
+                                    value={semester.id}
+                                >
+                                    {semester.session +
+                                        semester.year +
+                                        " semester"}
+                                </option>
+                            ))}
+                        </Form.Select>
+                    </Form.Group>
                     <Button
                         style={{
                             marginRight: "10px",

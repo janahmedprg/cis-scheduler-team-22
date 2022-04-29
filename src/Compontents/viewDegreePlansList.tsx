@@ -36,6 +36,7 @@ export function ViewDegreePlansList({
 }): JSX.Element {
     const [editMode, setEditMode] = useState<boolean>(false);
     const [addingDegreePlan, setAddingDegreePlan] = useState<boolean>(false);
+    const [viewReq, setViewReq] = useState<boolean>(false);
 
     function removeQuizByTitle(degreePlanId: number) {
         const modifiedDegreePlansList = degreePlansList.filter(
@@ -87,17 +88,9 @@ export function ViewDegreePlansList({
                                             fontSize: "200%"
                                         }}
                                     >
-                                        {degreePlanOption.name + " - "}
-                                    </text>
-                                }
-                                {
-                                    <text
-                                        style={{
-                                            fontWeight: "500",
-                                            fontSize: "200%"
-                                        }}
-                                    >
-                                        {degreePlanOption.semesters.length +
+                                        {degreePlanOption.name +
+                                            " - " +
+                                            degreePlanOption.semesters.length +
                                             " semesters"}
                                     </text>
                                 }
@@ -127,6 +120,20 @@ export function ViewDegreePlansList({
                                     >
                                         Download Plan as CSV
                                     </CSVLink>
+                                    <Button
+                                        onClick={() => setViewReq(!viewReq)}
+                                        style={{
+                                            fontSize: "18px",
+                                            fontStyle: "900px",
+                                            marginBottom: "10px",
+                                            fontFamily: "Arial",
+                                            marginRight: "20px"
+                                        }}
+                                    >
+                                        {viewReq
+                                            ? "Close"
+                                            : "Attatch code for this to show/hide Reqs"}
+                                    </Button>
                                     {editMode && (
                                         <Button
                                             style={{

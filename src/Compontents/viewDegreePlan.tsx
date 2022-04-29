@@ -6,6 +6,7 @@ import { EditDegreePlan } from "./editDegreePlan";
 import React, { useState } from "react";
 import { ViewCoursePool } from "./viewCoursePool";
 import { Course } from "../interfaces/Course";
+import { SearchCoursesSemesterView } from "./addCourse";
 
 export function ViewDegreePlan({
     degreePlan,
@@ -25,6 +26,7 @@ export function ViewDegreePlan({
     setCoursePool: (newCList: Course[]) => void;
 }): JSX.Element {
     const [editing, setEditing] = useState<boolean>(false);
+    const [addingCourse, setAddingCourse] = useState<boolean>(false);
 
     function clearPlan() {
         const foundDegreePlan = degreePlans.find(
@@ -147,6 +149,28 @@ export function ViewDegreePlan({
                     )
                 )}
             </Row>
+            {addingCourse === false ? (
+                <div>
+                    <Button onClick={() => setAddingCourse(!addingCourse)}>
+                        Add Courses To Plan
+                    </Button>
+                </div>
+            ) : (
+                <div>
+                    <Button onClick={() => setAddingCourse(!addingCourse)}>
+                        Close Course Search
+                    </Button>
+                </div>
+            )}
+            {addingCourse && (
+                <SearchCoursesSemesterView
+                    degreePlan={degreePlan}
+                    degreePlans={degreePlans}
+                    setDegreePlans={setDegreePlans}
+                    nextId={nextId}
+                    setNextId={setNextId}
+                />
+            )}
             <Button onClick={() => addNewSemester()}>Add New Semester</Button>
             <Button
                 style={{ backgroundColor: "red" }}

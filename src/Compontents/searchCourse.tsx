@@ -234,26 +234,18 @@ export function ShowAllCourses({
                             <p key={course.code.toString()}>
                                 <div
                                     style={{
-                                        border: "1px dashed black"
+                                        border: "1px solid black",
+                                        paddingBlock: "3px"
                                     }}
                                 >
                                     <div style={{ textAlign: "left" }}>
-                                        <Button
+                                        <b
                                             style={{
-                                                marginRight: "10px",
-                                                padding: "2px 2px"
-                                            }}
-                                        >
-                                            Add {course.code}
-                                        </Button>
-                                        <text
-                                            style={{
-                                                marginRight: "30px",
-                                                fontWeight: "1px"
+                                                marginRight: "30px"
                                             }}
                                         >
                                             {course.code + ": " + course.name}
-                                        </text>
+                                        </b>
                                         <text
                                             style={{
                                                 display: "inline-block",

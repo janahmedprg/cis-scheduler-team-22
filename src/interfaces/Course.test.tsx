@@ -11,6 +11,16 @@ describe("Course interface tests", () => {
         );
         expect(CISC106.credits).toEqual(3);
         expect(CISC106.restrict).toEqual("");
+        const MUSC470 = convertCourse(catalog["MUSC"]["MUSC 470"]);
+        expect(MUSC470.code).toEqual("MUSC 470");
+        expect(MUSC470.name).toEqual("Marching Band");
+        expect(MUSC470.descr).toEqual(
+            "All interested percussionists, colorguard and twirlers must audition. May be repeated for credit. Offered in fall semester only."
+        );
+        expect(MUSC470.credits).toEqual(1);
+        expect(MUSC470.restrict).toEqual(
+            "Contact the Director for detailed information. All interested percussionists, colorguard and twirlers must audition. May be repeated for credit. Offered in fall semester only."
+        );
     });
     test("importing CAH breadth courses correctly fills in the requirements", () => {
         const MUSC470 = convertCourse(catalog["MUSC"]["MUSC 470"]);

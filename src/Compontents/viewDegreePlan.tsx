@@ -185,6 +185,9 @@ export function ViewDegreePlan({
                 Remove All Semesters
             </Button>
             <ViewCoursePool
+                degreePlan={degreePlan}
+                degreePlans={degreePlans}
+                setDegreePlans={setDegreePlans}
                 coursePool={coursePool}
                 setCoursePool={setCoursePool}
             ></ViewCoursePool>

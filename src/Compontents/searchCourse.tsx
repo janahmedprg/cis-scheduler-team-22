@@ -26,11 +26,7 @@ export function SearchCourses(): JSX.Element {
                 marginRight: "20px"
             }}
         >
-            <h2>Course Search (temporarily here)</h2>
-            <h5 style={{ backgroundColor: "pink" }}>
-                REMINDER: Write code for if course number and code not in list
-                or both
-            </h5>
+            <h2>Course Search</h2>
             <div>
                 <div>
                     {searched === false ? (

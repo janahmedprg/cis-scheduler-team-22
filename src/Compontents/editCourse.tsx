@@ -73,14 +73,6 @@ export function EditCourse({
         );
         setDegreePlans(newPlans);
     }
-    function updateCourseCode(event: ChangeEvent) {
-        updateCourse(
-            event.target.value,
-            course.name,
-            course.descr,
-            course.credits
-        );
-    }
     function updateCourseName(event: ChangeEvent) {
         updateCourse(
             course.code,
@@ -109,10 +101,6 @@ export function EditCourse({
     return (
         <div>
             <h3>Editing {course.code}</h3>
-            <Form.Group controlId="formCourseNumber">
-                <Form.Label>Course Number:</Form.Label>
-                <Form.Control value={course.code} onChange={updateCourseCode} />
-            </Form.Group>
             <Form.Group controlId="formCourseName">
                 <Form.Label>Course Name:</Form.Label>
                 <Form.Control value={course.name} onChange={updateCourseName} />

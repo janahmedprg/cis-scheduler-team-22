@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { Button } from "react-bootstrap";
-import { Course } from "../interfaces/Course";
+import { Course, convertCourse } from "../interfaces/Course";
 import { DegreePlan } from "../interfaces/DegreePlan";
 import { Semester } from "../interfaces/Semester";
 import { EditCourse } from "./editCourse";
+import { catalog } from "./readJSON";
 
 export function ViewCourse({
     course,
@@ -82,6 +83,53 @@ export function ViewCourse({
         setDegreePlans(newPlans);
         setCoursePool([...coursePool, newPoolCourse]);
     }
+
+    function resetCourse() {
+        const foundDegreePlan = degreePlans.find(
+            (plan: DegreePlan): boolean => plan.id === degreePlan.id
+        );
+        if (foundDegreePlan === undefined) {
+            return;
+        }
+        const foundSemester = foundDegreePlan.semesters.find(
+            (semester1: Semester): boolean => semester1.id === semester.id
+        );
+        if (foundSemester === undefined) {
+            return;
+        }
+        const foundCourse = foundSemester.courses.find(
+            (course1: Course): boolean => course1.id === course.id
+        );
+        if (foundCourse === undefined) {
+            return;
+        }
+        const category: string = foundCourse.code.slice(0, 4).toUpperCase();
+
+        const newCourse: Course = convertCourse(
+            catalog[category][foundCourse.code]
+        );
+
+        const newSemester: Semester = {
+            ...foundSemester,
+            courses: foundSemester.courses.map(
+                (course: Course): Course =>
+                    course.code === newCourse.code ? newCourse : course
+            )
+        };
+        const newPlan: DegreePlan = {
+            ...foundDegreePlan,
+            semesters: foundDegreePlan.semesters.map(
+                (semester: Semester): Semester =>
+                    semester.id === newSemester.id ? newSemester : semester
+            )
+        };
+        const newPlans: DegreePlan[] = degreePlans.map(
+            (plan: DegreePlan): DegreePlan =>
+                plan.id === newPlan.id ? newPlan : plan
+        );
+        setDegreePlans(newPlans);
+    }
+
     return (
         <div
             style={{
@@ -150,6 +198,7 @@ export function ViewCourse({
                 {editing ? "Close" : "Edit"}
             </Button>
             <Button onClick={() => addToPool()}>Add to Pool</Button>
+            <Button onClick={() => resetCourse()}>Reset Course</Button>
         </div>
     );
 }

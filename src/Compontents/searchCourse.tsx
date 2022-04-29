@@ -168,7 +168,7 @@ export function ShowCourse({
 
     const adjustedCourse: Course = courseFound
         ? convertCourse(catalog[category][code])
-        : EMPTY_COURSE;
+        : EMPTY_COURSE; //prevents crashing if invalide code entered
 
     return (
         <div>

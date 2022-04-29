@@ -11,7 +11,7 @@ import { DegreePlan } from "../interfaces/DegreePlan";
 import { Semester } from "../interfaces/Semester";
 
 type ChangeEvent = React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>;
-/**now pass in all info and actualluy create course on click and add to semster of passed in id*/
+
 export function SearchCoursesSemesterView({
     degreePlan,
     degreePlans,

@@ -1,8 +1,64 @@
-import React from "react";
+import React, { useState } from "react";
 import { Course } from "../interfaces/Course";
+import { DegreePlan } from "../interfaces/DegreePlan";
 import { Button } from "react-bootstrap";
+import Form from "react-bootstrap/Form";
+import { Semester } from "../interfaces/Semester";
 
-export function ViewC({ course }: { course: Course }): JSX.Element {
+export function ViewC({
+    course,
+    degreePlan,
+    degreePlans,
+    setDegreePlans,
+    coursePool,
+    setCoursePool
+}: {
+    course: Course;
+    degreePlan: DegreePlan;
+    degreePlans: DegreePlan[];
+    setDegreePlans: (newDegPlan: DegreePlan[]) => void;
+    coursePool: Course[];
+    setCoursePool: (newCPool: Course[]) => void;
+}): JSX.Element {
+    const [chooseSemesterID, setChooseSemesterID] = useState(0);
+    function addCourseToSemester() {
+        const foundDegreePlan = degreePlans.find(
+            (plan: DegreePlan): boolean => plan.id === degreePlan.id
+        );
+        if (foundDegreePlan === undefined) {
+            return;
+        }
+        const indexOfS = degreePlan.semesters.findIndex(
+            (s: Semester): boolean => s.id === chooseSemesterID
+        );
+        const newCourseList = [
+            ...degreePlan.semesters[indexOfS].courses,
+            course
+        ];
+        const newSemester = {
+            ...degreePlan.semesters[indexOfS],
+            courses: newCourseList
+        };
+        const newSemesterList: Semester[] = degreePlan.semesters.map(
+            (s: Semester): Semester =>
+                s.id === newSemester.id ? newSemester : s
+        );
+        const newCoursePoolList: Course[] = [...coursePool];
+        const indexOfC = newCoursePoolList.findIndex(
+            (c: Course): boolean => c.id === course.id
+        );
+        newCoursePoolList.splice(indexOfC, 1);
+        const newPlan = { ...degreePlan, semesters: newSemesterList };
+        const newPlans: DegreePlan[] = degreePlans.map(
+            (plan: DegreePlan): DegreePlan =>
+                plan.id === newPlan.id ? newPlan : plan
+        );
+        setDegreePlans(newPlans);
+        setCoursePool(newCoursePoolList);
+    }
+    function updateChoice(event: React.ChangeEvent<HTMLSelectElement>) {
+        setChooseSemesterID(parseInt(event.target.value));
+    }
     return (
         <div>
             <b>{course.code}: </b>
@@ -22,14 +78,33 @@ export function ViewC({ course }: { course: Course }): JSX.Element {
                     </ul>
                 </div>
             )}
+            <Form.Label>Add to Semester:</Form.Label>
+            <Form.Select value={chooseSemesterID} onChange={updateChoice}>
+                {degreePlan.semesters.map(
+                    (s: Semester): JSX.Element => (
+                        <option key={s.id + "-semester"} value={s.id}>
+                            {s.session + " " + s.year + " semester"}
+                        </option>
+                    )
+                )}
+            </Form.Select>
+            <Button onClick={() => addCourseToSemester()}>
+                Add to semester
+            </Button>
         </div>
     );
 }
 
 export function ViewCoursePool({
+    degreePlan,
+    degreePlans,
+    setDegreePlans,
     coursePool,
     setCoursePool
 }: {
+    degreePlan: DegreePlan;
+    degreePlans: DegreePlan[];
+    setDegreePlans: (newDegreePlan: DegreePlan[]) => void;
     coursePool: Course[];
     setCoursePool: (newCList: Course[]) => void;
 }): JSX.Element {
@@ -40,7 +115,15 @@ export function ViewCoursePool({
         <div>
             {coursePool.map(
                 (course: Course): JSX.Element => (
-                    <ViewC course={course} key={course.id + "-course"}></ViewC>
+                    <ViewC
+                        course={course}
+                        degreePlan={degreePlan}
+                        degreePlans={degreePlans}
+                        setDegreePlans={setDegreePlans}
+                        coursePool={coursePool}
+                        setCoursePool={setCoursePool}
+                        key={course.id + "-course"}
+                    ></ViewC>
                 )
             )}
             <Button onClick={() => removeCoursePool()}>Clear Pool</Button>

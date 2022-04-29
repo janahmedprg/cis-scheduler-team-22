@@ -63,7 +63,13 @@ export function ViewC({
         setChooseSemesterID(parseInt(event.target.value));
     }
     return (
-        <div>
+        <div
+            style={{
+                border: "1px solid black",
+                fontSize: "small",
+                marginBottom: "5px"
+            }}
+        >
             <b>{course.code}: </b>
             {course.name} <br />
             <b>Description: </b>
@@ -115,7 +121,17 @@ export function ViewCoursePool({
         setCoursePool([]);
     }
     return (
-        <div>
+        <div
+            style={{
+                border: "2px solid black",
+                backgroundColor: "white",
+                marginLeft: "20px",
+                marginRight: "20px",
+                marginBottom: "20px",
+                marginTop: "20px"
+            }}
+        >
+            {<h4>Course Pool</h4>}
             {coursePool.map(
                 (course: Course): JSX.Element => (
                     <ViewC

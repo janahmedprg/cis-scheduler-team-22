@@ -188,7 +188,7 @@ export function ListAllCourses({
             return;
         }
 
-        const newCourse = { ...addingCourse };
+        const newCourse = { ...addingCourse, id: nextId };
 
         const newSemester: Semester = {
             ...foundSemester,

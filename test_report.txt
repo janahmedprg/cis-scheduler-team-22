@@ -4,7 +4,6 @@
 
 PASS src/interfaces/DegreePlan.test.tsx
 PASS src/interfaces/Course.test.tsx
-PASS src/interfaces/Requirements.test.tsx
 PASS src/Tests/viewDegreePlanTest.test.tsx
   ● Console
 
@@ -147,6 +146,7 @@ PASS src/Tests/viewDegreePlanTest.test.tsx
       at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22787:5)
       at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:22707:5)
 
+PASS src/interfaces/Requirements.test.tsx
 PASS src/App.test.tsx
   ● Console
 
@@ -305,7 +305,7 @@ All files                    |   24.21 |     25.4 |   16.93 |   24.21 |
   searchCourse.tsx           |   19.04 |       25 |    8.33 |   19.04 | 47-234                   
   viewCourse.tsx             |    4.76 |     14.7 |    8.69 |    4.76 | 33-133,196-204           
   viewCoursePool.tsx         |    3.22 |        0 |    6.66 |    3.22 | 23-121,137-148           
-  viewDegreePlan.tsx         |   10.81 |    22.72 |   11.11 |   10.81 | 32-89,110,161-190        
+  viewDegreePlan.tsx         |   10.81 |    22.72 |   11.11 |   10.81 | 32-89,110,162-204        
   viewDegreePlansList.tsx    |   33.33 |    46.66 |   28.57 |   33.33 | 42-46,61,127-151,220-303 
   viewSemester.tsx           |    8.82 |       15 |   14.28 |    8.82 | 30-79,125-144            
  src/interfaces              |   98.59 |    95.83 |     100 |   98.59 |                          
@@ -321,5 +321,5 @@ All files                    |   24.21 |     25.4 |   16.93 |   24.21 |
 Test Suites: 5 passed, 5 total
 Tests:       17 passed, 17 total
 Snapshots:   0 total
-Time:        5.128 s
+Time:        6.453 s
 Ran all test suites.

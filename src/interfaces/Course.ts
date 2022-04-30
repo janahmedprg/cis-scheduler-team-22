@@ -87,7 +87,7 @@ export function convertCourse(course: ImportCourse): Course {
             ...convertedCourse,
             requirementsFulfilled: {
                 ...convertedCourse.requirementsFulfilled,
-                SBSBreadth: convertedCourse.credits
+                CAHBreadth: convertedCourse.credits
             }
         };
     }
@@ -96,7 +96,7 @@ export function convertCourse(course: ImportCourse): Course {
             ...convertedCourse,
             requirementsFulfilled: {
                 ...convertedCourse.requirementsFulfilled,
-                SBSBreadth: convertedCourse.credits
+                HCCBreadth: convertedCourse.credits
             }
         };
     }

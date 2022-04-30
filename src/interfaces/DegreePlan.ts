@@ -35,7 +35,7 @@ export function getUnfilledRequirements(plan: DegreePlan): string[] {
             ...result,
             "This degree requires " +
                 plan.degree.requiredCredits +
-                " credits. Your plan has " +
+                " total credits. Your plan has " +
                 totalCredits +
                 " credits."
         ];

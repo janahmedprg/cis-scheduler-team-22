@@ -158,13 +158,21 @@ export function ViewDegreePlan({
             </Row>
             {addingCourse === false ? (
                 <div>
-                    <Button onClick={() => setAddingCourse(!addingCourse)}>
+                    <Button
+                        onClick={() => setAddingCourse(!addingCourse)}
+                        data-testid={degreePlan.id + "-add-course-degree-plan"}
+                    >
                         Add Courses To Plan
                     </Button>
                 </div>
             ) : (
                 <div>
-                    <Button onClick={() => setAddingCourse(!addingCourse)}>
+                    <Button
+                        onClick={() => setAddingCourse(!addingCourse)}
+                        data-testid={
+                            degreePlan.id + "-close-add-course-degree-plan"
+                        }
+                    >
                         Close Course Search
                     </Button>
                 </div>
@@ -178,16 +186,23 @@ export function ViewDegreePlan({
                     setNextId={setNextId}
                 />
             )}
-            <Button onClick={() => addNewSemester()}>Add New Semester</Button>
+            <Button
+                onClick={() => addNewSemester()}
+                data-testid={degreePlan.id + "-add-semester-degree-plan"}
+            >
+                Add New Semester
+            </Button>
             <Button
                 style={{ backgroundColor: "red" }}
                 onClick={() => clearPlan()}
+                data-testid={degreePlan.id + "-clear-semesters-degree-plan"}
             >
                 Clear All Semesters
             </Button>
             <Button
                 style={{ backgroundColor: "red" }}
                 onClick={() => removePlan()}
+                data-testid={degreePlan.id + "-remove-semester-degree-plan"}
             >
                 Remove All Semesters
             </Button>

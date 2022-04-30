@@ -87,6 +87,12 @@ export function ViewSemester({
             <h4>
                 {semester.session} {semester.year} semester
             </h4>
+            {semester.courses.length === 0 && (
+                <div>
+                    This semester has no courses. Use the &quot;Add Courses to
+                    Plan&quot; button below to add courses.
+                </div>
+            )}
             {semester.courses.map(
                 (course: Course): JSX.Element => (
                     <p

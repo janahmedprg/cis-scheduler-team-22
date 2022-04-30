@@ -116,6 +116,12 @@ export function ViewDegreePlan({
                     {editing ? "Close" : "Edit this Degree Plan"}
                 </Button>
             }
+            {degreePlan.semesters.length === 0 && (
+                <div>
+                    This plan has no semesters. Click the &quot;Add New
+                    Semester&quot; button to add a semester.
+                </div>
+            )}
             <Row>
                 {degreePlan.semesters.map(
                     (semester: Semester): JSX.Element => (

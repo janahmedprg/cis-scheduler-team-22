@@ -395,6 +395,7 @@ export function ListSingleCourse({
                                     value={semester.id}
                                 >
                                     {semester.session +
+                                        " " +
                                         semester.year +
                                         " semester"}
                                 </option>

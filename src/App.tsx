@@ -7,6 +7,7 @@ import { ViewDegreePlansList } from "./Compontents/viewDegreePlansList";
 import { ViewDegreePlan } from "./Compontents/viewDegreePlan";
 import { SearchCourses } from "./Compontents/searchCourse";
 import { Course } from "./interfaces/Course";
+import { Button } from "react-bootstrap";
 
 /**
  * Importing Course Catalog
@@ -20,6 +21,7 @@ function App(): JSX.Element {
     const [selectedPlanId, setSelectedPlanId] = useState<number>(7);
     const [nextId, setNextId] = useState<number>(1000);
     const [coursePool, setCoursePool] = useState<Course[]>([]);
+    const [showSketch, setShowSketch] = useState<boolean>(false);
     function findDegreePlan(id: number): DegreePlan {
         const foundPlan = degreePlans.find(
             (plan: DegreePlan): boolean => plan.id === id
@@ -82,7 +84,11 @@ function App(): JSX.Element {
             <div>Connor Nagle</div>
             <div>Brandon Aguiar</div>
             <div>Jan Ahmed</div>
-            <img src={sketch} alt="Sketch" />
+            <Button onClick={() => setShowSketch(!showSketch)}>
+                {showSketch ? "Hide" : "Show"} sketch
+            </Button>{" "}
+            <br />
+            {showSketch && <img src={sketch} alt="Sketch" />}
             <br />
         </div>
     );

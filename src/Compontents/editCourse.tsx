@@ -51,7 +51,28 @@ export function EditCourse({
             code: courseCode,
             name: name,
             descr: description,
-            credits: credits
+            credits: credits,
+            requirementsFulfilled: {
+                CAHBreadth:
+                    course.requirementsFulfilled.CAHBreadth > 0 ? credits : 0,
+                HCCBreadth:
+                    course.requirementsFulfilled.HCCBreadth > 0 ? credits : 0,
+                SBSBreadth:
+                    course.requirementsFulfilled.SBSBreadth > 0 ? credits : 0,
+                ForeignLanguage:
+                    course.requirementsFulfilled.ForeignLanguage > 0
+                        ? credits
+                        : 0,
+                LabScience:
+                    course.requirementsFulfilled.LabScience > 0 ? credits : 0,
+                CSCore: course.requirementsFulfilled.CSCore > 0 ? credits : 0,
+                TechnicalElective:
+                    course.requirementsFulfilled.TechnicalElective > 0
+                        ? credits
+                        : 0,
+                CSCapstone:
+                    course.requirementsFulfilled.CSCapstone > 0 ? credits : 0
+            }
         };
         const newSemester: Semester = {
             ...foundSemester,

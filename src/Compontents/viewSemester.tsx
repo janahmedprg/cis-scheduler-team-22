@@ -5,7 +5,6 @@ import { ViewCourse } from "./viewCourse";
 import { DegreePlan } from "../interfaces/DegreePlan";
 import { Button } from "react-bootstrap";
 import { EditSemester } from "./editSemester";
-import { EMPTY_REQUIREMENTS } from "../interfaces/Requirements";
 
 export function ViewSemester({
     semester,
@@ -79,44 +78,6 @@ export function ViewSemester({
         );
         setDegreePlans(newPlans);
     }
-    function addCourse() {
-        const foundDegreePlan = degreePlans.find(
-            (plan: DegreePlan): boolean => plan.id === degreePlan.id
-        );
-        if (foundDegreePlan === undefined) {
-            return;
-        }
-        const emptyCourse = {
-            id: nextId,
-            name: "New course",
-            descr: "",
-            credits: 0,
-            prereqs: [],
-            restrict: "",
-            typ: [],
-            code: "",
-            requirementsFulfilled: EMPTY_REQUIREMENTS,
-            sections: []
-        };
-        const newSemester: Semester = {
-            ...semester,
-            courses: [...semester.courses, emptyCourse]
-        };
-        const newSemesterList: Semester[] = degreePlan.semesters.map(
-            (s: Semester): Semester =>
-                s.id === newSemester.id ? newSemester : s
-        );
-        const newPlan: DegreePlan = {
-            ...foundDegreePlan,
-            semesters: [...newSemesterList]
-        };
-        const newPlans: DegreePlan[] = degreePlans.map(
-            (plan: DegreePlan): DegreePlan =>
-                plan.id === newPlan.id ? newPlan : plan
-        );
-        setNextId(nextId + 1);
-        setDegreePlans(newPlans);
-    }
     return (
         <div
             style={{
@@ -126,6 +87,12 @@ export function ViewSemester({
             <h4>
                 {semester.session} {semester.year} semester
             </h4>
+            {semester.courses.length === 0 && (
+                <div>
+                    This semester has no courses. Use the &quot;Add Courses to
+                    Plan&quot; button below to add courses.
+                </div>
+            )}
             {semester.courses.map(
                 (course: Course): JSX.Element => (
                     <p
@@ -148,10 +115,11 @@ export function ViewSemester({
                             coursePool={coursePool}
                             setCoursePool={setCoursePool}
                         />
+                        <hr />
                     </p>
                 )
             )}
-            <Button onClick={() => addCourse()}>Add course</Button>
+            {/* <Button onClick={() => addCourse()}>Add course</Button> */}
             <Button
                 style={{ backgroundColor: "red" }}
                 onClick={() => clearSemester()}
@@ -164,7 +132,6 @@ export function ViewSemester({
             >
                 Remove Semester
             </Button>
-            <br />
             {editing && (
                 <EditSemester
                     degreePlans={degreePlans}
@@ -175,10 +142,11 @@ export function ViewSemester({
             )}
             <Button
                 onClick={() => setEditing(!editing)}
-                style={{ marginBottom: "20px" }}
+                // style={{ marginBottom: "20px" }}
             >
                 {editing ? "Close" : "Edit Semester"}
             </Button>
+            <div style={{ minHeight: "10px" }} />
         </div>
     );
 }

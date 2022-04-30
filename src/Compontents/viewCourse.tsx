@@ -200,7 +200,7 @@ export function ViewCourse({
             <Button onClick={() => setEditing(!editing)}>
                 {editing ? "Close" : "Edit"}
             </Button>
-            <Button onClick={() => addToPool()}>Add to Pool</Button>
+            <Button onClick={() => addToPool()}>Move to Pool</Button>
             <Button onClick={() => resetCourse()}>Reset Course</Button>
         </div>
     );

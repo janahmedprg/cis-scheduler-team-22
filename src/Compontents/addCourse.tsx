@@ -336,7 +336,7 @@ export function ListSingleCourse({
             return;
         }
 
-        const newCourse = { ...addingCourse };
+        const newCourse = { ...addingCourse, id: nextId };
 
         const newSemester: Semester = {
             ...foundSemester,
@@ -395,6 +395,7 @@ export function ListSingleCourse({
                                     value={semester.id}
                                 >
                                     {semester.session +
+                                        " " +
                                         semester.year +
                                         " semester"}
                                 </option>

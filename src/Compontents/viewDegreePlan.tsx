@@ -112,6 +112,7 @@ export function ViewDegreePlan({
                         marginRight: "20px",
                         marginBottom: "10px"
                     }}
+                    data-testid={degreePlan.id + "-edit-close-degree-plan"}
                 >
                     {editing ? "Close" : "Edit this Degree Plan"}
                 </Button>

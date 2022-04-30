@@ -108,6 +108,9 @@ export function ViewDegreePlansList({
                                             fontFamily: "Arial",
                                             marginRight: "20px"
                                         }}
+                                        data-testid={
+                                            degreePlanOption.id + "-degree-plan"
+                                        }
                                     >
                                         View Plan
                                     </Button>

@@ -105,15 +105,18 @@ export function ViewCourse({
         }
         const category: string = foundCourse.code.slice(0, 4).toUpperCase();
 
-        const newCourse: Course = convertCourse(
-            catalog[category][foundCourse.code]
-        );
+        const oldId = foundCourse.id;
+
+        const newCourse: Course = {
+            ...convertCourse(catalog[category][foundCourse.code]),
+            id: oldId
+        };
 
         const newSemester: Semester = {
             ...foundSemester,
             courses: foundSemester.courses.map(
                 (course: Course): Course =>
-                    course.code === newCourse.code ? newCourse : course
+                    course.id === newCourse.id ? newCourse : course
             )
         };
         const newPlan: DegreePlan = {

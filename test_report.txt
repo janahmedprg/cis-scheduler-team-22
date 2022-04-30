@@ -2,16 +2,22 @@
 > react-typescript-starter@0.1.0 test
 > react-scripts test "--coverage"
 
-  console.error
-    Warning: The tag <text> is unrecognized in this browser. If you meant to render a React component, start its name with an uppercase letter.
-        at text
-        at div
-        at p
-        at div
-        at div
-        at ViewDegreePlansList (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewDegreePlansList.tsx:25:5)
-        at div
-        at App (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/App.tsx:19:43)
+PASS src/interfaces/DegreePlan.test.tsx
+PASS src/interfaces/Course.test.tsx
+PASS src/interfaces/Requirements.test.tsx
+PASS src/App.test.tsx
+  ● Console
+
+    console.error
+      Warning: The tag <text> is unrecognized in this browser. If you meant to render a React component, start its name with an uppercase letter.
+          at text
+          at div
+          at p
+          at div
+          at div
+          at ViewDegreePlansList (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewDegreePlansList.tsx:25:5)
+          at div
+          at App (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/App.tsx:19:43)
 
       at printWarning (node_modules/react-dom/cjs/react-dom.development.js:67:30)
       at error (node_modules/react-dom/cjs/react-dom.development.js:43:5)
@@ -20,39 +26,20 @@
       at completeWork (node_modules/react-dom/cjs/react-dom.development.js:19464:28)
       at completeUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22812:16)
       at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22787:5)
+      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:22707:5)
 
-  console.error
-    Warning: validateDOMNesting(...): <ul> cannot appear as a descendant of <p>.
-        at ul
-        at div
-        at div
-        at div
-        at p
-        at div
-        at div
-        at ViewDegreePlansList (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewDegreePlansList.tsx:25:5)
-        at div
-        at App (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/App.tsx:19:43)
-
-      at printWarning (node_modules/react-dom/cjs/react-dom.development.js:67:30)
-      at error (node_modules/react-dom/cjs/react-dom.development.js:43:5)
-      at validateDOMNesting (node_modules/react-dom/cjs/react-dom.development.js:10083:7)
-      at createInstance (node_modules/react-dom/cjs/react-dom.development.js:10181:5)
-      at completeWork (node_modules/react-dom/cjs/react-dom.development.js:19464:28)
-      at completeUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22812:16)
-      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22787:5)
-
-  console.error
-    Warning: validateDOMNesting(...): <div> cannot appear as a descendant of <p>.
-        at div
-        at div
-        at div
-        at p
-        at div
-        at div
-        at ViewDegreePlansList (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewDegreePlansList.tsx:25:5)
-        at div
-        at App (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/App.tsx:19:43)
+    console.error
+      Warning: validateDOMNesting(...): <ul> cannot appear as a descendant of <p>.
+          at ul
+          at div
+          at div
+          at div
+          at p
+          at div
+          at div
+          at ViewDegreePlansList (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewDegreePlansList.tsx:25:5)
+          at div
+          at App (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/App.tsx:19:43)
 
       at printWarning (node_modules/react-dom/cjs/react-dom.development.js:67:30)
       at error (node_modules/react-dom/cjs/react-dom.development.js:43:5)
@@ -61,21 +48,19 @@
       at completeWork (node_modules/react-dom/cjs/react-dom.development.js:19464:28)
       at completeUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22812:16)
       at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22787:5)
+      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:22707:5)
 
-  console.error
-    Warning: validateDOMNesting(...): <h4> cannot appear as a descendant of <p>.
-        at h4
-        at div
-        at ViewSemester (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewSemester.tsx:11:5)
-        at p
-        at div
-        at /home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/node_modules/react-bootstrap/cjs/Col.js:72:8
-        at div
-        at /home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/node_modules/react-bootstrap/cjs/Row.js:22:3
-        at div
-        at ViewDegreePlan (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewDegreePlan.tsx:12:5)
-        at div
-        at App (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/App.tsx:19:43)
+    console.error
+      Warning: validateDOMNesting(...): <div> cannot appear as a descendant of <p>.
+          at div
+          at div
+          at div
+          at p
+          at div
+          at div
+          at ViewDegreePlansList (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewDegreePlansList.tsx:25:5)
+          at div
+          at App (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/App.tsx:19:43)
 
       at printWarning (node_modules/react-dom/cjs/react-dom.development.js:67:30)
       at error (node_modules/react-dom/cjs/react-dom.development.js:43:5)
@@ -84,24 +69,22 @@
       at completeWork (node_modules/react-dom/cjs/react-dom.development.js:19464:28)
       at completeUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22812:16)
       at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22787:5)
+      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:22707:5)
 
-  console.error
-    Warning: validateDOMNesting(...): <p> cannot appear as a descendant of <p>.
-        at p
-        at div
-        at ViewCourse (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewCourse.tsx:10:5)
-        at p
-        at div
-        at ViewSemester (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewSemester.tsx:11:5)
-        at p
-        at div
-        at /home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/node_modules/react-bootstrap/cjs/Col.js:72:8
-        at div
-        at /home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/node_modules/react-bootstrap/cjs/Row.js:22:3
-        at div
-        at ViewDegreePlan (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewDegreePlan.tsx:12:5)
-        at div
-        at App (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/App.tsx:19:43)
+    console.error
+      Warning: validateDOMNesting(...): <h4> cannot appear as a descendant of <p>.
+          at h4
+          at div
+          at ViewSemester (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewSemester.tsx:11:5)
+          at p
+          at div
+          at /home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/node_modules/react-bootstrap/cjs/Col.js:72:8
+          at div
+          at /home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/node_modules/react-bootstrap/cjs/Row.js:22:3
+          at div
+          at ViewDegreePlan (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewDegreePlan.tsx:12:5)
+          at div
+          at App (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/App.tsx:19:43)
 
       at printWarning (node_modules/react-dom/cjs/react-dom.development.js:67:30)
       at error (node_modules/react-dom/cjs/react-dom.development.js:43:5)
@@ -110,14 +93,39 @@
       at completeWork (node_modules/react-dom/cjs/react-dom.development.js:19464:28)
       at completeUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22812:16)
       at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22787:5)
+      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:22707:5)
 
-PASS src/App.test.tsx
-  ✓ renders the course name somewhere (206 ms)
+    console.error
+      Warning: validateDOMNesting(...): <p> cannot appear as a descendant of <p>.
+          at p
+          at div
+          at ViewCourse (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewCourse.tsx:10:5)
+          at p
+          at div
+          at ViewSemester (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewSemester.tsx:11:5)
+          at p
+          at div
+          at /home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/node_modules/react-bootstrap/cjs/Col.js:72:8
+          at div
+          at /home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/node_modules/react-bootstrap/cjs/Row.js:22:3
+          at div
+          at ViewDegreePlan (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewDegreePlan.tsx:12:5)
+          at div
+          at App (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/App.tsx:19:43)
+
+      at printWarning (node_modules/react-dom/cjs/react-dom.development.js:67:30)
+      at error (node_modules/react-dom/cjs/react-dom.development.js:43:5)
+      at validateDOMNesting (node_modules/react-dom/cjs/react-dom.development.js:10083:7)
+      at createInstance (node_modules/react-dom/cjs/react-dom.development.js:10181:5)
+      at completeWork (node_modules/react-dom/cjs/react-dom.development.js:19464:28)
+      at completeUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22812:16)
+      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22787:5)
+      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:22707:5)
 
 -----------------------------|---------|----------|---------|---------|--------------------------
 File                         | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s        
 -----------------------------|---------|----------|---------|---------|--------------------------
-All files                    |   21.88 |     23.2 |   16.04 |   21.88 |                          
+All files                    |   23.19 |    25.59 |   16.04 |   23.19 |                          
  src                         |      90 |       50 |     100 |      90 |                          
   App.tsx                    |      90 |       50 |     100 |      90 | 28                       
  src/Compontents             |    7.18 |    11.52 |    7.64 |    7.18 |                          
@@ -133,17 +141,18 @@ All files                    |   21.88 |     23.2 |   16.04 |   21.88 |
   viewDegreePlan.tsx         |   10.81 |       20 |   11.11 |   10.81 | 32-89,110,154-183        
   viewDegreePlansList.tsx    |   28.57 |    46.66 |   21.42 |   28.57 | 42-46,61,100-148,217-300 
   viewSemester.tsx           |    6.25 |     8.33 |   10.52 |    6.25 | 31-118,154-177           
- src/interfaces              |   90.14 |    81.25 |     100 |   90.14 |                          
-  Course.ts                  |      80 |    73.07 |     100 |      80 | 77,86,95,114,123,132     
+ src/interfaces              |   98.59 |    95.83 |     100 |   98.59 |                          
+  Course.ts                  |     100 |    96.15 |     100 |     100 | 45                       
   CourseCSVTable.ts          |     100 |      100 |     100 |     100 |                          
   Degree.ts                  |     100 |      100 |     100 |     100 |                          
-  DegreePlan.ts              |   97.05 |     90.9 |     100 |   97.05 | 82                       
+  DegreePlan.ts              |   97.05 |    95.45 |     100 |   97.05 | 82                       
   Requirements.ts            |     100 |      100 |     100 |     100 |                          
   Section.ts                 |       0 |        0 |       0 |       0 |                          
   Semester.ts                |       0 |        0 |       0 |       0 |                          
 -----------------------------|---------|----------|---------|---------|--------------------------
-Test Suites: 1 passed, 1 total
-Tests:       1 passed, 1 total
+
+Test Suites: 4 passed, 4 total
+Tests:       16 passed, 16 total
 Snapshots:   0 total
-Time:        3.7 s
+Time:        6.219 s
 Ran all test suites.

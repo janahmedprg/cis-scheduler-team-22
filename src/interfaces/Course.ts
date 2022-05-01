@@ -42,7 +42,7 @@ export function convertCourse(course: ImportCourse): Course {
         id: 0,
         name: course.name,
         descr: course.descr,
-        credits: parseInt(course.credits[course.credits.length - 1]) || 0,
+        credits: parseInt(course.credits) || 1,
         prereqs: course.preReq === "" ? [] : course.preReq.split(","),
         restrict: course.restrict,
         typ: [],
@@ -158,10 +158,16 @@ export const LAB_SCIENCE: string[] = [
     "BISC208",
     "CHEM103",
     "CHEM104",
+    "CHEM133",
+    "CHEM134",
     "GEOL105",
     "GEOL107",
+    "GEOL110",
+    "GEOL115",
     "PHYS207",
-    "PHYS208"
+    "PHYS208",
+    "PHYS227",
+    "PHYS228"
 ];
 export const FOREIGN_LANGUAGE: string[] = [
     "ARAB107",

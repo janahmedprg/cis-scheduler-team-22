@@ -35,6 +35,7 @@ export const CISC_BS: Degree = {
         ["CISC 361"],
         ["CISC 372"],
         ["MATH 205", "MATH 350"],
+        ["CISC 304", "MATH 349"],
         ["MATH 210"],
         ["MATH 241"],
         ["MATH 242"],

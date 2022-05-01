@@ -184,7 +184,7 @@ export function EditCourseRequirements({
             <Form.Check
                 style={{ marginLeft: "20px", marginRight: "20px" }}
                 type="checkbox"
-                id="is-happy-check"
+                id={"cah-check" + course.id}
                 label="Creative Arts and Humanities Breadth"
                 checked={course.requirementsFulfilled.CAHBreadth > 0}
                 onChange={updateCAHBreadth}
@@ -192,7 +192,7 @@ export function EditCourseRequirements({
             <Form.Check
                 style={{ marginLeft: "20px", marginRight: "20px" }}
                 type="checkbox"
-                id="is-happy-check"
+                id={"hcc-check" + course.id}
                 label="History and Cultural Change Breadth"
                 checked={course.requirementsFulfilled.HCCBreadth > 0}
                 onChange={updateHCCBreadth}
@@ -200,7 +200,7 @@ export function EditCourseRequirements({
             <Form.Check
                 style={{ marginLeft: "20px", marginRight: "20px" }}
                 type="checkbox"
-                id="is-happy-check"
+                id={"sbs-check" + course.id}
                 label="Social and Behavioral Sciences Breadth"
                 checked={course.requirementsFulfilled.SBSBreadth > 0}
                 onChange={updateSBSBreadth}
@@ -208,7 +208,7 @@ export function EditCourseRequirements({
             <Form.Check
                 style={{ marginLeft: "20px", marginRight: "20px" }}
                 type="checkbox"
-                id="is-happy-check"
+                id={"lang-check" + course.id}
                 label="Foriegn Language"
                 checked={course.requirementsFulfilled.ForeignLanguage > 0}
                 onChange={updateForeignLanguage}
@@ -216,7 +216,7 @@ export function EditCourseRequirements({
             <Form.Check
                 style={{ marginLeft: "20px", marginRight: "20px" }}
                 type="checkbox"
-                id="is-happy-check"
+                id={"lab-check" + course.id}
                 label="Lab Science"
                 checked={course.requirementsFulfilled.LabScience > 0}
                 onChange={updateLabScience}
@@ -224,7 +224,7 @@ export function EditCourseRequirements({
             <Form.Check
                 style={{ marginLeft: "20px", marginRight: "20px" }}
                 type="checkbox"
-                id="is-happy-check"
+                id={"core-check" + course.id}
                 label="Computer Science Core"
                 checked={course.requirementsFulfilled.CSCore > 0}
                 onChange={updateCSCore}
@@ -232,7 +232,7 @@ export function EditCourseRequirements({
             <Form.Check
                 style={{ marginLeft: "20px", marginRight: "20px" }}
                 type="checkbox"
-                id="is-happy-check"
+                id={"elec-check" + course.id}
                 label="Technical Elective"
                 checked={course.requirementsFulfilled.TechnicalElective > 0}
                 onChange={updateTechnicalElective}
@@ -240,7 +240,7 @@ export function EditCourseRequirements({
             <Form.Check
                 style={{ marginLeft: "20px", marginRight: "20px" }}
                 type="checkbox"
-                id="is-happy-check"
+                id={"cap-check" + course.id}
                 label="Computer Science Capstone"
                 checked={course.requirementsFulfilled.CSCapstone > 0}
                 onChange={updateCSCapstone}

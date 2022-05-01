@@ -292,7 +292,7 @@ PASS src/App.test.tsx
 -----------------------------|---------|----------|---------|---------|--------------------------
 File                         | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s        
 -----------------------------|---------|----------|---------|---------|--------------------------
-All files                    |   24.21 |     25.4 |   16.93 |   24.21 |                          
+All files                    |   23.54 |    24.75 |   16.93 |   23.54 |                          
  src                         |   83.33 |       50 |      75 |   83.33 |                          
   App.tsx                    |   83.33 |       50 |      75 |   83.33 | 30,87                    
  src/Compontents             |    7.71 |    11.67 |    8.48 |    7.71 |                          
@@ -308,11 +308,11 @@ All files                    |   24.21 |     25.4 |   16.93 |   24.21 |
   viewDegreePlan.tsx         |   10.81 |    22.72 |   11.11 |   10.81 | 32-89,110,162-204        
   viewDegreePlansList.tsx    |   33.33 |    46.66 |   28.57 |   33.33 | 42-46,61,127-151,220-303 
   viewSemester.tsx           |    8.82 |       15 |   14.28 |    8.82 | 30-79,125-144            
- src/interfaces              |   98.59 |    95.83 |     100 |   98.59 |                          
-  Course.ts                  |     100 |    96.15 |     100 |     100 | 45                       
+ src/interfaces              |   94.36 |    91.66 |     100 |   94.36 |                          
+  Course.ts                  |     100 |      100 |     100 |     100 |                          
   CourseCSVTable.ts          |     100 |      100 |     100 |     100 |                          
   Degree.ts                  |     100 |      100 |     100 |     100 |                          
-  DegreePlan.ts              |   97.05 |    95.45 |     100 |   97.05 | 82                       
+  DegreePlan.ts              |   88.23 |    81.81 |     100 |   88.23 | 49,59,82,125             
   Requirements.ts            |     100 |      100 |     100 |     100 |                          
   Section.ts                 |       0 |        0 |       0 |       0 |                          
   Semester.ts                |       0 |        0 |       0 |       0 |                          
@@ -321,5 +321,5 @@ All files                    |   24.21 |     25.4 |   16.93 |   24.21 |
 Test Suites: 5 passed, 5 total
 Tests:       17 passed, 17 total
 Snapshots:   0 total
-Time:        6.453 s
+Time:        5.07 s
 Ran all test suites.

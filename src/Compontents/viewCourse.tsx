@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button } from "react-bootstrap";
+import { Button, Form } from "react-bootstrap";
 import { Course, convertCourse } from "../interfaces/Course";
 import { DegreePlan } from "../interfaces/DegreePlan";
 import { Semester } from "../interfaces/Semester";
@@ -28,6 +28,11 @@ export function ViewCourse({
     setCoursePool: (newCoursePool: Course[]) => void;
 }) {
     const [editing, setEditing] = useState<boolean>(false);
+    const [viewing, setViewing] = useState<boolean>(false);
+
+    function updateViewing(event: React.ChangeEvent<HTMLInputElement>) {
+        setViewing(event.target.checked);
+    }
 
     function removeCourse() {
         const foundDegreePlan = degreePlans.find(
@@ -142,35 +147,14 @@ export function ViewCourse({
         >
             <b>{course.code}: </b>
             {course.name} <br />
-            <b>Description: </b>
-            {course.descr} <br />
-            Credits: {course.credits}
-            {/* {course.requirementsFulfilled.length > 0 && (
-                <div>
-                    Fulfills requirements:{" "}
-                    <ul>
-                        {course.requirementsFulfilled.map(
-                            (requirement: string): JSX.Element => (
-                                <li key={requirement + "-requirement"}>
-                                    {requirement}
-                                </li>
-                            )
-                        )}
-                    </ul>
-                </div>
-            )} */}
-            {course.prereqs.length > 0 && (
-                <div>
-                    Prerequisites:{" "}
-                    <ul>
-                        {course.prereqs.map(
-                            (prereq: string): JSX.Element => (
-                                <li key={prereq + "-prerequisite"}>{prereq}</li>
-                            )
-                        )}
-                    </ul>
-                </div>
-            )}
+            <Form.Check
+                data-testid={"is-viewing-check" + course.id}
+                type="switch"
+                id={"is-viewing-check" + course.id}
+                label="View Course Information"
+                checked={viewing}
+                onChange={updateViewing}
+            />
             {!course.typ.includes(semester.session) && (
                 <div>
                     {course.typ.length > 0 && (
@@ -181,27 +165,48 @@ export function ViewCourse({
                     )}
                 </div>
             )}
-            {editing && (
-                <EditCourse
-                    course={course}
-                    semester={semester}
-                    degreePlan={degreePlan}
-                    degreePlans={degreePlans}
-                    setDegreePlans={setDegreePlans}
-                />
+            {viewing && (
+                <div>
+                    <b>Description: </b>
+                    {course.descr} <br />
+                    Credits: {course.credits}
+                    {course.prereqs.length > 0 && (
+                        <div>
+                            Prerequisites:{" "}
+                            <ul>
+                                {course.prereqs.map(
+                                    (prereq: string): JSX.Element => (
+                                        <li key={prereq + "-prerequisite"}>
+                                            {prereq}
+                                        </li>
+                                    )
+                                )}
+                            </ul>
+                        </div>
+                    )}
+                    {editing && (
+                        <EditCourse
+                            course={course}
+                            semester={semester}
+                            degreePlan={degreePlan}
+                            degreePlans={degreePlans}
+                            setDegreePlans={setDegreePlans}
+                        />
+                    )}
+                    <p></p>
+                    <Button
+                        style={{ backgroundColor: "red" }}
+                        onClick={() => removeCourse()}
+                    >
+                        Remove course
+                    </Button>
+                    <Button onClick={() => setEditing(!editing)}>
+                        {editing ? "Close" : "Edit"}
+                    </Button>
+                    <Button onClick={() => addToPool()}>Move to Pool</Button>
+                    <Button onClick={() => resetCourse()}>Reset Course</Button>
+                </div>
             )}
-            <p></p>
-            <Button
-                style={{ backgroundColor: "red" }}
-                onClick={() => removeCourse()}
-            >
-                Remove course
-            </Button>
-            <Button onClick={() => setEditing(!editing)}>
-                {editing ? "Close" : "Edit"}
-            </Button>
-            <Button onClick={() => addToPool()}>Move to Pool</Button>
-            <Button onClick={() => resetCourse()}>Reset Course</Button>
         </div>
     );
 }

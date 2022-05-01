@@ -169,37 +169,126 @@ export const EMPTY_PLAN: DegreePlan = {
     semesters: []
 };
 
+//default plans
 export const TEST_PLANS: DegreePlan[] = [
     {
         id: 0,
         degree: CISC_BS,
-        name: "CS test plan",
+        name: "Computer Science Degree Plan",
         semesters: [
             {
-                id: 2,
+                id: 1,
                 courses: [
-                    { ...convertCourse(catalog["CISC"]["CISC 108"]), id: 1 },
-                    { ...convertCourse(catalog["CISC"]["CISC 304"]), id: 18 },
-                    { ...convertCourse(catalog["CISC"]["CISC 367"]), id: 19 }
+                    { ...convertCourse(catalog["CISC"]["CISC 108"]), id: 2 },
+                    { ...convertCourse(catalog["EGGG"]["EGGG 101"]), id: 3 },
+                    { ...convertCourse(catalog["ENGL"]["ENGL 110"]), id: 4 },
+                    { ...convertCourse(catalog["MATH"]["MATH 241"]), id: 5 },
+                    { ...convertCourse(catalog["HIST"]["HIST 106"]), id: 6 },
+                    { ...convertCourse(catalog["MUSC"]["MUSC 470"]), id: 7 }
                 ],
                 session: "fall",
                 year: 2022
             },
             {
-                id: 4,
+                id: 8,
                 courses: [
-                    { ...convertCourse(catalog["CISC"]["CISC 181"]), id: 5 },
-                    { ...convertCourse(catalog["CISC"]["CISC 210"]), id: 6 }
+                    { ...convertCourse(catalog["CISC"]["CISC 181"]), id: 9 },
+                    { ...convertCourse(catalog["CISC"]["CISC 210"]), id: 10 },
+                    { ...convertCourse(catalog["MATH"]["MATH 210"]), id: 11 },
+                    { ...convertCourse(catalog["MATH"]["MATH 242"]), id: 12 },
+                    { ...convertCourse(catalog["ECON"]["ECON 101"]), id: 13 },
+                    { ...convertCourse(catalog["LING"]["LING 101"]), id: 14 },
+                    { ...convertCourse(catalog["MUSC"]["MUSC 119"]), id: 15 }
                 ],
                 session: "spring",
                 year: 2023
+            },
+            {
+                id: 16,
+                courses: [
+                    { ...convertCourse(catalog["CISC"]["CISC 220"]), id: 17 },
+                    { ...convertCourse(catalog["CISC"]["CISC 260"]), id: 18 },
+                    { ...convertCourse(catalog["CHEM"]["CHEM 103"]), id: 19 },
+                    { ...convertCourse(catalog["CHEM"]["CHEM 133"]), id: 20 },
+                    { ...convertCourse(catalog["MATH"]["MATH 243"]), id: 21 },
+                    { ...convertCourse(catalog["MUSC"]["MUSC 470"]), id: 22 }
+                ],
+                session: "fall",
+                year: 2023
+            },
+            {
+                id: 23,
+                courses: [
+                    { ...convertCourse(catalog["CISC"]["CISC 275"]), id: 24 },
+                    { ...convertCourse(catalog["CISC"]["CISC 355"]), id: 25 },
+                    { ...convertCourse(catalog["CHEM"]["CHEM 104"]), id: 26 },
+                    { ...convertCourse(catalog["CHEM"]["CHEM 134"]), id: 27 },
+                    { ...convertCourse(catalog["LING"]["LING 202"]), id: 28 }
+                ],
+                session: "spring",
+                year: 2024
+            },
+            {
+                id: 29,
+                courses: [
+                    { ...convertCourse(catalog["CISC"]["CISC 320"]), id: 30 },
+                    { ...convertCourse(catalog["MATH"]["MATH 349"]), id: 31 },
+                    { ...convertCourse(catalog["CISC"]["CISC 361"]), id: 32 },
+                    { ...convertCourse(catalog["MUSC"]["MUSC 470"]), id: 33 }
+                ],
+                session: "fall",
+                year: 2024
+            },
+            {
+                id: 35,
+                courses: [
+                    { ...convertCourse(catalog["CISC"]["CISC 304"]), id: 36 },
+                    { ...convertCourse(catalog["CISC"]["CISC 303"]), id: 37 },
+                    { ...convertCourse(catalog["MATH"]["MATH 315"]), id: 38 },
+                    { ...convertCourse(catalog["ENGL"]["ENGL 410"]), id: 39 },
+                    { ...convertCourse(catalog["CISC"]["CISC 484"]), id: 40 }
+                ],
+                session: "spring",
+                year: 2025
+            },
+            {
+                id: 41,
+                courses: [
+                    { ...convertCourse(catalog["CISC"]["CISC 498"]), id: 42 },
+                    { ...convertCourse(catalog["CISC"]["CISC 481"]), id: 43 },
+                    { ...convertCourse(catalog["HIST"]["HIST 200"]), id: 44 },
+                    { ...convertCourse(catalog["CISC"]["CISC 410"]), id: 34 },
+
+                    {
+                        ...convertCourse(catalog["CISC"]["CISC 483"]),
+                        id: 45,
+                        requirementsFulfilled: {
+                            ...EMPTY_REQUIREMENTS,
+                            TechnicalElective: 3
+                        }
+                    }
+                ],
+                session: "fall",
+                year: 2025
+            },
+            {
+                id: 46,
+                courses: [
+                    { ...convertCourse(catalog["CISC"]["CISC 499"]), id: 47 },
+                    { ...convertCourse(catalog["CISC"]["CISC 450"]), id: 48 },
+                    { ...convertCourse(catalog["MUSC"]["MUSC 470"]), id: 49 },
+                    { ...convertCourse(catalog["CISC"]["CISC 367"]), id: 50 },
+                    { ...convertCourse(catalog["CISC"]["CISC 372"]), id: 51 }
+                ],
+                session: "spring",
+                year: 2026
             }
         ]
     },
     {
-        id: 7,
+        id: 107,
         degree: {
-            id: 8,
+            id: 108,
             name: "MATH Degree",
             requirements: EMPTY_REQUIREMENTS,
             requiredCourses: [],
@@ -208,24 +297,24 @@ export const TEST_PLANS: DegreePlan[] = [
         name: "Math test plan",
         semesters: [
             {
-                id: 9,
+                id: 109,
                 courses: [
-                    { ...convertCourse(catalog["MATH"]["MATH 241"]), id: 10 }
+                    { ...convertCourse(catalog["MATH"]["MATH 241"]), id: 110 }
                 ],
                 session: "fall",
                 year: 2022
             },
             {
-                id: 11,
+                id: 111,
                 courses: [
-                    { ...convertCourse(catalog["MATH"]["MATH 242"]), id: 12 },
-                    { ...convertCourse(catalog["MATH"]["MATH 210"]), id: 13 }
+                    { ...convertCourse(catalog["MATH"]["MATH 242"]), id: 112 },
+                    { ...convertCourse(catalog["MATH"]["MATH 210"]), id: 113 }
                 ],
                 session: "spring",
                 year: 2023
             },
             {
-                id: 14,
+                id: 114,
                 courses: [
                     { ...convertCourse(catalog["MATH"]["MATH 243"]), id: 15 }
                 ],

@@ -18,7 +18,7 @@ import { Button } from "react-bootstrap";
 
 export function App(): JSX.Element {
     const [degreePlans, setDegreePlans] = useState<DegreePlan[]>(TEST_PLANS);
-    const [selectedPlanId, setSelectedPlanId] = useState<number>(7);
+    const [selectedPlanId, setSelectedPlanId] = useState<number>(107);
     const [nextId, setNextId] = useState<number>(1000);
     const [coursePool, setCoursePool] = useState<Course[]>([]);
     const [showSketch, setShowSketch] = useState<boolean>(false);

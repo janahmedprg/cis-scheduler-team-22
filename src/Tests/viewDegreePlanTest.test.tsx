@@ -32,10 +32,10 @@ describe("EditQuizView Tests", () => {
             0
         );
         expect(screen.queryAllByText("New degree plan Name:")).toHaveLength(0);
-        screen.getByTestId("7-edit-close-degree-plan").click();
+        screen.getByTestId("107-edit-close-degree-plan").click();
         expect(screen.getAllByText("Editing: Math test plan")).toHaveLength(1);
         expect(screen.getAllByText("New degree plan Name:")).toHaveLength(1);
-        screen.getByTestId("7-edit-close-degree-plan").click();
+        screen.getByTestId("107-edit-close-degree-plan").click();
         expect(screen.queryAllByText("Editing: Math test plan")).toHaveLength(
             0
         );
@@ -43,7 +43,7 @@ describe("EditQuizView Tests", () => {
     });
     test("Test Add Courses To Plan button", () => {
         expect(
-            screen.queryByTestId("7-close-add-course-degree-plan")
+            screen.queryByTestId("107-close-add-course-degree-plan")
         ).toBeFalsy();
         expect(screen.queryAllByText("Course Adder")).toHaveLength(0);
         expect(
@@ -52,7 +52,7 @@ describe("EditQuizView Tests", () => {
         expect(
             screen.queryAllByText("Enter course Number: (Ex: 108)")
         ).toHaveLength(1);
-        screen.getByTestId("7-add-course-degree-plan").click();
+        screen.getByTestId("107-add-course-degree-plan").click();
         expect(screen.getAllByText("Course Adder")).toHaveLength(1);
         expect(
             screen.getAllByText("Enter course Code: (Ex: CISC)")
@@ -61,9 +61,9 @@ describe("EditQuizView Tests", () => {
             screen.getAllByText("Enter course Number: (Ex: 108)")
         ).toHaveLength(2);
         expect(
-            screen.getByTestId("7-close-add-course-degree-plan")
+            screen.getByTestId("107-close-add-course-degree-plan")
         ).toBeInTheDocument();
-        screen.getByTestId("7-close-add-course-degree-plan").click();
+        screen.getByTestId("107-close-add-course-degree-plan").click();
         expect(screen.queryAllByText("Course Adder")).toHaveLength(0);
         expect(
             screen.queryAllByText("Enter course Code: (Ex: CISC)")

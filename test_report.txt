@@ -292,20 +292,20 @@ PASS src/App.test.tsx
 -----------------------------|---------|----------|---------|---------|--------------------------
 File                         | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s        
 -----------------------------|---------|----------|---------|---------|--------------------------
-All files                    |   23.54 |    24.75 |   16.93 |   23.54 |                          
+All files                    |   25.33 |    29.26 |   19.67 |   25.33 |                          
  src                         |   83.33 |       50 |      75 |   83.33 |                          
   App.tsx                    |   83.33 |       50 |      75 |   83.33 | 30,87                    
- src/Compontents             |    7.71 |    11.67 |    8.48 |    7.71 |                          
-  addCourse.tsx              |       0 |        0 |       0 |       0 | 29-410                   
+ src/Compontents             |    9.91 |    17.12 |   11.51 |    9.91 |                          
+  addCourse.tsx              |    6.34 |    18.51 |    3.57 |    6.34 | 59-410                   
   editCourse.tsx             |       0 |        0 |       0 |       0 | 31-122                   
   editCourseRequirements.tsx |       0 |        0 |       0 |       0 | 33-181                   
-  editDegreePlan.tsx         |       0 |        0 |       0 |       0 | 21-40                    
+  editDegreePlan.tsx         |      10 |        0 |      20 |      10 | 21-38                    
   editSemester.tsx           |       0 |      100 |       0 |       0 | 22-57                    
   readJSON.tsx               |     100 |      100 |     100 |     100 |                          
   searchCourse.tsx           |   19.04 |       25 |    8.33 |   19.04 | 47-234                   
   viewCourse.tsx             |    4.76 |     14.7 |    8.69 |    4.76 | 33-133,196-204           
   viewCoursePool.tsx         |    3.22 |        0 |    6.66 |    3.22 | 23-121,137-148           
-  viewDegreePlan.tsx         |   10.81 |    22.72 |   11.11 |   10.81 | 32-89,110,162-204        
+  viewDegreePlan.tsx         |   18.91 |     40.9 |   27.77 |   18.91 | 32-89,190-204            
   viewDegreePlansList.tsx    |   33.33 |    46.66 |   28.57 |   33.33 | 42-46,61,127-151,220-303 
   viewSemester.tsx           |    8.82 |       15 |   14.28 |    8.82 | 30-79,125-144            
  src/interfaces              |   94.36 |    91.66 |     100 |   94.36 |                          
@@ -319,7 +319,7 @@ All files                    |   23.54 |    24.75 |   16.93 |   23.54 |
 -----------------------------|---------|----------|---------|---------|--------------------------
 
 Test Suites: 5 passed, 5 total
-Tests:       17 passed, 17 total
+Tests:       19 passed, 19 total
 Snapshots:   0 total
-Time:        5.07 s
+Time:        6.68 s
 Ran all test suites.

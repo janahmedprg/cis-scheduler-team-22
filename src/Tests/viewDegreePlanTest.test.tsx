@@ -6,25 +6,25 @@ import { App } from "../App";
 describe("EditQuizView Tests", () => {
     beforeEach(() => {
         render(<App />);
-        const currPlan = screen.getByTestId("7-degree-plan");
+        const currPlan = screen.getByTestId("107-degree-plan");
         currPlan.click();
     });
     test("Check existance of degreePlan name and buttons", () => {
         expect(screen.getAllByText("Math test plan")).toHaveLength(1);
         expect(
-            screen.getByTestId("7-edit-close-degree-plan")
+            screen.getByTestId("107-edit-close-degree-plan")
         ).toBeInTheDocument();
         expect(
-            screen.getByTestId("7-add-course-degree-plan")
+            screen.getByTestId("107-add-course-degree-plan")
         ).toBeInTheDocument();
         expect(
-            screen.getByTestId("7-add-semester-degree-plan")
+            screen.getByTestId("107-add-semester-degree-plan")
         ).toBeInTheDocument();
         expect(
-            screen.getByTestId("7-clear-semesters-degree-plan")
+            screen.getByTestId("107-clear-semesters-degree-plan")
         ).toBeInTheDocument();
         expect(
-            screen.getByTestId("7-remove-semester-degree-plan")
+            screen.getByTestId("107-remove-semester-degree-plan")
         ).toBeInTheDocument();
     });
     test("Test Edit this Degree Plan button", () => {

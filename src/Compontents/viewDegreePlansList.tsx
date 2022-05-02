@@ -36,7 +36,7 @@ export function ViewDegreePlansList({
 }): JSX.Element {
     const [editMode, setEditMode] = useState<boolean>(false);
     const [addingDegreePlan, setAddingDegreePlan] = useState<boolean>(false);
-    const [viewReq, setViewReq] = useState<boolean>(false);
+    //const [viewReq, setViewReq] = useState<boolean>(false);
 
     function removeQuizByTitle(degreePlanId: number) {
         const modifiedDegreePlansList = degreePlansList.filter(
@@ -123,6 +123,7 @@ export function ViewDegreePlansList({
                                     >
                                         Download Plan as CSV
                                     </CSVLink>
+                                    {/** 
                                     <Button
                                         onClick={() => setViewReq(!viewReq)}
                                         style={{
@@ -137,6 +138,7 @@ export function ViewDegreePlansList({
                                             ? "Close"
                                             : "Attatch code for this to show/hide Reqs"}
                                     </Button>
+                                    */}
                                     {editMode && (
                                         <Button
                                             style={{

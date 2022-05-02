@@ -123,12 +123,14 @@ export function ViewSemester({
             <Button
                 style={{ backgroundColor: "red" }}
                 onClick={() => clearSemester()}
+                data-testid={semester.id + "-edit-clear-semester"}
             >
                 Clear Semester
             </Button>
             <Button
                 style={{ backgroundColor: "red" }}
                 onClick={() => removeSemester()}
+                data-testid={semester.id + "-edit-remove-semester"}
             >
                 Remove Semester
             </Button>
@@ -143,6 +145,7 @@ export function ViewSemester({
             <Button
                 onClick={() => setEditing(!editing)}
                 // style={{ marginBottom: "20px" }}
+                data-testid={semester.id + "-edit-editing-semester"}
             >
                 {editing ? "Close" : "Edit Semester"}
             </Button>

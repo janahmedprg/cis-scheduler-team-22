@@ -200,7 +200,10 @@ export function ViewCourse({
                     >
                         Remove course
                     </Button>
-                    <Button onClick={() => setEditing(!editing)}>
+                    <Button
+                        data-testid={"edit-course-button" + course.id}
+                        onClick={() => setEditing(!editing)}
+                    >
                         {editing ? "Close" : "Edit"}
                     </Button>
                     <Button onClick={() => addToPool()}>Move to Pool</Button>

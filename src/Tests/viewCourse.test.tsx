@@ -37,5 +37,13 @@ describe("ViewCourse tests", () => {
         ).toHaveLength(1);
         expect(screen.queryAllByText(/Remove course/i)).toHaveLength(1);
         expect(screen.queryAllByText(/Move to Pool/i)).toHaveLength(1);
+        courseSwitch.click();
+        expect(
+            screen.queryAllByText(
+                /Functions, limits, continuity, derivatives./i
+            )
+        ).toHaveLength(0);
+        expect(screen.queryAllByText(/Remove course/i)).toHaveLength(0);
+        expect(screen.queryAllByText(/Move to Pool/i)).toHaveLength(0);
     });
 });

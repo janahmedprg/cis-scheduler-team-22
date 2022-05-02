@@ -123,12 +123,18 @@ export function EditCourse({
         <div>
             <h3>Editing {course.code}</h3>
             <Form.Group controlId="formCourseName">
+                {" "}
                 <Form.Label>Course Name:</Form.Label>
-                <Form.Control value={course.name} onChange={updateCourseName} />
+                <Form.Control
+                    data-testid={"edit-name" + course.id}
+                    value={course.name}
+                    onChange={updateCourseName}
+                />
             </Form.Group>
             <Form.Group controlId="formCourseDescription">
                 <Form.Label>Course Description:</Form.Label>
                 <Form.Control
+                    data-testid={"edit-descr" + course.id}
                     as={"textarea"}
                     rows={5}
                     value={course.descr}
@@ -138,6 +144,7 @@ export function EditCourse({
             <Form.Group controlId="formCourseCredits">
                 <Form.Label>Credits</Form.Label>
                 <Form.Control
+                    data-testid={"edit-credits" + course.id}
                     value={course.credits}
                     onChange={updateCourseCredits}
                     type={"number"}

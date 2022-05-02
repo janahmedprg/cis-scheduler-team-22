@@ -207,7 +207,12 @@ export function ViewCourse({
                         {editing ? "Close" : "Edit"}
                     </Button>
                     <Button onClick={() => addToPool()}>Move to Pool</Button>
-                    <Button onClick={() => resetCourse()}>Reset Course</Button>
+                    <Button
+                        onClick={() => resetCourse()}
+                        data-testid={"reset-course" + course.id}
+                    >
+                        Reset Course
+                    </Button>
                 </div>
             )}
         </div>

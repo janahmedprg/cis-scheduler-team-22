@@ -52,7 +52,7 @@ export function EditDegreePlan({
                 <Form.Control
                     value={degreePlan.name}
                     onChange={updateDegreePlanName}
-                    data-testid={degreePlan.toString() + "-degreeplan"}
+                    data-testid={degreePlan.id + "-degreeplan"}
                 />
             </Form.Group>
         </div>

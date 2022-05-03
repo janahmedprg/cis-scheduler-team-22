@@ -3,7 +3,7 @@ import { render, screen } from "@testing-library/react";
 // import userEvent from "@testing-library/user-event";
 import { App } from "../App";
 
-describe("EditQuizView Tests", () => {
+describe("View Semester Tests", () => {
     beforeEach(() => {
         render(<App />);
         const currPlan = screen.getByTestId("107-degree-plan");

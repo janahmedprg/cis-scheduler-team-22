@@ -60,6 +60,7 @@ export function EditSemester({
             <Form.Select
                 value={semester.session}
                 onChange={updateSemesterSession}
+                data-testid={semester.id.toString() + "-session"}
             >
                 <option value="winter">Winter</option>
                 <option value="spring">Spring</option>

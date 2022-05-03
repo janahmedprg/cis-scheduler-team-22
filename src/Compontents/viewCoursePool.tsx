@@ -88,7 +88,11 @@ export function ViewC({
                 </div>
             )}
             <Form.Label>Add to Semester:</Form.Label>
-            <Form.Select value={chooseSemesterID} onChange={updateChoice}>
+            <Form.Select
+                value={chooseSemesterID}
+                onChange={updateChoice}
+                data-testid={"semester-dropdown"}
+            >
                 {degreePlan.semesters.map(
                     (s: Semester): JSX.Element => (
                         <option key={s.id + "-semester"} value={s.id}>
@@ -97,7 +101,10 @@ export function ViewC({
                     )
                 )}
             </Form.Select>
-            <Button onClick={() => addCourseToSemester()}>
+            <Button
+                onClick={() => addCourseToSemester()}
+                data-testid={degreePlan.id + "-add-to-semester"}
+            >
                 Add to semester
             </Button>
         </div>
@@ -145,7 +152,12 @@ export function ViewCoursePool({
                     ></ViewC>
                 )
             )}
-            <Button onClick={() => removeCoursePool()}>Clear Pool</Button>
+            <Button
+                onClick={() => removeCoursePool()}
+                data-testid={degreePlan.id + "-clear-pool"}
+            >
+                Clear Pool
+            </Button>
         </div>
     );
 }

@@ -59,6 +59,7 @@ export function ViewDegreePlansList({
                     label={<h5>Click to edit Degree Plans</h5>}
                     checked={editMode}
                     onChange={() => setEditMode(!editMode)}
+                    data-testid="edit-switch-degreePlansList"
                 />
             </div>
             <div
@@ -120,6 +121,9 @@ export function ViewDegreePlansList({
                                             degreePlanOption.name + ".csv"
                                         }
                                         style={{ marginRight: "20px" }}
+                                        data-testid={
+                                            degreePlanOption.id + "-csv-link"
+                                        }
                                     >
                                         Download Plan as CSV
                                     </CSVLink>
@@ -153,6 +157,10 @@ export function ViewDegreePlansList({
                                                 removeQuizByTitle(
                                                     degreePlanOption.id
                                                 )
+                                            }
+                                            data-testid={
+                                                degreePlanOption.id +
+                                                "-delete-plan"
                                             }
                                         >
                                             Delete this Degree Plan
@@ -220,6 +228,7 @@ export function ViewDegreePlansList({
                             marginBottom: "10px"
                         }}
                         onClick={() => setAddingDegreePlan(!addingDegreePlan)}
+                        data-testid="add-close-degree-plan"
                     >
                         {addingDegreePlan
                             ? "Close adding option"
@@ -279,6 +288,7 @@ export function AddToDegreePlansList({
             >
                 <Form.Label>New Degree Plan Degree:</Form.Label>
                 <Form.Control /**value={degree} //onChange={updateDegreePlanDegree} */
+                    data-tastid="new-degree-plan-degree"
                 />
             </Form.Group>
             <Form.Group
@@ -291,11 +301,12 @@ export function AddToDegreePlansList({
             >
                 <Form.Label>New Degree Plan Name:</Form.Label>
                 <Form.Control
+                    data-tastid="new-degree-plan-name"
                     value={name}
                     onChange={(event: ChangeEvent) =>
                         setName(event.target.value)
                     }
-                />
+                ></Form.Control>
             </Form.Group>
             <Button
                 style={{
@@ -314,6 +325,7 @@ export function AddToDegreePlansList({
                         []
                     )
                 }
+                data-testid="add-to-degree-plan"
             >
                 Add This Degree Plan
             </Button>

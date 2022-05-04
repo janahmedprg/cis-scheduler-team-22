@@ -46,7 +46,7 @@ export function EditSemester({
         );
         const newSemester = {
             ...newSemesterArray[indexOfSemester],
-            year: parseInt(event.target.value)
+            year: parseInt(event.target.value) || 0
         };
         newSemesterArray.splice(indexOfSemester, 1, newSemester);
         const newDegreePlan = { ...degreePlan, semesters: newSemesterArray };
@@ -71,6 +71,7 @@ export function EditSemester({
             <Form.Control
                 key={semester.id.toString() + "-semester"}
                 onChange={updateSemesterYear}
+                value={semester.year}
                 id={semester.id.toString() + "-semester"}
                 data-testid={semester.id.toString() + "-semester"}
             ></Form.Control>

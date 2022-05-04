@@ -58,6 +58,9 @@ export function SearchCoursesSemesterView({
                                     onChange={(event: ChangeEvent) =>
                                         setCategory(event.target.value)
                                     }
+                                    data-testid={
+                                        degreePlan.id + "-add-course-code"
+                                    }
                                 />
                             </Form.Group>
                             <Form.Group
@@ -75,6 +78,9 @@ export function SearchCoursesSemesterView({
                                     onChange={(event: ChangeEvent) =>
                                         setCode(event.target.value)
                                     }
+                                    data-testid={
+                                        degreePlan.id + "-add-course-number"
+                                    }
                                 />
                             </Form.Group>
                             <Button
@@ -83,6 +89,9 @@ export function SearchCoursesSemesterView({
                                     marginBottom: "10px"
                                 }}
                                 onClick={() => setSearched(!searched)}
+                                data-testid={
+                                    degreePlan.id + "-add-course-search"
+                                }
                             >
                                 {" "}
                                 Search for this course{" "}
@@ -101,6 +110,9 @@ export function SearchCoursesSemesterView({
                                     marginBottom: "10px"
                                 }}
                                 onClick={() => setSearched(!searched)}
+                                data-testid={
+                                    degreePlan.id + "-add-course-search-close"
+                                }
                             >
                                 {" "}
                                 Search for another course{" "}

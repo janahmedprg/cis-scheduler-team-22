@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Semester } from "../interfaces/Semester";
+import { Semester, sortSemesters } from "../interfaces/Semester";
 import { Course } from "../interfaces/Course";
 import { ViewCourse } from "./viewCourse";
 import { DegreePlan } from "../interfaces/DegreePlan";
@@ -25,7 +25,7 @@ export function ViewSemester({
     coursePool: Course[];
     setCoursePool: (newCoursePool: Course[]) => void;
 }): JSX.Element {
-    const [editing, setEditing] = useState<boolean>(false);
+    const [editing, setEditing] = useState<boolean>(semester.year === 0);
     function clearSemester() {
         const foundDegreePlan = degreePlans.find(
             (plan: DegreePlan): boolean => plan.id === degreePlan.id
@@ -71,6 +71,23 @@ export function ViewSemester({
         const newPlan: DegreePlan = {
             ...foundDegreePlan,
             semesters: [...newSemesterList]
+        };
+        const newPlans: DegreePlan[] = degreePlans.map(
+            (plan: DegreePlan): DegreePlan =>
+                plan.id === newPlan.id ? newPlan : plan
+        );
+        setDegreePlans(newPlans);
+    }
+    function sortSem() {
+        const foundDegreePlan = degreePlans.find(
+            (plan: DegreePlan): boolean => plan.id === degreePlan.id
+        );
+        if (foundDegreePlan === undefined) {
+            return;
+        }
+        const newPlan: DegreePlan = {
+            ...foundDegreePlan,
+            semesters: sortSemesters(foundDegreePlan.semesters)
         };
         const newPlans: DegreePlan[] = degreePlans.map(
             (plan: DegreePlan): DegreePlan =>
@@ -143,7 +160,12 @@ export function ViewSemester({
                 />
             )}
             <Button
-                onClick={() => setEditing(!editing)}
+                onClick={() => {
+                    if (editing) {
+                        sortSem();
+                    }
+                    setEditing(!editing);
+                }}
                 // style={{ marginBottom: "20px" }}
                 data-testid={semester.id + "-edit-editing-semester"}
             >

@@ -72,7 +72,7 @@ PASS src/Tests/viewDegreePlansListTest.test.tsx
       Warning: validateDOMNesting(...): <h4> cannot appear as a descendant of <p>.
           at h4
           at div
-          at ViewSemester (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewSemester.tsx:10:5)
+          at ViewSemester (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewSemester.tsx:15:5)
           at p
           at div
           at /home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/node_modules/react-bootstrap/cjs/Col.js:72:8
@@ -97,7 +97,7 @@ PASS src/Tests/viewDegreePlansListTest.test.tsx
           at hr
           at p
           at div
-          at ViewSemester (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewSemester.tsx:10:5)
+          at ViewSemester (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewSemester.tsx:15:5)
           at p
           at div
           at /home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/node_modules/react-bootstrap/cjs/Col.js:72:8
@@ -121,7 +121,7 @@ PASS src/Tests/viewDegreePlansListTest.test.tsx
       Warning: validateDOMNesting(...): <p> cannot appear as a descendant of <p>.
           at p
           at div
-          at ViewSemester (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewSemester.tsx:10:5)
+          at ViewSemester (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewSemester.tsx:15:5)
           at p
           at div
           at /home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/node_modules/react-bootstrap/cjs/Col.js:72:8
@@ -211,7 +211,7 @@ PASS src/Tests/viewDegreePlanTest.test.tsx
       Warning: validateDOMNesting(...): <h4> cannot appear as a descendant of <p>.
           at h4
           at div
-          at ViewSemester (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewSemester.tsx:10:5)
+          at ViewSemester (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewSemester.tsx:15:5)
           at p
           at div
           at /home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/node_modules/react-bootstrap/cjs/Col.js:72:8
@@ -236,7 +236,7 @@ PASS src/Tests/viewDegreePlanTest.test.tsx
           at hr
           at p
           at div
-          at ViewSemester (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewSemester.tsx:10:5)
+          at ViewSemester (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewSemester.tsx:15:5)
           at p
           at div
           at /home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/node_modules/react-bootstrap/cjs/Col.js:72:8
@@ -260,7 +260,7 @@ PASS src/Tests/viewDegreePlanTest.test.tsx
       Warning: validateDOMNesting(...): <p> cannot appear as a descendant of <p>.
           at p
           at div
-          at ViewSemester (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewSemester.tsx:10:5)
+          at ViewSemester (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewSemester.tsx:15:5)
           at p
           at div
           at /home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/node_modules/react-bootstrap/cjs/Col.js:72:8
@@ -352,7 +352,7 @@ PASS src/Tests/editCourse.test.tsx
       Warning: validateDOMNesting(...): <h4> cannot appear as a descendant of <p>.
           at h4
           at div
-          at ViewSemester (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewSemester.tsx:10:5)
+          at ViewSemester (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewSemester.tsx:15:5)
           at p
           at div
           at /home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/node_modules/react-bootstrap/cjs/Col.js:72:8
@@ -377,7 +377,7 @@ PASS src/Tests/editCourse.test.tsx
           at hr
           at p
           at div
-          at ViewSemester (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewSemester.tsx:10:5)
+          at ViewSemester (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewSemester.tsx:15:5)
           at p
           at div
           at /home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/node_modules/react-bootstrap/cjs/Col.js:72:8
@@ -401,7 +401,7 @@ PASS src/Tests/editCourse.test.tsx
       Warning: validateDOMNesting(...): <p> cannot appear as a descendant of <p>.
           at p
           at div
-          at ViewSemester (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewSemester.tsx:10:5)
+          at ViewSemester (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewSemester.tsx:15:5)
           at p
           at div
           at /home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/node_modules/react-bootstrap/cjs/Col.js:72:8
@@ -431,7 +431,7 @@ PASS src/Tests/editCourse.test.tsx
           at ViewCourse (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewCourse.tsx:10:5)
           at p
           at div
-          at ViewSemester (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewSemester.tsx:10:5)
+          at ViewSemester (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewSemester.tsx:15:5)
           at p
           at div
           at /home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/node_modules/react-bootstrap/cjs/Col.js:72:8
@@ -521,7 +521,7 @@ PASS src/Tests/viewSemesterTest.test.tsx
       Warning: validateDOMNesting(...): <h4> cannot appear as a descendant of <p>.
           at h4
           at div
-          at ViewSemester (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewSemester.tsx:10:5)
+          at ViewSemester (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewSemester.tsx:15:5)
           at p
           at div
           at /home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/node_modules/react-bootstrap/cjs/Col.js:72:8
@@ -546,7 +546,7 @@ PASS src/Tests/viewSemesterTest.test.tsx
           at hr
           at p
           at div
-          at ViewSemester (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewSemester.tsx:10:5)
+          at ViewSemester (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewSemester.tsx:15:5)
           at p
           at div
           at /home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/node_modules/react-bootstrap/cjs/Col.js:72:8
@@ -570,7 +570,7 @@ PASS src/Tests/viewSemesterTest.test.tsx
       Warning: validateDOMNesting(...): <p> cannot appear as a descendant of <p>.
           at p
           at div
-          at ViewSemester (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewSemester.tsx:10:5)
+          at ViewSemester (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewSemester.tsx:15:5)
           at p
           at div
           at /home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/node_modules/react-bootstrap/cjs/Col.js:72:8
@@ -660,7 +660,7 @@ PASS src/Tests/editSemester.test.tsx
       Warning: validateDOMNesting(...): <h4> cannot appear as a descendant of <p>.
           at h4
           at div
-          at ViewSemester (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewSemester.tsx:10:5)
+          at ViewSemester (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewSemester.tsx:15:5)
           at p
           at div
           at /home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/node_modules/react-bootstrap/cjs/Col.js:72:8
@@ -685,7 +685,7 @@ PASS src/Tests/editSemester.test.tsx
           at hr
           at p
           at div
-          at ViewSemester (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewSemester.tsx:10:5)
+          at ViewSemester (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewSemester.tsx:15:5)
           at p
           at div
           at /home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/node_modules/react-bootstrap/cjs/Col.js:72:8
@@ -709,7 +709,7 @@ PASS src/Tests/editSemester.test.tsx
       Warning: validateDOMNesting(...): <p> cannot appear as a descendant of <p>.
           at p
           at div
-          at ViewSemester (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewSemester.tsx:10:5)
+          at ViewSemester (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewSemester.tsx:15:5)
           at p
           at div
           at /home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/node_modules/react-bootstrap/cjs/Col.js:72:8
@@ -802,7 +802,7 @@ PASS src/Tests/editDegreePlan.test.tsx
       Warning: validateDOMNesting(...): <h4> cannot appear as a descendant of <p>.
           at h4
           at div
-          at ViewSemester (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewSemester.tsx:10:5)
+          at ViewSemester (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewSemester.tsx:15:5)
           at p
           at div
           at /home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/node_modules/react-bootstrap/cjs/Col.js:72:8
@@ -827,7 +827,7 @@ PASS src/Tests/editDegreePlan.test.tsx
           at hr
           at p
           at div
-          at ViewSemester (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewSemester.tsx:10:5)
+          at ViewSemester (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewSemester.tsx:15:5)
           at p
           at div
           at /home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/node_modules/react-bootstrap/cjs/Col.js:72:8
@@ -851,7 +851,7 @@ PASS src/Tests/editDegreePlan.test.tsx
       Warning: validateDOMNesting(...): <p> cannot appear as a descendant of <p>.
           at p
           at div
-          at ViewSemester (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewSemester.tsx:10:5)
+          at ViewSemester (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewSemester.tsx:15:5)
           at p
           at div
           at /home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/node_modules/react-bootstrap/cjs/Col.js:72:8
@@ -941,7 +941,7 @@ PASS src/Tests/viewCoursePool.test.tsx
       Warning: validateDOMNesting(...): <h4> cannot appear as a descendant of <p>.
           at h4
           at div
-          at ViewSemester (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewSemester.tsx:10:5)
+          at ViewSemester (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewSemester.tsx:15:5)
           at p
           at div
           at /home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/node_modules/react-bootstrap/cjs/Col.js:72:8
@@ -966,7 +966,7 @@ PASS src/Tests/viewCoursePool.test.tsx
           at hr
           at p
           at div
-          at ViewSemester (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewSemester.tsx:10:5)
+          at ViewSemester (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewSemester.tsx:15:5)
           at p
           at div
           at /home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/node_modules/react-bootstrap/cjs/Col.js:72:8
@@ -990,7 +990,7 @@ PASS src/Tests/viewCoursePool.test.tsx
       Warning: validateDOMNesting(...): <p> cannot appear as a descendant of <p>.
           at p
           at div
-          at ViewSemester (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewSemester.tsx:10:5)
+          at ViewSemester (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewSemester.tsx:15:5)
           at p
           at div
           at /home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/node_modules/react-bootstrap/cjs/Col.js:72:8
@@ -1080,7 +1080,7 @@ PASS src/Tests/viewCourse.test.tsx
       Warning: validateDOMNesting(...): <h4> cannot appear as a descendant of <p>.
           at h4
           at div
-          at ViewSemester (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewSemester.tsx:10:5)
+          at ViewSemester (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewSemester.tsx:15:5)
           at p
           at div
           at /home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/node_modules/react-bootstrap/cjs/Col.js:72:8
@@ -1105,7 +1105,7 @@ PASS src/Tests/viewCourse.test.tsx
           at hr
           at p
           at div
-          at ViewSemester (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewSemester.tsx:10:5)
+          at ViewSemester (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewSemester.tsx:15:5)
           at p
           at div
           at /home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/node_modules/react-bootstrap/cjs/Col.js:72:8
@@ -1129,7 +1129,7 @@ PASS src/Tests/viewCourse.test.tsx
       Warning: validateDOMNesting(...): <p> cannot appear as a descendant of <p>.
           at p
           at div
-          at ViewSemester (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewSemester.tsx:10:5)
+          at ViewSemester (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewSemester.tsx:15:5)
           at p
           at div
           at /home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/node_modules/react-bootstrap/cjs/Col.js:72:8
@@ -1219,7 +1219,7 @@ PASS src/Tests/addCourse.test.tsx
       Warning: validateDOMNesting(...): <h4> cannot appear as a descendant of <p>.
           at h4
           at div
-          at ViewSemester (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewSemester.tsx:10:5)
+          at ViewSemester (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewSemester.tsx:15:5)
           at p
           at div
           at /home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/node_modules/react-bootstrap/cjs/Col.js:72:8
@@ -1244,7 +1244,7 @@ PASS src/Tests/addCourse.test.tsx
           at hr
           at p
           at div
-          at ViewSemester (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewSemester.tsx:10:5)
+          at ViewSemester (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewSemester.tsx:15:5)
           at p
           at div
           at /home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/node_modules/react-bootstrap/cjs/Col.js:72:8
@@ -1268,7 +1268,7 @@ PASS src/Tests/addCourse.test.tsx
       Warning: validateDOMNesting(...): <p> cannot appear as a descendant of <p>.
           at p
           at div
-          at ViewSemester (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewSemester.tsx:10:5)
+          at ViewSemester (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewSemester.tsx:15:5)
           at p
           at div
           at /home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/node_modules/react-bootstrap/cjs/Col.js:72:8
@@ -1359,7 +1359,7 @@ PASS src/App.test.tsx
       Warning: validateDOMNesting(...): <h4> cannot appear as a descendant of <p>.
           at h4
           at div
-          at ViewSemester (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewSemester.tsx:10:5)
+          at ViewSemester (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewSemester.tsx:15:5)
           at p
           at div
           at /home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/node_modules/react-bootstrap/cjs/Col.js:72:8
@@ -1384,7 +1384,7 @@ PASS src/App.test.tsx
           at hr
           at p
           at div
-          at ViewSemester (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewSemester.tsx:10:5)
+          at ViewSemester (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewSemester.tsx:15:5)
           at p
           at div
           at /home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/node_modules/react-bootstrap/cjs/Col.js:72:8
@@ -1408,7 +1408,7 @@ PASS src/App.test.tsx
       Warning: validateDOMNesting(...): <p> cannot appear as a descendant of <p>.
           at p
           at div
-          at ViewSemester (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewSemester.tsx:10:5)
+          at ViewSemester (/home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/src/Compontents/viewSemester.tsx:15:5)
           at p
           at div
           at /home/runner/work/cis-scheduler-team-22/cis-scheduler-team-22/node_modules/react-bootstrap/cjs/Col.js:72:8
@@ -1431,10 +1431,10 @@ PASS src/App.test.tsx
 -----------------------------|---------|----------|---------|---------|-------------------------
 File                         | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s       
 -----------------------------|---------|----------|---------|---------|-------------------------
-All files                    |   62.84 |    56.57 |   65.26 |   62.84 |                         
+All files                    |   63.31 |    56.83 |   66.15 |   63.31 |                         
  src                         |   91.66 |    66.66 |      75 |   91.66 |                         
   App.tsx                    |   91.66 |    66.66 |      75 |   91.66 | 87                      
- src/Compontents             |   55.49 |    50.18 |    61.3 |   55.49 |                         
+ src/Compontents             |   55.61 |    50.56 |   61.53 |   55.61 |                         
   addCourse.tsx              |    23.8 |    38.88 |   32.14 |    23.8 | 79,189-222,235,269-422  
   editCourse.tsx             |    87.5 |       60 |     100 |    87.5 | 35,41,47                
   editCourseRequirements.tsx |    3.33 |        0 |    6.25 |    3.33 | 33-170                  
@@ -1445,20 +1445,20 @@ All files                    |   62.84 |    56.57 |   65.26 |   62.84 |
   viewCourse.tsx             |   67.69 |    69.44 |      75 |   67.69 | 38-61,68,97,103,109,199 
   viewCoursePool.tsx         |    25.8 |       20 |   46.66 |    25.8 | 25-63,105               
   viewDegreePlan.tsx         |   91.89 |    86.36 |     100 |   91.89 | 36,55,72                
-  viewDegreePlansList.tsx    |   73.68 |     92.3 |   76.92 |   73.68 | 265-276,307-316         
-  viewSemester.tsx           |   88.63 |    80.76 |     100 |   88.63 | 34,40,61,67,86          
- src/interfaces              |   90.69 |    85.71 |     100 |   90.69 |                         
+  viewDegreePlansList.tsx    |      75 |     92.3 |   78.57 |      75 | 279-290,321-330         
+  viewSemester.tsx           |   88.63 |    82.14 |     100 |   88.63 | 39,45,66,72,91          
+ src/interfaces              |    91.2 |    85.71 |     100 |    91.2 |                         
   Course.ts                  |     100 |      100 |     100 |     100 |                         
   CourseCSVTable.ts          |     100 |      100 |     100 |     100 |                         
   Degree.ts                  |     100 |      100 |     100 |     100 |                         
   DegreePlan.ts              |   88.23 |    81.81 |     100 |   88.23 | 49,59,82,125            
   Requirements.ts            |     100 |      100 |     100 |     100 |                         
   Section.ts                 |       0 |        0 |       0 |       0 |                         
-  Semester.ts                |   73.33 |       50 |     100 |   73.33 | 38,43-46                
+  Semester.ts                |      80 |       50 |     100 |      80 | 61,66-69                
 -----------------------------|---------|----------|---------|---------|-------------------------
 
 Test Suites: 13 passed, 13 total
 Tests:       51 passed, 51 total
 Snapshots:   0 total
-Time:        15.741 s
+Time:        16.158 s
 Ran all test suites.

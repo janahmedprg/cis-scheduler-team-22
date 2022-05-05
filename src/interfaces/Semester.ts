@@ -9,11 +9,34 @@ export const sessionTime: Record<SemesterSession, number> = {
     fall: 3
 };
 
+export const maxCredits: Record<SemesterSession, number> = {
+    winter: 7,
+    spring: 21,
+    summer: 14,
+    fall: 21
+};
+
 export interface Semester {
     id: number;
     courses: Course[];
     session: SemesterSession;
     year: number;
+}
+
+export function countCredits(semester: Semester): number {
+    return semester.courses.reduce(
+        (currentSum: number, course: Course): number =>
+            currentSum + course.credits,
+        0
+    );
+}
+
+export function countCreditsArray(semesters: Semester[]): number {
+    return semesters.reduce(
+        (currentSum: number, semester: Semester): number =>
+            currentSum + countCredits(semester),
+        0
+    );
 }
 
 export function sortSemesters(semesters: Semester[]): Semester[] {

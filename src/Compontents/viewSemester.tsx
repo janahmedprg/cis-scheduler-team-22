@@ -1,5 +1,10 @@
 import React, { useState } from "react";
-import { Semester } from "../interfaces/Semester";
+import {
+    countCredits,
+    maxCredits,
+    Semester,
+    sortSemesters
+} from "../interfaces/Semester";
 import { Course } from "../interfaces/Course";
 import { ViewCourse } from "./viewCourse";
 import { DegreePlan } from "../interfaces/DegreePlan";
@@ -25,7 +30,7 @@ export function ViewSemester({
     coursePool: Course[];
     setCoursePool: (newCoursePool: Course[]) => void;
 }): JSX.Element {
-    const [editing, setEditing] = useState<boolean>(false);
+    const [editing, setEditing] = useState<boolean>(semester.year === 0);
     function clearSemester() {
         const foundDegreePlan = degreePlans.find(
             (plan: DegreePlan): boolean => plan.id === degreePlan.id
@@ -78,6 +83,23 @@ export function ViewSemester({
         );
         setDegreePlans(newPlans);
     }
+    function sortSem() {
+        const foundDegreePlan = degreePlans.find(
+            (plan: DegreePlan): boolean => plan.id === degreePlan.id
+        );
+        if (foundDegreePlan === undefined) {
+            return;
+        }
+        const newPlan: DegreePlan = {
+            ...foundDegreePlan,
+            semesters: sortSemesters(foundDegreePlan.semesters)
+        };
+        const newPlans: DegreePlan[] = degreePlans.map(
+            (plan: DegreePlan): DegreePlan =>
+                plan.id === newPlan.id ? newPlan : plan
+        );
+        setDegreePlans(newPlans);
+    }
     return (
         <div
             style={{
@@ -87,6 +109,13 @@ export function ViewSemester({
             <h4>
                 {semester.session} {semester.year} semester
             </h4>
+            {countCredits(semester) > maxCredits[semester.session] && (
+                <div style={{ color: "red" }}>
+                    It is not recommended to take more than{" "}
+                    {maxCredits[semester.session]} credits in a{" "}
+                    {semester.session} semester.
+                </div>
+            )}
             {semester.courses.length === 0 && (
                 <div>
                     This semester has no courses. Use the &quot;Add Courses to
@@ -142,7 +171,12 @@ export function ViewSemester({
                 />
             )}
             <Button
-                onClick={() => setEditing(!editing)}
+                onClick={() => {
+                    if (editing) {
+                        sortSem();
+                    }
+                    setEditing(!editing);
+                }}
                 // style={{ marginBottom: "20px" }}
                 data-testid={semester.id + "-edit-editing-semester"}
             >

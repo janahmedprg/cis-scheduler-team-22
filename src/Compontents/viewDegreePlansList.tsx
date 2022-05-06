@@ -3,7 +3,7 @@ import { Button } from "react-bootstrap";
 //import { Course } from "../interfaces/Course";
 import { Degree } from "../interfaces/Degree";
 import { DegreePlan, getUnfilledRequirements } from "../interfaces/DegreePlan";
-import { Semester } from "../interfaces/Semester";
+import { countCreditsArray, Semester } from "../interfaces/Semester";
 import { Form } from "react-bootstrap";
 import { EMPTY_REQUIREMENTS } from "../interfaces/Requirements";
 import { CSVLink } from "react-csv";
@@ -92,7 +92,21 @@ export function ViewDegreePlansList({
                                         {degreePlanOption.name +
                                             " - " +
                                             degreePlanOption.semesters.length +
-                                            " semesters"}
+                                            " semesters, " +
+                                            degreePlanOption.semesters.reduce(
+                                                (
+                                                    currentTotal: number,
+                                                    semester: Semester
+                                                ): number =>
+                                                    currentTotal +
+                                                    semester.courses.length,
+                                                0
+                                            ) +
+                                            " courses, " +
+                                            countCreditsArray(
+                                                degreePlanOption.semesters
+                                            ) +
+                                            " credits"}
                                     </span>
                                 }
                                 <div>

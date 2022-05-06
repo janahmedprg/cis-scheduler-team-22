@@ -1,7 +1,7 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import { App } from "../App";
-// import userEvent from "@testing-library/user-event";
+import userEvent from "@testing-library/user-event";
 
 describe("ViewDegreePlansList Tests", () => {
     beforeEach(() => {
@@ -111,11 +111,16 @@ describe("ViewDegreePlansList Tests", () => {
 
         screen.getByTestId("edit-switch-degreePlansList").click();
         screen.getByTestId("add-close-degree-plan").click();
-        // const degree = screen.getByTestId("new-degree-plan-degree");
-        // const degreeName = screen.queryAllByTestId("new-degree-plan-name");
-        // userEvent.type(degree, "{selectall}{del}Bachelor of Science");
-        // userEvent.type(degreeName, "{selectall}{del}Biology");
-        // screen.getByTestId("add-to-degree-plan").click();
-        // expect(screen.queryAllByText(/Biology/)).toHaveLength(1);
+        const degree = screen.getByTestId("new-degree-plan-degree");
+        const degreeName = screen.getByTestId("new-degree-plan-name");
+        userEvent.type(degree, "{selectall}{del}Bachelor of Science");
+        userEvent.type(degreeName, "{selectall}{del}Biology");
+        screen.getByTestId("add-to-degree-plan").click();
+        expect(screen.queryAllByText(/Biology/)).toHaveLength(1);
+
+        screen.getByTestId("add-close-degree-plan").click();
+        expect(screen.queryAllByText("New Degree Plan Degree:")).toHaveLength(
+            0
+        );
     });
 });

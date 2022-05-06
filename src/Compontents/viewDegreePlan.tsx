@@ -140,7 +140,7 @@ export function ViewDegreePlan({
                                 "course"
                             }
                         >
-                            <p>
+                            <div>
                                 <ViewSemester
                                     semester={semester}
                                     degreePlan={degreePlan}
@@ -151,7 +151,7 @@ export function ViewDegreePlan({
                                     coursePool={coursePool}
                                     setCoursePool={setCoursePool}
                                 />
-                            </p>
+                            </div>
                         </Col>
                     )
                 )}

@@ -124,7 +124,7 @@ export function ViewSemester({
             )}
             {semester.courses.map(
                 (course: Course): JSX.Element => (
-                    <p
+                    <div
                         key={
                             semester.id.toString() +
                             "-" +
@@ -144,8 +144,7 @@ export function ViewSemester({
                             coursePool={coursePool}
                             setCoursePool={setCoursePool}
                         />
-                        <hr />
-                    </p>
+                    </div>
                 )
             )}
             {/* <Button onClick={() => addCourse()}>Add course</Button> */}

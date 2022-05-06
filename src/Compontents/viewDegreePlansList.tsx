@@ -72,7 +72,7 @@ export function ViewDegreePlansList({
             >
                 {degreePlansList.map(
                     (degreePlanOption: DegreePlan): JSX.Element => (
-                        <p key={degreePlanOption.id.toString()}>
+                        <div key={degreePlanOption.id.toString()}>
                             <div
                                 style={{
                                     border: "1px solid black",
@@ -83,7 +83,7 @@ export function ViewDegreePlansList({
                                 }}
                             >
                                 {
-                                    <text
+                                    <span
                                         style={{
                                             fontWeight: "550",
                                             fontSize: "200%"
@@ -107,7 +107,7 @@ export function ViewDegreePlansList({
                                                 degreePlanOption.semesters
                                             ) +
                                             " credits"}
-                                    </text>
+                                    </span>
                                 }
                                 <div>
                                     <Button
@@ -224,7 +224,7 @@ export function ViewDegreePlansList({
                                     )}
                                 </div>
                             </div>
-                        </p>
+                        </div>
                     )
                 )}
                 {editMode && addingDegreePlan && (
@@ -302,7 +302,7 @@ export function AddToDegreePlansList({
             >
                 <Form.Label>New Degree Plan Degree:</Form.Label>
                 <Form.Control /**value={degree} //onChange={updateDegreePlanDegree} */
-                    data-tastid="new-degree-plan-degree"
+                    data-testid="new-degree-plan-degree"
                 />
             </Form.Group>
             <Form.Group
@@ -315,7 +315,7 @@ export function AddToDegreePlansList({
             >
                 <Form.Label>New Degree Plan Name:</Form.Label>
                 <Form.Control
-                    data-tastid="new-degree-plan-name"
+                    data-testid="new-degree-plan-name"
                     value={name}
                     onChange={(event: ChangeEvent) =>
                         setName(event.target.value)

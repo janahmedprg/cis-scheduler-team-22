@@ -257,7 +257,7 @@ export function ListAllCourses({
                 <div>
                     {adjustedCourses.map(
                         (course: Course): JSX.Element => (
-                            <p key={course.code.toString()}>
+                            <div key={course.code.toString()}>
                                 <div>
                                     <div style={{ textAlign: "left" }}>
                                         <Button
@@ -271,15 +271,15 @@ export function ListAllCourses({
                                         >
                                             Add {course.code}
                                         </Button>
-                                        <text
+                                        <span
                                             style={{
                                                 marginRight: "30px",
                                                 fontWeight: "1px"
                                             }}
                                         >
                                             {course.code + ": " + course.name}
-                                        </text>
-                                        <text
+                                        </span>
+                                        <span
                                             style={{
                                                 display: "inline-block",
                                                 fontSize: "small",
@@ -287,8 +287,8 @@ export function ListAllCourses({
                                             }}
                                         >
                                             {"Credits: " + course.credits}
-                                        </text>
-                                        <text
+                                        </span>
+                                        <span
                                             style={{
                                                 display: "inline-block",
                                                 fontSize: "small",
@@ -296,10 +296,10 @@ export function ListAllCourses({
                                             }}
                                         >
                                             {"Typically offered: " + course.typ}
-                                        </text>
+                                        </span>
                                     </div>
                                 </div>
-                            </p>
+                            </div>
                         )
                     )}
                 </div>

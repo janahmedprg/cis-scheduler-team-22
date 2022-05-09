@@ -11,7 +11,7 @@ describe("Course Pool Tests", () => {
     });
     test("Check existance of Course pool", () => {
         expect(screen.getAllByText("Course Pool")).toHaveLength(1);
-        expect(screen.getAllByText("Clear Pool")).toHaveLength(1);
+        expect(screen.getAllByText(/clear course pool/i)).toHaveLength(1);
     });
     test("Check existance of buttons", () => {
         screen.getByTestId("is-viewing-check110").click();

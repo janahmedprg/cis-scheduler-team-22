@@ -1,4 +1,4 @@
-import { Requirements } from "./Requirements";
+import { EMPTY_REQUIREMENTS, Requirements } from "./Requirements";
 
 export interface Degree {
     id: number;
@@ -7,6 +7,15 @@ export interface Degree {
     requiredCourses: string[][]; //requiremed courses not covered by the requirements field
     requiredCredits: number;
 }
+
+export const EMPTY_DEGREE: Degree = {
+    id: 0,
+    name: "No Degree",
+    requirements: EMPTY_REQUIREMENTS,
+    requiredCourses: [],
+    requiredCredits: 0
+};
+
 export const CISC_BS: Degree = {
     //custom concentration
     id: 0,
@@ -49,7 +58,7 @@ export const CISC_BS: Degree = {
 
 export const CISC_BA: Degree = {
     id: 0,
-    name: "Computer Science BS",
+    name: "Computer Science BA",
     requirements: {
         CAHBreadth: 9,
         HCCBreadth: 9,
@@ -89,3 +98,5 @@ export const CISC_BA: Degree = {
     ],
     requiredCredits: 124
 };
+
+export const OFFICIAL_DEGREES: Degree[] = [EMPTY_DEGREE, CISC_BS, CISC_BA];

@@ -320,6 +320,7 @@ export function AddToDegreePlansList({
                 <Form.Select
                     value={degree.name}
                     onChange={updateDegreePlanDegree}
+                    data-testid="new-degree-plan-degree"
                 >
                     {OFFICIAL_DEGREES.map(
                         (option: Degree): JSX.Element => (

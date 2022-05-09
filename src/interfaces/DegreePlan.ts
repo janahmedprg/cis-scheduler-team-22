@@ -1,5 +1,5 @@
 import { convertCourse, Course } from "./Course";
-import { CISC_BS, Degree } from "./Degree";
+import { CISC_BS, Degree, EMPTY_DEGREE } from "./Degree";
 import {
     addRquirements,
     EMPTY_REQUIREMENTS,
@@ -287,13 +287,7 @@ export const TEST_PLANS: DegreePlan[] = [
     },
     {
         id: 107,
-        degree: {
-            id: 108,
-            name: "MATH Degree",
-            requirements: EMPTY_REQUIREMENTS,
-            requiredCourses: [],
-            requiredCredits: 124
-        },
+        degree: EMPTY_DEGREE,
         name: "Math test plan",
         semesters: [
             {

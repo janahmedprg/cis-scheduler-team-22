@@ -173,7 +173,7 @@ export const EMPTY_PLAN: DegreePlan = {
 export const TEST_PLANS: DegreePlan[] = [
     {
         id: 0,
-        degree: CISC_BS,
+        degree: { ...CISC_BS, id: 52 },
         name: "Computer Science Degree Plan",
         semesters: [
             {
@@ -287,7 +287,7 @@ export const TEST_PLANS: DegreePlan[] = [
     },
     {
         id: 107,
-        degree: EMPTY_DEGREE,
+        degree: { ...EMPTY_DEGREE, id: 108 },
         name: "Math test plan",
         semesters: [
             {

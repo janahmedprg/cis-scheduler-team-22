@@ -78,7 +78,7 @@ export function EditDegreePlan({
                     marginTop: "20px"
                 }}
             >
-                <Form.Label>Select an option:</Form.Label>
+                <Form.Label>Select a degree:</Form.Label>
                 <Form.Select
                     value={degreePlan.degree.name}
                     onChange={updateDegreePlanDegree}

@@ -124,7 +124,7 @@ export function ViewSemester({
             )}
             {semester.courses.map(
                 (course: Course): JSX.Element => (
-                    <p
+                    <div
                         key={
                             semester.id.toString() +
                             "-" +
@@ -144,24 +144,23 @@ export function ViewSemester({
                             coursePool={coursePool}
                             setCoursePool={setCoursePool}
                         />
-                        <hr />
-                    </p>
+                    </div>
                 )
             )}
             {/* <Button onClick={() => addCourse()}>Add course</Button> */}
             <Button
-                style={{ backgroundColor: "red" }}
+                style={{ backgroundColor: "#FFF9FF", color: "black" }}
                 onClick={() => clearSemester()}
                 data-testid={semester.id + "-edit-clear-semester"}
             >
-                Clear Semester
+                ❌ Clear
             </Button>
             <Button
-                style={{ backgroundColor: "red" }}
+                style={{ backgroundColor: "#EC3B15", color: "black" }}
                 onClick={() => removeSemester()}
                 data-testid={semester.id + "-edit-remove-semester"}
             >
-                Remove Semester
+                🗑 Remove Semester
             </Button>
             {editing && (
                 <EditSemester
@@ -178,10 +177,10 @@ export function ViewSemester({
                     }
                     setEditing(!editing);
                 }}
-                // style={{ marginBottom: "20px" }}
+                style={{ backgroundColor: "#BAC9EB", color: "black" }}
                 data-testid={semester.id + "-edit-editing-semester"}
             >
-                {editing ? "Close" : "Edit Semester"}
+                {editing ? "Close" : "✏️ Edit Semester"}
             </Button>
             <div style={{ minHeight: "10px" }} />
         </div>

@@ -62,11 +62,12 @@ export function App(): JSX.Element {
             <h2
                 style={{
                     backgroundColor: "#0C3590",
-                    height: "50px",
                     fontWeight: "5px solid blue",
                     marginLeft: "400px",
                     marginRight: "400px",
-                    color: "white"
+                    color: "white",
+                    marginBottom: "20px",
+                    marginTop: "20px"
                 }}
             >
                 See Selected Degree Plan Below

@@ -154,9 +154,10 @@ export function ViewCoursePool({
             )}
             <Button
                 onClick={() => removeCoursePool()}
+                style={{ backgroundColor: "#BAC9EB", color: "black" }}
                 data-testid={degreePlan.id + "-clear-pool"}
             >
-                Clear Pool
+                ❌ Clear Course Pool
             </Button>
         </div>
     );

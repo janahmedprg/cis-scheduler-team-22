@@ -304,7 +304,7 @@ export function AddToDegreePlansList({
     function updateDegreePlanDegree(
         event: React.ChangeEvent<HTMLSelectElement>
     ) {
-        const newDegree = OFFICIAL_DEGREES.find(
+        const newDegree = Object.values(OFFICIAL_DEGREES).find(
             (degree: Degree): boolean => degree.name === event.target.value
         );
         if (newDegree !== undefined) {
@@ -328,7 +328,7 @@ export function AddToDegreePlansList({
                     onChange={updateDegreePlanDegree}
                     data-testid="new-degree-plan-degree"
                 >
-                    {OFFICIAL_DEGREES.map(
+                    {Object.values(OFFICIAL_DEGREES).map(
                         (option: Degree): JSX.Element => (
                             <option value={option.name} key={option.name}>
                                 {option.name}

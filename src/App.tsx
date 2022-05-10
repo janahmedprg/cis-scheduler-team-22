@@ -17,9 +17,28 @@ import { Button } from "react-bootstrap";
  */
 
 export function App(): JSX.Element {
-    const [degreePlans, setDegreePlans] = useState<DegreePlan[]>(TEST_PLANS);
-    const [selectedPlanId, setSelectedPlanId] = useState<number>(107);
-    const [nextId, setNextId] = useState<number>(1000);
+    let loadedDegreePlans = TEST_PLANS;
+    let loadedSelectPlanId = 107;
+    let loadedNextId = 1000;
+
+    // const saveDegreePlansKey = "DEGREE-PLANS";
+    // const saveSelectPlanId = "SELECT-PLAN";
+    // const saveNextId = "NEXT-ID";
+
+    // const previousDegreePlans = localStorage.getItem(saveDegreePlansKey);
+    // const previousSelectPlanId = localStorage.getItem(saveSelectPlanId);
+    // const previousNextId = localStorage.getItem(saveNextId);
+
+    // if (previousDegreePlans !== null) {
+    //     loadedDegreePlans = JSON.parse(previousDegreePlans);
+    //     loadedSelectPlanId = JSON.parse(previousSelectPlanId);
+    //     loadedNextId = JSON.parse(previousNextId);
+    // }
+    const [degreePlans, setDegreePlans] =
+        useState<DegreePlan[]>(loadedDegreePlans);
+    const [selectedPlanId, setSelectedPlanId] =
+        useState<number>(loadedSelectPlanId);
+    const [nextId, setNextId] = useState<number>(loadedNextId);
     const [coursePool, setCoursePool] = useState<Course[]>([]);
     const [showSketch, setShowSketch] = useState<boolean>(false);
     function findDegreePlan(id: number): DegreePlan {
@@ -30,6 +49,9 @@ export function App(): JSX.Element {
             return EMPTY_PLAN;
         }
         return foundPlan;
+    }
+    function saveData() {
+        // localStorage.setItem(saveDataKey, JSON.stringify(data));
     }
     return (
         <div
@@ -91,6 +113,7 @@ export function App(): JSX.Element {
             <br />
             {showSketch && <img src={sketch} alt="Sketch" />}
             <br />
+            <Button onClick={saveData}>Save Data</Button>
         </div>
     );
 }

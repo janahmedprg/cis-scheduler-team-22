@@ -5,9 +5,9 @@ import {
     ImportCourse,
     convertCourse,
     Course,
-    ALL_COURSE_CODES,
     EMPTY_COURSE
 } from "../interfaces/Course";
+import ALL_COURSE_CODES from "../allCourseCodes.json";
 
 //import { Requirements } from "../interfaces/Requirements";
 

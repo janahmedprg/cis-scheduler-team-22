@@ -16,9 +16,9 @@ import { Button } from "react-bootstrap";
  */
 
 export function App(): JSX.Element {
-    let loadedDegreePlans = TEST_PLANS;
-    let loadedSelectPlanId = 107;
-    let loadedNextId = 1000;
+    const loadedDegreePlans = TEST_PLANS;
+    const loadedSelectPlanId = 107;
+    const loadedNextId = 1000;
 
     // const saveDegreePlansKey = "DEGREE-PLANS";
     // const saveSelectPlanId = "SELECT-PLAN";

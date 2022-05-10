@@ -5,7 +5,6 @@ import UDHeader from "./UDHeader.jpg";
 import { DegreePlan, TEST_PLANS, EMPTY_PLAN } from "./interfaces/DegreePlan";
 import { ViewDegreePlansList } from "./Compontents/viewDegreePlansList";
 import { ViewDegreePlan } from "./Compontents/viewDegreePlan";
-import { SearchCourses } from "./Compontents/searchCourse";
 import { Course } from "./interfaces/Course";
 import { Button } from "react-bootstrap";
 
@@ -49,7 +48,6 @@ export function App(): JSX.Element {
                 <h3>Hello, welcome to your UD CIS course scheduler!</h3>
             </header>
             <h1 style={{ backgroundColor: "gold" }}> Course Scheduler</h1>
-            <SearchCourses></SearchCourses>
             <h2>Degree Plans List</h2>
             <ViewDegreePlansList
                 degreePlansList={degreePlans}

@@ -1,7 +1,9 @@
 import { EMPTY_REQUIREMENTS, Requirements } from "./Requirements";
 import categories from "../courseCategories.json";
+import prereqs from "../prereqs.json";
 
 const categoryData = categories as Record<string, string[]>;
+const prereqData = prereqs as Record<string, string[][]>;
 
 export interface ImportCourse {
     code: string;
@@ -46,7 +48,9 @@ export function convertCourse(course: ImportCourse): Course {
         name: course.name,
         descr: course.descr,
         credits: parseInt(course.credits) || 1,
-        prereqs: [],
+        prereqs: Object.keys(prereqData).includes(course.code)
+            ? prereqData[course.code]
+            : [],
         restrict: course.restrict,
         typ: ["winter", "spring", "summer", "fall"].filter(
             (season: string): boolean =>

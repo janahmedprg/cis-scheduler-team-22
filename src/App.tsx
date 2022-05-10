@@ -54,6 +54,7 @@ export function App(): JSX.Element {
             <ViewDegreePlansList
                 degreePlansList={degreePlans}
                 setDegreePlans={setDegreePlans}
+                selectedPlanId={selectedPlanId}
                 setSelectedPlanId={setSelectedPlanId}
                 nextId={nextId}
                 setNextId={setNextId}

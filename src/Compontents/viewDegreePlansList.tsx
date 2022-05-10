@@ -23,12 +23,14 @@ type ChangeEvent = React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>;
 export function ViewDegreePlansList({
     degreePlansList,
     setDegreePlans,
+    selectedPlanId,
     setSelectedPlanId,
     nextId,
     setNextId
 }: {
     degreePlansList: DegreePlan[];
     setDegreePlans: (plans: DegreePlan[]) => void;
+    selectedPlanId: number;
     setSelectedPlanId: (id: number) => void;
     nextId: number;
     setNextId: (id: number) => void;
@@ -106,6 +108,10 @@ export function ViewDegreePlansList({
                                                 degreePlanOption.semesters
                                             ) +
                                             " credits"}
+                                        <br />
+                                        {selectedPlanId ===
+                                            degreePlanOption.id &&
+                                            "(currently viewing)"}
                                     </span>
                                 }
                                 <div>

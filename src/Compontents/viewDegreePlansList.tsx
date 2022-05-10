@@ -87,7 +87,7 @@ export function ViewDegreePlansList({
                                     <span
                                         style={{
                                             fontWeight: "550",
-                                            fontSize: "200%"
+                                            fontSize: "160%"
                                         }}
                                     >
                                         {degreePlanOption.name +
@@ -107,11 +107,21 @@ export function ViewDegreePlansList({
                                             countCreditsArray(
                                                 degreePlanOption.semesters
                                             ) +
-                                            " credits"}
+                                            " credits "}
+                                        <text
+                                            style={{
+                                                fontSize: "50%",
+                                                fontWeight: "20%",
+                                                marginLeft: "1%"
+                                            }}
+                                        >
+                                            {"Degree type: " +
+                                                degreePlanOption.degree.name}
+                                        </text>
                                         <br />
                                         {selectedPlanId ===
                                             degreePlanOption.id &&
-                                            "(currently viewing)"}
+                                            "(currently viewing below)"}
                                     </span>
                                 }
                                 <div>

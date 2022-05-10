@@ -52,7 +52,7 @@ export function ViewDegreePlansList({
         <div>
             <div>
                 <Form.Check
-                    style={{ marginLeft: "40px", marginRight: "1120px" }}
+                    style={{ marginLeft: "3%", marginRight: "80%" }}
                     type="switch"
                     id="can-edit-degreePlansList"
                     role="can-edit-degreePlansList"

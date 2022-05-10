@@ -5,11 +5,11 @@ import {
     ImportCourse,
     convertCourse,
     Course,
-    ALL_COURSE_CODES,
     EMPTY_COURSE
 } from "../interfaces/Course";
 import { DegreePlan } from "../interfaces/DegreePlan";
 import { Semester } from "../interfaces/Semester";
+import ALL_COURSE_CODES from "../allCourseCodes.json";
 
 type ChangeEvent = React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>;
 

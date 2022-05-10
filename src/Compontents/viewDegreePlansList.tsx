@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import { Button } from "react-bootstrap";
 //import { Course } from "../interfaces/Course";
-import { Degree } from "../interfaces/Degree";
+import { Degree, EMPTY_DEGREE, OFFICIAL_DEGREES } from "../interfaces/Degree";
 import { DegreePlan, getUnfilledRequirements } from "../interfaces/DegreePlan";
 import { countCreditsArray, Semester } from "../interfaces/Semester";
 import { Form } from "react-bootstrap";
-import { EMPTY_REQUIREMENTS } from "../interfaces/Requirements";
 import { CSVLink } from "react-csv";
 import { createCSVTable } from "../interfaces/CourseCSVTable";
 
@@ -24,12 +23,14 @@ type ChangeEvent = React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>;
 export function ViewDegreePlansList({
     degreePlansList,
     setDegreePlans,
+    selectedPlanId,
     setSelectedPlanId,
     nextId,
     setNextId
 }: {
     degreePlansList: DegreePlan[];
     setDegreePlans: (plans: DegreePlan[]) => void;
+    selectedPlanId: number;
     setSelectedPlanId: (id: number) => void;
     nextId: number;
     setNextId: (id: number) => void;
@@ -107,6 +108,10 @@ export function ViewDegreePlansList({
                                                 degreePlanOption.semesters
                                             ) +
                                             " credits"}
+                                        <br />
+                                        {selectedPlanId ===
+                                            degreePlanOption.id &&
+                                            "(currently viewing)"}
                                     </span>
                                 }
                                 <div>
@@ -189,8 +194,13 @@ export function ViewDegreePlansList({
                                                 margin: "0 auto"
                                             }}
                                         >
-                                            This degree plan fulfills all degree
-                                            requirements.
+                                            {degreePlanOption.degree.name !==
+                                                "No Degree" && (
+                                                <div>
+                                                    This degree plan fulfills
+                                                    all degree requirements.
+                                                </div>
+                                            )}
                                         </div>
                                     )}
                                     {getUnfilledRequirements(degreePlanOption)
@@ -267,6 +277,7 @@ export function AddToDegreePlansList({
 }): JSX.Element {
     //const [degree, setDegree] = useState<Degree>();
     const [name, setName] = useState<string>("New Degree Plan");
+    const [degree, setDegree] = useState<Degree>(EMPTY_DEGREE);
     //const [semesters, setSemesters] = useState<Semester[]>([]);
     //const [questionCount, setquestionCount] = useState<number>(0);
 
@@ -290,6 +301,17 @@ export function AddToDegreePlansList({
         setNextId(nextId + 2);
     }
 
+    function updateDegreePlanDegree(
+        event: React.ChangeEvent<HTMLSelectElement>
+    ) {
+        const newDegree = OFFICIAL_DEGREES.find(
+            (degree: Degree): boolean => degree.name === event.target.value
+        );
+        if (newDegree !== undefined) {
+            setDegree(newDegree);
+        }
+    }
+
     return (
         <div>
             <Form.Group
@@ -301,9 +323,19 @@ export function AddToDegreePlansList({
                 }}
             >
                 <Form.Label>New Degree Plan Degree:</Form.Label>
-                <Form.Control /**value={degree} //onChange={updateDegreePlanDegree} */
+                <Form.Select
+                    value={degree.name}
+                    onChange={updateDegreePlanDegree}
                     data-testid="new-degree-plan-degree"
-                />
+                >
+                    {OFFICIAL_DEGREES.map(
+                        (option: Degree): JSX.Element => (
+                            <option value={option.name} key={option.name}>
+                                {option.name}
+                            </option>
+                        )
+                    )}
+                </Form.Select>
             </Form.Group>
             <Form.Group
                 controlId="formDegreePlanName"
@@ -326,19 +358,7 @@ export function AddToDegreePlansList({
                 style={{
                     backgroundColor: "black"
                 }}
-                onClick={() =>
-                    appendDegreePlanToList(
-                        {
-                            id: 0,
-                            name: "",
-                            requirements: EMPTY_REQUIREMENTS,
-                            requiredCourses: [],
-                            requiredCredits: 0
-                        },
-                        name,
-                        []
-                    )
-                }
+                onClick={() => appendDegreePlanToList(degree, name, [])}
                 data-testid="add-to-degree-plan"
             >
                 Add This Degree Plan

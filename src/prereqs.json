@@ -1,0 +1,82 @@
+{
+    "CISC 181": [["CISC 106", "CISC 108"]],
+    "CISC 210": [["CISC 106", "CISC 108"]],
+    "CISC 220": [["CISC 210"]],
+    "CISC 260": [["CISC 210"]],
+    "CISC 275": [["CISC 181"], ["CISC 220"]],
+    "CISC 303": [["MATH 210"], ["CISC 220"]],
+    "CISC 304": [["CISC 220"], ["MATH 210"]],
+    "CISC 320": [["MATH 210"], ["CISC 220"]],
+    "CISC 361": [["CISC 220"], ["CISC 260", "CPEG 222"]],
+    "CISC 372": [["CISC 220"], ["CISC 260"]],
+    "CISC 357": [["CISC 101", "CISC 103", "CISC 106", "CISC 108"]],
+    "CISC 436": [["CISC 220"]],
+    "CISC 437": [["CISC 220"]],
+    "CISC 440": [["CISC 220"], ["MATH 241"]],
+    "CISC 442": [["CISC 220"]],
+    "CISC 450": [["CISC 260", "CPEG 222"]],
+    "CISC 453": [["CISC 450"]],
+    "CISC 459": [["CISC 450"]],
+    "CISC 464": [["CISC 450"]],
+    "CISC 474": [["CISC 275"]],
+    "CISC 481": [["CISC 220"], ["CISC 304"]],
+    "CISC 483": [["CISC 220"], ["MATH 205", "MATH 350"]],
+    "CISC 484": [["CISC 220"], ["MATH 205", "MATH 350"]],
+    "CISC 498": [["CISC 275"], ["CISC 320"]],
+    "CISC 499": [["CISC 498"]],
+    "CPEG 472": [["CPEG 465", "CPEG 665", "MATH 549"]],
+    "CPEG 473": [
+        [
+            "CPEG 465",
+            "CPEG 665",
+            "CISC 465",
+            "CISC 665",
+            "ELEG 465",
+            "ELEG 665",
+            "MISY 465",
+            "MISY 665",
+            "CPEG 494",
+            "CPEG 694",
+            "ELEG 494",
+            "ELEG 694"
+        ]
+    ],
+    "CPEG 475": [["CPEG 222", "CPEG 465", "CPEG 665"]],
+    "MATH 242": [["MATH 241"]],
+    "MATH 243": [["MATH 242"]],
+    "MATH 349": [["MATH 230", "MATH 242"]],
+    "MATH 350": [["MATH 242"]],
+    "ENGL 312": [["ENGL 110"]],
+    "ENGL 410": [["ENGL 110"]],
+    "BISC 208": [["BISC 207"]],
+    "CHEM 104": [
+        ["CHEM 103", "CHEM 111"],
+        ["CHEM 133", "CHEM 111"]
+    ],
+    "CHEM 134": [
+        ["CHEM 103", "CHEM 111"],
+        ["CHEM 133", "CHEM 111"]
+    ],
+    "CHEM 213": [
+        ["CHEM 102", "CHEM 104", "CHEM 105", "CHEM 112"],
+        ["CHEM 102", "CHEM 134", "CHEM 105", "CHEM 112"]
+    ],
+    "CHEM 215": [
+        ["CHEM 102", "CHEM 104", "CHEM 105", "CHEM 112"],
+        ["CHEM 102", "CHEM 134", "CHEM 105", "CHEM 112"]
+    ],
+    "CHEM 321": [
+        ["CHEM 104", "CHEM 112"],
+        ["CHEM 134", "CHEM 112"]
+    ],
+    "PHYS 208": [
+        ["PHYS 203", "PHYS 207"],
+        ["PHYS 203", "PHYS 227"],
+        ["MATH 241", "MATH 232"]
+    ],
+    "PHYS 228": [
+        ["PHYS 203", "PHYS 207"],
+        ["PHYS 203", "PHYS 227"],
+        ["MATH 241", "MATH 232"]
+    ]
+}

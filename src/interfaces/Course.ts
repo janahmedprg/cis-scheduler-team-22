@@ -31,7 +31,7 @@ export interface Course {
     name: string; //Actual course name (ex: Data structures)
     descr: string;
     credits: number;
-    prereqs: string[];
+    prereqs: string[][];
     restrict: string;
     typ: string[];
     //additional attributes to be added to classes
@@ -46,7 +46,7 @@ export function convertCourse(course: ImportCourse): Course {
         name: course.name,
         descr: course.descr,
         credits: parseInt(course.credits) || 1,
-        prereqs: course.preReq === "" ? [] : course.preReq.split(","),
+        prereqs: [],
         restrict: course.restrict,
         typ: ["winter", "spring", "summer", "fall"].filter(
             (season: string): boolean =>

@@ -234,6 +234,13 @@ export function ListAllCourses({
     function updateChoice(event: React.ChangeEvent<HTMLSelectElement>) {
         setChoice(event.target.value);
     }
+
+    const allIncludedCourses: string[] = [];
+    degreePlan.semesters.map((semester: Semester) =>
+        semester.courses.map((course: Course) =>
+            allIncludedCourses.push(course.code)
+        )
+    );
     return (
         <div>
             <Form.Group controlId="currentChoice">
@@ -258,8 +265,15 @@ export function ListAllCourses({
                     {adjustedCourses.map(
                         (course: Course): JSX.Element => (
                             <div key={course.code.toString()}>
-                                <div>
-                                    <div style={{ textAlign: "left" }}>
+                                <div
+                                    style={{ borderBottom: ".5px solid gray" }}
+                                >
+                                    <div
+                                        style={{
+                                            textAlign: "left",
+                                            marginTop: "5px"
+                                        }}
+                                    >
                                         <Button
                                             style={{
                                                 marginRight: "10px",
@@ -296,6 +310,20 @@ export function ListAllCourses({
                                             }}
                                         >
                                             {"Typically offered: " + course.typ}
+                                        </span>
+                                        <span
+                                            style={{
+                                                color: "red",
+                                                textAlign: "right"
+                                            }}
+                                        >
+                                            {allIncludedCourses.includes(
+                                                course.code
+                                            )
+                                                ? "WARNING: " +
+                                                  course.code +
+                                                  " currently exists within this degree plan"
+                                                : ""}
                                         </span>
                                     </div>
                                 </div>
@@ -390,6 +418,13 @@ export function ListSingleCourse({
     function updateChoice(event: React.ChangeEvent<HTMLSelectElement>) {
         setChoice(event.target.value);
     }
+
+    const allIncludedCourses: string[] = [];
+    degreePlan.semesters.map((semester: Semester) =>
+        semester.courses.map((course: Course) =>
+            allIncludedCourses.push(course.code)
+        )
+    );
     return (
         <div>
             {courseFound ? (
@@ -423,6 +458,18 @@ export function ListSingleCourse({
                     >
                         Add {adjustedCourse.code}
                     </Button>
+                    <div
+                        style={{
+                            color: "red",
+                            textAlign: "center"
+                        }}
+                    >
+                        {allIncludedCourses.includes(adjustedCourse.code)
+                            ? "WARNING: " +
+                              adjustedCourse.code +
+                              " currently exists within this degree plan"
+                            : ""}
+                    </div>
                     <h5 style={{ textAlign: "left" }}>
                         {adjustedCourse.code + ": " + adjustedCourse.name}
                     </h5>

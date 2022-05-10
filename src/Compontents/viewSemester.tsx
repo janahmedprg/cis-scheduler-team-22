@@ -132,6 +132,7 @@ export function ViewSemester({
                             "-" +
                             "course"
                         }
+                        style={{ borderBottom: ".5px solid gray" }}
                     >
                         <ViewCourse
                             course={course}

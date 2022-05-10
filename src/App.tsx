@@ -47,8 +47,21 @@ export function App(): JSX.Element {
             >
                 <h3>Hello, welcome to your UD CIS course scheduler!</h3>
             </header>
-            <h1 style={{ backgroundColor: "gold" }}> Course Scheduler</h1>
-            <h2>Degree Plans List</h2>
+            <h1 style={{ backgroundColor: "gold", fontSize: "300%" }}>
+                {" "}
+                Course Scheduler
+            </h1>
+            <h2
+                style={{
+                    fontSize: "180%",
+                    marginLeft: "3%",
+                    marginRight: "3%",
+                    textAlign: "center",
+                    borderBottom: ".5px solid black"
+                }}
+            >
+                Degree Plans List
+            </h2>
             <ViewDegreePlansList
                 degreePlansList={degreePlans}
                 setDegreePlans={setDegreePlans}
@@ -62,8 +75,8 @@ export function App(): JSX.Element {
                 style={{
                     backgroundColor: "#0C3590",
                     fontWeight: "5px solid blue",
-                    marginLeft: "400px",
-                    marginRight: "400px",
+                    marginLeft: "30%",
+                    marginRight: "30%",
                     color: "white",
                     marginBottom: "20px",
                     marginTop: "20px"

@@ -23,12 +23,14 @@ type ChangeEvent = React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>;
 export function ViewDegreePlansList({
     degreePlansList,
     setDegreePlans,
+    selectedPlanId,
     setSelectedPlanId,
     nextId,
     setNextId
 }: {
     degreePlansList: DegreePlan[];
     setDegreePlans: (plans: DegreePlan[]) => void;
+    selectedPlanId: number;
     setSelectedPlanId: (id: number) => void;
     nextId: number;
     setNextId: (id: number) => void;
@@ -51,7 +53,7 @@ export function ViewDegreePlansList({
         <div>
             <div>
                 <Form.Check
-                    style={{ marginLeft: "40px", marginRight: "1120px" }}
+                    style={{ marginLeft: "3%", marginRight: "80%" }}
                     type="switch"
                     id="can-edit-degreePlansList"
                     role="can-edit-degreePlansList"
@@ -85,7 +87,7 @@ export function ViewDegreePlansList({
                                     <span
                                         style={{
                                             fontWeight: "550",
-                                            fontSize: "200%"
+                                            fontSize: "160%"
                                         }}
                                     >
                                         {degreePlanOption.name +
@@ -105,7 +107,21 @@ export function ViewDegreePlansList({
                                             countCreditsArray(
                                                 degreePlanOption.semesters
                                             ) +
-                                            " credits"}
+                                            " credits "}
+                                        <text
+                                            style={{
+                                                fontSize: "50%",
+                                                fontWeight: "20%",
+                                                marginLeft: "1%"
+                                            }}
+                                        >
+                                            {"Degree type: " +
+                                                degreePlanOption.degree.name}
+                                        </text>
+                                        <br />
+                                        {selectedPlanId ===
+                                            degreePlanOption.id &&
+                                            "(currently viewing below)"}
                                     </span>
                                 }
                                 <div>

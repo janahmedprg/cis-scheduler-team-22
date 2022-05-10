@@ -1,24 +1,44 @@
 {
     "CISC Core": [
-        "CISC 108",
-        "CISC 181",
-        "CISC 210",
-        "CISC 220",
-        "CISC 260",
-        "CISC 275",
-        "CISC 303",
-        "CISC 320",
-        "MATH 210",
-        "MATH 241"
+        "CISC106",
+        "CISC108",
+        "CISC181",
+        "CISC210",
+        "CISC220",
+        "CISC260",
+        "CISC275",
+        "CISC303",
+        "CISC320",
+        "CISC361",
+        "CISC372"
     ],
-    "Lab Requirements": [
-        "BISC 207",
-        "BISC 208",
-        "CHEM 103",
-        "CHEM 104",
-        "GEOL 105",
-        "GEOL 107",
-        "PHYS 207",
-        "PHYS 208"
-    ]
+    "Lab Science": [
+        "BISC207",
+        "BISC208",
+        "CHEM103",
+        "CHEM104",
+        "CHEM133",
+        "CHEM134",
+        "GEOL105",
+        "GEOL107",
+        "GEOL110",
+        "GEOL115",
+        "PHYS207",
+        "PHYS208",
+        "PHYS227",
+        "PHYS228"
+    ],
+    "Foreign Language": [
+        "ARAB107",
+        "CHIN107",
+        "FREN107",
+        "GREK202",
+        "GRMN107",
+        "ITAL107",
+        "JAPN107",
+        "RUSS107",
+        "SPAN107",
+        "LATN202"
+    ],
+    "CISC Capstone": ["UNIV401", "UNIV402", "CISC498", "CISC499"]
 }

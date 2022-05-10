@@ -48,18 +48,18 @@ describe("ViewDegreePlan Tests", () => {
         expect(screen.queryAllByText("Course Adder")).toHaveLength(0);
         expect(
             screen.queryAllByText("Enter course Code: (Ex: CISC)")
-        ).toHaveLength(1);
+        ).toHaveLength(0);
         expect(
             screen.queryAllByText("Enter course Number: (Ex: 108)")
-        ).toHaveLength(1);
+        ).toHaveLength(0);
         screen.getByTestId("107-add-course-degree-plan").click();
         expect(screen.getAllByText("Course Adder")).toHaveLength(1);
         expect(
             screen.getAllByText("Enter course Code: (Ex: CISC)")
-        ).toHaveLength(2);
+        ).toHaveLength(1);
         expect(
             screen.getAllByText("Enter course Number: (Ex: 108)")
-        ).toHaveLength(2);
+        ).toHaveLength(1);
         expect(
             screen.getByTestId("107-close-add-course-degree-plan")
         ).toBeInTheDocument();
@@ -67,10 +67,10 @@ describe("ViewDegreePlan Tests", () => {
         expect(screen.queryAllByText("Course Adder")).toHaveLength(0);
         expect(
             screen.queryAllByText("Enter course Code: (Ex: CISC)")
-        ).toHaveLength(1);
+        ).toHaveLength(0);
         expect(
             screen.queryAllByText("Enter course Number: (Ex: 108)")
-        ).toHaveLength(1);
+        ).toHaveLength(0);
     });
     test("Test Add New Semester button", () => {
         expect(screen.queryAllByText("winter 0 semester")).toHaveLength(0);

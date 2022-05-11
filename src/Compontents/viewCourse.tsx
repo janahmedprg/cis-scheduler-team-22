@@ -175,9 +175,14 @@ export function ViewCourse({
                             Prerequisites:{" "}
                             <ul>
                                 {course.prereqs.map(
-                                    (prereq: string): JSX.Element => (
-                                        <li key={prereq + "-prerequisite"}>
-                                            {prereq}
+                                    (prereq: string[]): JSX.Element => (
+                                        <li
+                                            key={
+                                                prereq.join(" or ") +
+                                                "-prerequisite"
+                                            }
+                                        >
+                                            {prereq.join(" or ")}
                                         </li>
                                     )
                                 )}

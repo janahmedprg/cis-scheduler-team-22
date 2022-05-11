@@ -80,8 +80,10 @@ export function ViewC({
                     Prerequisites:{" "}
                     <ul>
                         {course.prereqs.map(
-                            (prereq: string): JSX.Element => (
-                                <li key={prereq + "-prerequisite"}>{prereq}</li>
+                            (prereq: string[]): JSX.Element => (
+                                <li key={prereq.join(" or ") + "-prerequisite"}>
+                                    {prereq.join(" or ")}
+                                </li>
                             )
                         )}
                     </ul>

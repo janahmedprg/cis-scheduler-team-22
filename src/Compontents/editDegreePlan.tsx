@@ -44,7 +44,7 @@ export function EditDegreePlan({
         updateDegreePlan(degreePlan.id, event.target.value, degreePlan.degree);
     }
     function updateDegreePlanDegree(event: ChangeEvent) {
-        const newDegree = OFFICIAL_DEGREES.find(
+        const newDegree = Object.values(OFFICIAL_DEGREES).find(
             (degree: Degree): boolean => degree.name === event.target.value
         );
         if (newDegree !== undefined) {
@@ -83,7 +83,7 @@ export function EditDegreePlan({
                     value={degreePlan.degree.name}
                     onChange={updateDegreePlanDegree}
                 >
-                    {OFFICIAL_DEGREES.map(
+                    {Object.values(OFFICIAL_DEGREES).map(
                         (option: Degree): JSX.Element => (
                             <option value={option.name} key={option.name}>
                                 {option.name}

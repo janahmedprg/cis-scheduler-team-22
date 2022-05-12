@@ -101,28 +101,34 @@ export function App(): JSX.Element {
                 setNextId={setNextId}
             />
             <hr />
-            <h2
-                style={{
-                    backgroundColor: "#0C3590",
-                    fontWeight: "5px solid blue",
-                    marginLeft: "30%",
-                    marginRight: "30%",
-                    color: "white",
-                    marginBottom: "20px",
-                    marginTop: "20px"
-                }}
-            >
-                See Selected Degree Plan Below
-            </h2>
-            <ViewDegreePlan
-                degreePlan={findDegreePlan(selectedPlanId)}
-                degreePlans={degreePlans}
-                setDegreePlans={setDegreePlans}
-                nextId={nextId}
-                setNextId={setNextId}
-                coursePool={coursePool}
-                setCoursePool={setCoursePool}
-            />
+            {degreePlans.length > 0 ? (
+                <div>
+                    <h2
+                        style={{
+                            backgroundColor: "#0C3590",
+                            fontWeight: "5px solid blue",
+                            marginLeft: "30%",
+                            marginRight: "30%",
+                            color: "white",
+                            marginBottom: "20px",
+                            marginTop: "20px"
+                        }}
+                    >
+                        See Selected Degree Plan Below
+                    </h2>
+                    <ViewDegreePlan
+                        degreePlan={findDegreePlan(selectedPlanId)}
+                        degreePlans={degreePlans}
+                        setDegreePlans={setDegreePlans}
+                        nextId={nextId}
+                        setNextId={setNextId}
+                        coursePool={coursePool}
+                        setCoursePool={setCoursePool}
+                    />
+                </div>
+            ) : (
+                <div></div>
+            )}
             <hr />
             <div>Connor Nagle</div>
             <div>Brandon Aguiar</div>

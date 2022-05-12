@@ -10,6 +10,7 @@ import {
 import { DegreePlan } from "../interfaces/DegreePlan";
 import { Semester } from "../interfaces/Semester";
 import ALL_COURSE_CODES from "../allCourseCodes.json";
+import { toString } from "../interfaces/Requirements";
 
 type ChangeEvent = React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>;
 
@@ -495,7 +496,7 @@ export function ListSingleCourse({
                     </div>
                     <div style={{ textAlign: "left" }}>
                         {"Requirements Fulfilled: " +
-                            adjustedCourse.requirementsFulfilled}
+                            toString(adjustedCourse.requirementsFulfilled)}
                     </div>
                     <div style={{ textAlign: "left" }}>
                         {"Typically offered: " + adjustedCourse.typ}

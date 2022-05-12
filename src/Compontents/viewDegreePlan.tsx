@@ -110,11 +110,13 @@ export function ViewDegreePlan({
                     onClick={() => setEditing(!editing)}
                     style={{
                         marginRight: "20px",
-                        marginBottom: "10px"
+                        marginBottom: "10px",
+                        backgroundColor: "#BAC9EB",
+                        color: "black"
                     }}
                     data-testid={degreePlan.id + "-edit-close-degree-plan"}
                 >
-                    {editing ? "Close" : "Edit this Degree Plan"}
+                    {editing ? "Close" : "✏️ Edit Degree Name"}
                 </Button>
             }
             {degreePlan.semesters.length === 0 && (
@@ -156,63 +158,69 @@ export function ViewDegreePlan({
                     )
                 )}
             </Row>
-            {addingCourse === false ? (
-                <div>
-                    <Button
-                        onClick={() => setAddingCourse(!addingCourse)}
-                        data-testid={degreePlan.id + "-add-course-degree-plan"}
-                    >
-                        Add Courses To Plan
-                    </Button>
-                </div>
-            ) : (
-                <div>
-                    <Button
-                        onClick={() => setAddingCourse(!addingCourse)}
-                        data-testid={
-                            degreePlan.id + "-close-add-course-degree-plan"
-                        }
-                    >
-                        Close Course Search
-                    </Button>
-                </div>
-            )}
-            {addingCourse && (
-                <SearchCoursesSemesterView
+            <div style={{ marginTop: "20px" }}>
+                {addingCourse === false ? (
+                    <div>
+                        <Button
+                            onClick={() => setAddingCourse(!addingCourse)}
+                            style={{ backgroundColor: "#373DBE" }}
+                            data-testid={
+                                degreePlan.id + "-add-course-degree-plan"
+                            }
+                        >
+                            ✅ Add Courses To Plan
+                        </Button>
+                    </div>
+                ) : (
+                    <div>
+                        <Button
+                            onClick={() => setAddingCourse(!addingCourse)}
+                            data-testid={
+                                degreePlan.id + "-close-add-course-degree-plan"
+                            }
+                        >
+                            Close Course Search
+                        </Button>
+                    </div>
+                )}
+                {addingCourse && (
+                    <SearchCoursesSemesterView
+                        degreePlan={degreePlan}
+                        degreePlans={degreePlans}
+                        setDegreePlans={setDegreePlans}
+                        nextId={nextId}
+                        setNextId={setNextId}
+                    />
+                )}
+                <Button
+                    onClick={() => addNewSemester()}
+                    style={{ backgroundColor: "#FFF9FF", color: "black" }}
+                    data-testid={degreePlan.id + "-add-semester-degree-plan"}
+                >
+                    ➕ Add New Semester
+                </Button>
+                <Button
+                    style={{ backgroundColor: "#FFF9FF", color: "black" }}
+                    onClick={() => clearPlan()}
+                    data-testid={degreePlan.id + "-clear-semesters-degree-plan"}
+                >
+                    ❌ Clear All Semesters
+                </Button>
+                <Button
+                    style={{ backgroundColor: "#FFF9FF", color: "black" }}
+                    onClick={() => removePlan()}
+                    data-testid={degreePlan.id + "-remove-semester-degree-plan"}
+                >
+                    🗑 Remove All Semesters
+                </Button>
+                <ViewCoursePool
                     degreePlan={degreePlan}
                     degreePlans={degreePlans}
                     setDegreePlans={setDegreePlans}
-                    nextId={nextId}
-                    setNextId={setNextId}
-                />
-            )}
-            <Button
-                onClick={() => addNewSemester()}
-                data-testid={degreePlan.id + "-add-semester-degree-plan"}
-            >
-                Add New Semester
-            </Button>
-            <Button
-                style={{ backgroundColor: "red" }}
-                onClick={() => clearPlan()}
-                data-testid={degreePlan.id + "-clear-semesters-degree-plan"}
-            >
-                Clear All Semesters
-            </Button>
-            <Button
-                style={{ backgroundColor: "red" }}
-                onClick={() => removePlan()}
-                data-testid={degreePlan.id + "-remove-semester-degree-plan"}
-            >
-                Remove All Semesters
-            </Button>
-            <ViewCoursePool
-                degreePlan={degreePlan}
-                degreePlans={degreePlans}
-                setDegreePlans={setDegreePlans}
-                coursePool={coursePool}
-                setCoursePool={setCoursePool}
-            ></ViewCoursePool>
+                    coursePool={coursePool}
+                    setCoursePool={setCoursePool}
+                ></ViewCoursePool>
+            </div>
         </div>
     );
 }

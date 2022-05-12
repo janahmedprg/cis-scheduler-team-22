@@ -5,7 +5,6 @@ import UDHeader from "./UDHeader.jpg";
 import { DegreePlan, TEST_PLANS, EMPTY_PLAN } from "./interfaces/DegreePlan";
 import { ViewDegreePlansList } from "./Compontents/viewDegreePlansList";
 import { ViewDegreePlan } from "./Compontents/viewDegreePlan";
-import { SearchCourses } from "./Compontents/searchCourse";
 import { Course } from "./interfaces/Course";
 import { Button } from "react-bootstrap";
 
@@ -17,9 +16,28 @@ import { Button } from "react-bootstrap";
  */
 
 export function App(): JSX.Element {
-    const [degreePlans, setDegreePlans] = useState<DegreePlan[]>(TEST_PLANS);
-    const [selectedPlanId, setSelectedPlanId] = useState<number>(107);
-    const [nextId, setNextId] = useState<number>(1000);
+    const loadedDegreePlans = TEST_PLANS;
+    const loadedSelectPlanId = 107;
+    const loadedNextId = 1000;
+
+    // const saveDegreePlansKey = "DEGREE-PLANS";
+    // const saveSelectPlanId = "SELECT-PLAN";
+    // const saveNextId = "NEXT-ID";
+
+    // const previousDegreePlans = localStorage.getItem(saveDegreePlansKey);
+    // const previousSelectPlanId = localStorage.getItem(saveSelectPlanId);
+    // const previousNextId = localStorage.getItem(saveNextId);
+
+    // if (previousDegreePlans !== null) {
+    //     loadedDegreePlans = JSON.parse(previousDegreePlans);
+    //     loadedSelectPlanId = JSON.parse(previousSelectPlanId);
+    //     loadedNextId = JSON.parse(previousNextId);
+    // }
+    const [degreePlans, setDegreePlans] =
+        useState<DegreePlan[]>(loadedDegreePlans);
+    const [selectedPlanId, setSelectedPlanId] =
+        useState<number>(loadedSelectPlanId);
+    const [nextId, setNextId] = useState<number>(loadedNextId);
     const [coursePool, setCoursePool] = useState<Course[]>([]);
     const [showSketch, setShowSketch] = useState<boolean>(false);
     function findDegreePlan(id: number): DegreePlan {
@@ -30,6 +48,9 @@ export function App(): JSX.Element {
             return EMPTY_PLAN;
         }
         return foundPlan;
+    }
+    function saveData() {
+        // localStorage.setItem(saveDataKey, JSON.stringify(data));
     }
     return (
         <div
@@ -48,12 +69,25 @@ export function App(): JSX.Element {
             >
                 <h3>Hello, welcome to your UD CIS course scheduler!</h3>
             </header>
-            <h1 style={{ backgroundColor: "gold" }}> Course Scheduler</h1>
-            <SearchCourses></SearchCourses>
-            <h2>Degree Plans List</h2>
+            <h1 style={{ backgroundColor: "gold", fontSize: "300%" }}>
+                {" "}
+                Course Scheduler
+            </h1>
+            <h2
+                style={{
+                    fontSize: "180%",
+                    marginLeft: "3%",
+                    marginRight: "3%",
+                    textAlign: "center",
+                    borderBottom: ".5px solid black"
+                }}
+            >
+                Degree Plans List
+            </h2>
             <ViewDegreePlansList
                 degreePlansList={degreePlans}
                 setDegreePlans={setDegreePlans}
+                selectedPlanId={selectedPlanId}
                 setSelectedPlanId={setSelectedPlanId}
                 nextId={nextId}
                 setNextId={setNextId}
@@ -62,11 +96,12 @@ export function App(): JSX.Element {
             <h2
                 style={{
                     backgroundColor: "#0C3590",
-                    height: "50px",
                     fontWeight: "5px solid blue",
-                    marginLeft: "400px",
-                    marginRight: "400px",
-                    color: "white"
+                    marginLeft: "30%",
+                    marginRight: "30%",
+                    color: "white",
+                    marginBottom: "20px",
+                    marginTop: "20px"
                 }}
             >
                 See Selected Degree Plan Below
@@ -90,6 +125,7 @@ export function App(): JSX.Element {
             <br />
             {showSketch && <img src={sketch} alt="Sketch" />}
             <br />
+            <Button onClick={saveData}>Save Data</Button>
         </div>
     );
 }

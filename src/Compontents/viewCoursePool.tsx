@@ -80,8 +80,10 @@ export function ViewC({
                     Prerequisites:{" "}
                     <ul>
                         {course.prereqs.map(
-                            (prereq: string): JSX.Element => (
-                                <li key={prereq + "-prerequisite"}>{prereq}</li>
+                            (prereq: string[]): JSX.Element => (
+                                <li key={prereq.join(" or ") + "-prerequisite"}>
+                                    {prereq.join(" or ")}
+                                </li>
                             )
                         )}
                     </ul>
@@ -154,9 +156,10 @@ export function ViewCoursePool({
             )}
             <Button
                 onClick={() => removeCoursePool()}
+                style={{ backgroundColor: "#BAC9EB", color: "black" }}
                 data-testid={degreePlan.id + "-clear-pool"}
             >
-                Clear Pool
+                ❌ Clear Course Pool
             </Button>
         </div>
     );

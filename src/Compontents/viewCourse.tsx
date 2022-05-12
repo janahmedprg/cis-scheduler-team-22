@@ -151,7 +151,7 @@ export function ViewCourse({
                 data-testid={"is-viewing-check" + course.id}
                 type="switch"
                 id={"is-viewing-check" + course.id}
-                label="View Course Information"
+                label="View or Edit Course Information"
                 checked={viewing}
                 onChange={updateViewing}
             />
@@ -175,9 +175,14 @@ export function ViewCourse({
                             Prerequisites:{" "}
                             <ul>
                                 {course.prereqs.map(
-                                    (prereq: string): JSX.Element => (
-                                        <li key={prereq + "-prerequisite"}>
-                                            {prereq}
+                                    (prereq: string[]): JSX.Element => (
+                                        <li
+                                            key={
+                                                prereq.join(" or ") +
+                                                "-prerequisite"
+                                            }
+                                        >
+                                            {prereq.join(" or ")}
                                         </li>
                                     )
                                 )}

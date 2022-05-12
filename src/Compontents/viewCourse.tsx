@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
-import { Course, convertCourse } from "../interfaces/Course";
-import { DegreePlan } from "../interfaces/DegreePlan";
-import { Semester } from "../interfaces/Semester";
+import { Course, convertCourse, prereqData } from "../interfaces/Course";
+import { DegreePlan, getUnfilledRequirements } from "../interfaces/DegreePlan";
+import { EMPTY_REQUIREMENTS } from "../interfaces/Requirements";
+import { Semester, sessionTime } from "../interfaces/Semester";
 import { EditCourse } from "./editCourse";
 import { catalog } from "./readJSON";
 
@@ -163,6 +164,31 @@ export function ViewCourse({
                             {semester.session}
                         </div>
                     )}
+                </div>
+            )}
+            {getUnfilledRequirements({
+                ...degreePlan,
+                degree: {
+                    id: 0,
+                    name: "",
+                    requirements: EMPTY_REQUIREMENTS,
+                    requiredCourses: Object.keys(prereqData).includes(
+                        course.code
+                    )
+                        ? prereqData[course.code]
+                        : [],
+                    requiredCredits: 0
+                },
+                semesters: degreePlan.semesters.filter(
+                    (planSemester: Semester): boolean =>
+                        planSemester.year < semester.year ||
+                        (planSemester.year === semester.year &&
+                            sessionTime[planSemester.session] <
+                                sessionTime[semester.session])
+                )
+            }).length > 0 && (
+                <div style={{ color: "red" }}>
+                    WARNING: course prerequisites not met
                 </div>
             )}
             {viewing && (

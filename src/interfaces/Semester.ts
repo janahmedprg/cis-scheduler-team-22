@@ -23,6 +23,13 @@ export interface Semester {
     year: number;
 }
 
+export const EMPTY_SEMESTER: Semester = {
+    id: 0,
+    courses: [],
+    session: "winter",
+    year: 0
+};
+
 export function countCredits(semester: Semester): number {
     return semester.courses.reduce(
         (currentSum: number, course: Course): number =>

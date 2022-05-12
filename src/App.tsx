@@ -77,10 +77,14 @@ export function App(): JSX.Element {
                 <h3>Hello, welcome to your UD CIS course scheduler!</h3>
             </header>
             <h1 style={{ backgroundColor: "gold", fontSize: "300%" }}>
-                {" "}
                 Course Scheduler
             </h1>
-            <CSVImport></CSVImport>
+            <CSVImport
+                plans={degreePlans}
+                setPlans={setDegreePlans}
+                nextId={nextId}
+                setNextId={setNextId}
+            ></CSVImport>
             <h2
                 style={{
                     fontSize: "180%",

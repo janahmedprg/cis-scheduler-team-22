@@ -148,6 +148,7 @@ export function ViewCourse({
         >
             <b>{course.code}: </b>
             {course.name} <br />
+            id: {course.id}
             <Form.Check
                 data-testid={"is-viewing-check" + course.id}
                 type="switch"

@@ -7,6 +7,7 @@ import { ViewDegreePlansList } from "./Compontents/viewDegreePlansList";
 import { ViewDegreePlan } from "./Compontents/viewDegreePlan";
 import { Course } from "./interfaces/Course";
 import { Button } from "react-bootstrap";
+import { CSVImport } from "./Compontents/ImportCSV";
 
 /**
  * Importing Course Catalog
@@ -79,6 +80,7 @@ export function App(): JSX.Element {
                 {" "}
                 Course Scheduler
             </h1>
+            <CSVImport></CSVImport>
             <h2
                 style={{
                     fontSize: "180%",

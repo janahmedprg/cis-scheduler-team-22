@@ -16,23 +16,27 @@ import { Button } from "react-bootstrap";
  */
 
 export function App(): JSX.Element {
-    const loadedDegreePlans = TEST_PLANS;
-    const loadedSelectPlanId = 107;
-    const loadedNextId = 1000;
+    let loadedDegreePlans = TEST_PLANS;
+    let loadedSelectPlanId = 107;
+    let loadedNextId = 1000;
 
-    // const saveDegreePlansKey = "DEGREE-PLANS";
-    // const saveSelectPlanId = "SELECT-PLAN";
-    // const saveNextId = "NEXT-ID";
+    const saveDegreePlansKey = "DEGREE-PLANS";
+    const saveSelectPlanId = "SELECT-PLAN";
+    const saveNextId = "NEXT-ID";
 
-    // const previousDegreePlans = localStorage.getItem(saveDegreePlansKey);
-    // const previousSelectPlanId = localStorage.getItem(saveSelectPlanId);
-    // const previousNextId = localStorage.getItem(saveNextId);
+    const previousDegreePlans = localStorage.getItem(saveDegreePlansKey);
+    const previousSelectPlanId = localStorage.getItem(saveSelectPlanId);
+    const previousNextId = localStorage.getItem(saveNextId);
 
-    // if (previousDegreePlans !== null) {
-    //     loadedDegreePlans = JSON.parse(previousDegreePlans);
-    //     loadedSelectPlanId = JSON.parse(previousSelectPlanId);
-    //     loadedNextId = JSON.parse(previousNextId);
-    // }
+    if (previousDegreePlans !== null) {
+        loadedDegreePlans = JSON.parse(previousDegreePlans);
+    }
+    if (previousSelectPlanId !== null) {
+        loadedSelectPlanId = parseInt(previousSelectPlanId);
+    }
+    if (previousNextId !== null) {
+        loadedNextId = parseInt(previousNextId);
+    }
     const [degreePlans, setDegreePlans] =
         useState<DegreePlan[]>(loadedDegreePlans);
     const [selectedPlanId, setSelectedPlanId] =
@@ -50,7 +54,9 @@ export function App(): JSX.Element {
         return foundPlan;
     }
     function saveData() {
-        // localStorage.setItem(saveDataKey, JSON.stringify(data));
+        localStorage.setItem(saveDegreePlansKey, JSON.stringify(degreePlans));
+        localStorage.setItem(saveSelectPlanId, JSON.stringify(selectedPlanId));
+        localStorage.setItem(saveNextId, JSON.stringify(nextId));
     }
     return (
         <div

@@ -29,9 +29,10 @@ function ImportContentButton({
     setNextId
 }: ImportContentButtonProps): JSX.Element {
     function CSVToPlan() {
+        let tempID = nextId;
         const rows: string[] = content.split("\n");
-        let newPlan = { ...EMPTY_PLAN, id: nextId };
-        setNextId(nextId + 1);
+        let newPlan = { ...EMPTY_PLAN, id: tempID };
+        tempID++;
         rows.reduce((previousValue: number, row: string): number => {
             if (previousValue === 0) {
                 return previousValue + 1;
@@ -42,14 +43,17 @@ function ImportContentButton({
             }
             if (previousValue === 1) {
                 let newDegree = Object.values(OFFICIAL_DEGREES).find(
-                    (degree: Degree): boolean => degree.name === tokens[16]
+                    (degree: Degree): boolean =>
+                        degree.name === tokens[16].replace(/"/, "")
                 );
                 if (newDegree === undefined) {
                     newDegree = EMPTY_DEGREE;
                 }
+                newDegree = { ...newDegree, id: tempID };
+                tempID++;
                 newPlan = {
                     ...newPlan,
-                    name: tokens[15].replace(/"/, ""),
+                    name: tokens[15],
                     degree: newDegree
                 };
             }
@@ -62,11 +66,11 @@ function ImportContentButton({
             if (foundSemester === undefined) {
                 newSemester = {
                     ...EMPTY_SEMESTER,
-                    id: nextId,
+                    id: tempID,
                     session: tokens[13] as SemesterSession,
                     year: parseInt(tokens[14]) || 0
                 };
-                setNextId(nextId + 1);
+                tempID++;
                 newPlan = {
                     ...newPlan,
                     semesters: [...newPlan.semesters, newSemester]
@@ -77,7 +81,7 @@ function ImportContentButton({
             let newCourse = convertCourse(catalog[department][code]);
             newCourse = {
                 ...newCourse,
-                id: nextId,
+                id: tempID,
                 name: tokens[1],
                 descr: tokens[2],
                 credits: parseInt(tokens[3]) || 0,
@@ -93,7 +97,7 @@ function ImportContentButton({
                     CSCapstone: parseInt(tokens[12]) || 0
                 }
             };
-            setNextId(nextId + 1);
+            tempID++;
             newPlan = {
                 ...newPlan,
                 semesters: newPlan.semesters.map(
@@ -115,6 +119,7 @@ function ImportContentButton({
             return previousValue + 1;
         }, 0);
         setPlans([...plans, newPlan]);
+        setNextId(tempID);
     }
     return (
         <div>

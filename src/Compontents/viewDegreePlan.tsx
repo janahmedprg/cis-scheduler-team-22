@@ -98,6 +98,7 @@ export function ViewDegreePlan({
             }}
         >
             <h3>{degreePlan.name}</h3>
+            id: {degreePlan.id}
             {editing && (
                 <EditDegreePlan
                     degreePlan={degreePlan}

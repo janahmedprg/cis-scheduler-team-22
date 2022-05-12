@@ -89,6 +89,7 @@ export function ViewC({
                     </ul>
                 </div>
             )}
+            <br />
             <Form.Label>Add to Semester:</Form.Label>
             <Form.Select
                 value={chooseSemesterID}

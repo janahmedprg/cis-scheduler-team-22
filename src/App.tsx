@@ -45,6 +45,7 @@ export function App(): JSX.Element {
             (plan: DegreePlan): boolean => plan.id === id
         );
         if (foundPlan === undefined && degreePlans.length > 0) {
+            setSelectedPlanId(degreePlans[0].id);
             return degreePlans[0];
         }
         if (foundPlan === undefined) {

@@ -148,14 +148,22 @@ export function ViewCourse({
         >
             <b>{course.code}: </b>
             {course.name} <br />
-            <Form.Check
-                data-testid={"is-viewing-check" + course.id}
-                type="switch"
-                id={"is-viewing-check" + course.id}
-                label="View or Edit Course Information"
-                checked={viewing}
-                onChange={updateViewing}
-            />
+            <div style={{ marginBottom: "5px", marginTop: "3px" }}>
+                <Form.Check
+                    style={{
+                        display: "inline",
+                        marginRight: "10px"
+                    }}
+                    data-testid={"is-viewing-check" + course.id}
+                    type="switch"
+                    id={"is-viewing-check" + course.id}
+                    checked={viewing}
+                    onChange={updateViewing}
+                />
+                <text style={{ display: "inline" }}>
+                    View or Edit Course Information
+                </text>
+            </div>
             {!course.typ.includes(semester.session) && (
                 <div>
                     {course.typ.length > 0 && (

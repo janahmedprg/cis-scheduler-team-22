@@ -51,6 +51,9 @@ export function App(): JSX.Element {
         const foundPlan = degreePlans.find(
             (plan: DegreePlan): boolean => plan.id === id
         );
+        if (foundPlan === undefined && degreePlans.length > 0) {
+            return degreePlans[0];
+        }
         if (foundPlan === undefined) {
             return EMPTY_PLAN;
         }

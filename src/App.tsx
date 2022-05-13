@@ -45,6 +45,8 @@ export function App(): JSX.Element {
     const [nextId, setNextId] = useState<number>(loadedNextId);
     const [coursePool, setCoursePool] = useState<Course[]>([]);
     const [showSketch, setShowSketch] = useState<boolean>(false);
+    const [showImport, setShowImport] = useState<boolean>(false);
+
     function findDegreePlan(id: number): DegreePlan {
         const foundPlan = degreePlans.find(
             (plan: DegreePlan): boolean => plan.id === id
@@ -79,12 +81,6 @@ export function App(): JSX.Element {
             <h1 style={{ backgroundColor: "gold", fontSize: "300%" }}>
                 Course Scheduler
             </h1>
-            <CSVImport
-                plans={degreePlans}
-                setPlans={setDegreePlans}
-                nextId={nextId}
-                setNextId={setNextId}
-            ></CSVImport>
             <h2
                 style={{
                     fontSize: "180%",
@@ -95,6 +91,24 @@ export function App(): JSX.Element {
                 }}
             >
                 Degree Plans List
+                <Button
+                    onClick={() => setShowImport(!showImport)}
+                    style={{
+                        display: "inline",
+                        marginLeft: "20px",
+                        marginBottom: "5px"
+                    }}
+                >
+                    {showImport ? "Close Import" : "Import Plan as CSV"}
+                </Button>{" "}
+                {showImport && (
+                    <CSVImport
+                        plans={degreePlans}
+                        setPlans={setDegreePlans}
+                        nextId={nextId}
+                        setNextId={setNextId}
+                    ></CSVImport>
+                )}
             </h2>
             <ViewDegreePlansList
                 degreePlansList={degreePlans}

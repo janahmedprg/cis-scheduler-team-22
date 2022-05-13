@@ -9,13 +9,6 @@ import { Course } from "./interfaces/Course";
 import { Button } from "react-bootstrap";
 import { CSVImport } from "./Compontents/ImportCSV";
 
-/**
- * Importing Course Catalog
- * - use record nested within record
- * c:Record<string, Record<string, Course>> = "input";
- * c["Cisc"]["Cisc275"]
- */
-
 export function App(): JSX.Element {
     let loadedDegreePlans = TEST_PLANS;
     let loadedSelectPlanId = 107;

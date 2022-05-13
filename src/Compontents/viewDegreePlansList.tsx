@@ -290,6 +290,10 @@ export function ViewDegreePlansList({
                 <div style={{ textAlign: "left", fontSize: "small" }}>
                     *Degrees with <b>No Type</b> show no requirements
                 </div>
+                <div style={{ textAlign: "left", fontSize: "small" }}>
+                    *To save plans, scroll to page bottom and click{" "}
+                    <b>Save Data</b>
+                </div>
             </div>
         </div>
     );

@@ -113,10 +113,11 @@ describe("ViewDegreePlansList Tests", () => {
         screen.getByTestId("add-close-degree-plan").click();
         const degree = screen.getByTestId("new-degree-plan-degree");
         const degreeName = screen.getByTestId("new-degree-plan-name");
-        userEvent.type(degree, "{selectall}{del}Bachelor of Science");
-        userEvent.type(degreeName, "{selectall}{del}Biology");
+        degree.click();
+        screen.getByText("Computer Science BA").click();
+        userEvent.type(degreeName, "{selectall}{del}Computer Science 2");
         screen.getByTestId("add-to-degree-plan").click();
-        expect(screen.queryAllByText(/Biology/)).toHaveLength(1);
+        expect(screen.queryAllByText(/Computer Science 2/)).toHaveLength(1);
 
         screen.getByTestId("add-close-degree-plan").click();
         expect(screen.queryAllByText("New Degree Plan Degree:")).toHaveLength(

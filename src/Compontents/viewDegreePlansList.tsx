@@ -53,7 +53,7 @@ export function ViewDegreePlansList({
         <div>
             <div>
                 <Form.Check
-                    style={{ marginLeft: "3%", marginRight: "80%" }}
+                    style={{ marginLeft: "3%", marginRight: "75%" }}
                     type="switch"
                     id="can-edit-degreePlansList"
                     role="can-edit-degreePlansList"
@@ -287,6 +287,9 @@ export function ViewDegreePlansList({
                             : "Click To Add Degree Plan"}
                     </Button>
                 )}
+                <div style={{ textAlign: "left", fontSize: "small" }}>
+                    *Degrees with <b>No Type</b> show no requirements
+                </div>
             </div>
         </div>
     );

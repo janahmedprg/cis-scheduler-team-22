@@ -109,7 +109,6 @@ export function ViewSemester({
             <h4>
                 {semester.session} {semester.year} semester
             </h4>
-            id: {semester.id}
             {countCredits(semester) > maxCredits[semester.session] && (
                 <div style={{ color: "red" }}>
                     It is not recommended to take more than{" "}

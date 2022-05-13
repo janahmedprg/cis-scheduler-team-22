@@ -40,11 +40,12 @@ describe("ViewCourse tests", () => {
         expect(screen.getByTestId("109-session")).toBeInTheDocument();
         expect(screen.queryAllByText("fall 2022 semester")).toHaveLength(1);
         const semesterYear = screen.getByTestId("109-semester");
-        userEvent.type(semesterYear, "{selectall}{delete}new year");
+        userEvent.type(semesterYear, "{selectall}{delete}2024");
         const semesterSession = screen.getByTestId("109-session");
-        userEvent.type(semesterSession, "{selectall}{delete}new session");
+        semesterSession.click();
+        screen.getByText("Winter").click();
         screen.getByTestId("109-edit-editing-semester").click();
         expect(screen.queryAllByText("fall 2022 semester")).toHaveLength(0);
-        expect(screen.queryAllByText(/fall 2022 semester/i)).toHaveLength(0);
+        expect(screen.queryAllByText(/winter 2024 semester/i)).toHaveLength(0);
     });
 });

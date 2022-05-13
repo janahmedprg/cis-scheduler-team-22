@@ -3,7 +3,7 @@ import categories from "../courseCategories.json";
 import prereqs from "../prereqs.json";
 
 const categoryData = categories as Record<string, string[]>;
-const prereqData = prereqs as Record<string, string[][]>;
+export const prereqData = prereqs as Record<string, string[][]>;
 
 export interface ImportCourse {
     code: string;

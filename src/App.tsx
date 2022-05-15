@@ -144,17 +144,18 @@ export function App(): JSX.Element {
             ) : (
                 <div></div>
             )}
+            <Button style={{ marginTop: "10px" }} onClick={saveData}>
+                Save Data
+            </Button>
             <hr />
             <div>Connor Nagle</div>
             <div>Brandon Aguiar</div>
             <div>Jan Ahmed</div>
             <Button onClick={() => setShowSketch(!showSketch)}>
                 {showSketch ? "Hide" : "Show"} sketch
-            </Button>{" "}
+            </Button>
             <br />
             {showSketch && <img src={sketch} alt="Sketch" />}
-            <br />
-            <Button onClick={saveData}>Save Data</Button>
         </div>
     );
 }

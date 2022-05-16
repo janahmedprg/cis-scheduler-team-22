@@ -234,16 +234,17 @@ export function ViewCourse({
                     )}
                     <p></p>
                     <Button
-                        style={{ backgroundColor: "red" }}
+                        style={{ backgroundColor: "#EC3B15", color: "white" }}
                         onClick={() => removeCourse()}
                     >
-                        Remove course
+                        🗑 Remove
                     </Button>
                     <Button
+                        style={{ backgroundColor: "#BAC9EB" }}
                         data-testid={"edit-course-button" + course.id}
                         onClick={() => setEditing(!editing)}
                     >
-                        {editing ? "Close" : "Edit"}
+                        {editing ? "Close" : "✏️ Edit"}
                     </Button>
                     <Button
                         onClick={() => addToPool()}

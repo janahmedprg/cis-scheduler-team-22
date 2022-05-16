@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./App.css";
 import UDHeader from "./UDHeader.jpg";
 import { DegreePlan, TEST_PLANS, EMPTY_PLAN } from "./interfaces/DegreePlan";
@@ -8,7 +8,19 @@ import { Course } from "./interfaces/Course";
 import { Button } from "react-bootstrap";
 import { CSVImport } from "./Compontents/ImportCSV";
 
+export function useTitle(title: string) {
+    useEffect(() => {
+        const prevTitle = document.title;
+        document.title = title;
+        return () => {
+            document.title = prevTitle;
+        };
+    });
+}
+
 export function App(): JSX.Element {
+    useTitle("Course Scheduler");
+
     let loadedDegreePlans = TEST_PLANS;
     let loadedSelectPlanId = 107;
     let loadedNextId = 1000;

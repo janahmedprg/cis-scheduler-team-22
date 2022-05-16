@@ -24,7 +24,7 @@ describe("ViewCourse tests", () => {
                 /Functions, limits, continuity, derivatives./i
             )
         ).toHaveLength(0);
-        expect(screen.queryAllByText(/Remove course/i)).toHaveLength(0);
+        expect(screen.queryAllByText(/Reset course/i)).toHaveLength(0);
         expect(screen.queryAllByText(/Move to Pool/i)).toHaveLength(0);
     });
     test("clicking the switch makes the information and buttons appear", () => {
@@ -35,7 +35,7 @@ describe("ViewCourse tests", () => {
                 /Functions, limits, continuity, derivatives./i
             )
         ).toHaveLength(1);
-        expect(screen.queryAllByText(/Remove course/i)).toHaveLength(1);
+        expect(screen.queryAllByText(/Reset course/i)).toHaveLength(1);
         expect(screen.queryAllByText(/Move to Pool/i)).toHaveLength(1);
         courseSwitch.click();
         expect(
@@ -43,7 +43,7 @@ describe("ViewCourse tests", () => {
                 /Functions, limits, continuity, derivatives./i
             )
         ).toHaveLength(0);
-        expect(screen.queryAllByText(/Remove course/i)).toHaveLength(0);
+        expect(screen.queryAllByText(/Reset course/i)).toHaveLength(0);
         expect(screen.queryAllByText(/Move to Pool/i)).toHaveLength(0);
     });
 });

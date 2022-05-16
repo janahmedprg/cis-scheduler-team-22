@@ -158,7 +158,11 @@ export function ViewDegreePlan({
                 )}
             </Row>
             <div style={{ marginTop: "20px" }}>
-                {addingCourse === false ? (
+                <b>
+                    {degreePlan.semesters.length === 0 &&
+                        "Add a semester to this plan to begin adding courses"}
+                </b>
+                {degreePlan.semesters.length > 0 && addingCourse === false ? (
                     <div>
                         <Button
                             onClick={() => setAddingCourse(!addingCourse)}
@@ -172,14 +176,17 @@ export function ViewDegreePlan({
                     </div>
                 ) : (
                     <div>
-                        <Button
-                            onClick={() => setAddingCourse(!addingCourse)}
-                            data-testid={
-                                degreePlan.id + "-close-add-course-degree-plan"
-                            }
-                        >
-                            Close Course Search
-                        </Button>
+                        {degreePlan.semesters.length > 0 && (
+                            <Button
+                                onClick={() => setAddingCourse(!addingCourse)}
+                                data-testid={
+                                    degreePlan.id +
+                                    "-close-add-course-degree-plan"
+                                }
+                            >
+                                Close Course Search
+                            </Button>
+                        )}
                     </div>
                 )}
                 {addingCourse && (

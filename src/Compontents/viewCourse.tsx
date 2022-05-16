@@ -160,9 +160,9 @@ export function ViewCourse({
                     checked={viewing}
                     onChange={updateViewing}
                 />
-                <text style={{ display: "inline" }}>
+                <div style={{ display: "inline" }}>
                     View or Edit Course Information
-                </text>
+                </div>
             </div>
             {!course.typ.includes(semester.session) && (
                 <div>
@@ -206,7 +206,7 @@ export function ViewCourse({
                     Credits: {course.credits}
                     {course.prereqs.length > 0 && (
                         <div>
-                            Prerequisites:{" "}
+                            Prerequisites:
                             <ul>
                                 {course.prereqs.map(
                                     (prereq: string[]): JSX.Element => (
@@ -232,7 +232,6 @@ export function ViewCourse({
                             setDegreePlans={setDegreePlans}
                         />
                     )}
-                    <p></p>
                     <Button
                         style={{ backgroundColor: "#EC3B15", color: "white" }}
                         onClick={() => removeCourse()}

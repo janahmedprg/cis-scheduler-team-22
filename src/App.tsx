@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "./App.css";
-import sketch from "./sketch.jpg";
 import UDHeader from "./UDHeader.jpg";
 import { DegreePlan, TEST_PLANS, EMPTY_PLAN } from "./interfaces/DegreePlan";
 import { ViewDegreePlansList } from "./Compontents/viewDegreePlansList";
@@ -37,7 +36,6 @@ export function App(): JSX.Element {
         useState<number>(loadedSelectPlanId);
     const [nextId, setNextId] = useState<number>(loadedNextId);
     const [coursePool, setCoursePool] = useState<Course[]>([]);
-    const [showSketch, setShowSketch] = useState<boolean>(false);
     const [showImport, setShowImport] = useState<boolean>(false);
 
     function findDegreePlan(id: number): DegreePlan {
@@ -144,17 +142,13 @@ export function App(): JSX.Element {
             ) : (
                 <div></div>
             )}
+            <Button style={{ marginTop: "10px" }} onClick={saveData}>
+                Save Data
+            </Button>
             <hr />
             <div>Connor Nagle</div>
             <div>Brandon Aguiar</div>
             <div>Jan Ahmed</div>
-            <Button onClick={() => setShowSketch(!showSketch)}>
-                {showSketch ? "Hide" : "Show"} sketch
-            </Button>{" "}
-            <br />
-            {showSketch && <img src={sketch} alt="Sketch" />}
-            <br />
-            <Button onClick={saveData}>Save Data</Button>
         </div>
     );
 }

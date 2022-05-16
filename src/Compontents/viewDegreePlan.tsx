@@ -109,14 +109,13 @@ export function ViewDegreePlan({
                 <Button
                     onClick={() => setEditing(!editing)}
                     style={{
-                        marginRight: "20px",
                         marginBottom: "10px",
                         backgroundColor: "#BAC9EB",
                         color: "black"
                     }}
                     data-testid={degreePlan.id + "-edit-close-degree-plan"}
                 >
-                    {editing ? "Close" : "✏️ Edit Degree Name"}
+                    {editing ? "Close" : "✏️ Edit Plan Name or Degree"}
                 </Button>
             }
             {degreePlan.semesters.length === 0 && (

@@ -204,25 +204,27 @@ export function ViewCourse({
                     <b>Description: </b>
                     {course.descr} <br />
                     Credits: {course.credits}
-                    {course.prereqs.length > 0 && (
-                        <div>
-                            Prerequisites:
-                            <ul>
-                                {course.prereqs.map(
-                                    (prereq: string[]): JSX.Element => (
-                                        <li
-                                            key={
-                                                prereq.join(" or ") +
-                                                "-prerequisite"
-                                            }
-                                        >
-                                            {prereq.join(" or ")}
-                                        </li>
-                                    )
-                                )}
-                            </ul>
-                        </div>
-                    )}
+                    <div>
+                        {course.prereqs.length > 0 && (
+                            <div>
+                                Prerequisites:
+                                <ul>
+                                    {course.prereqs.map(
+                                        (prereq: string[]): JSX.Element => (
+                                            <li
+                                                key={
+                                                    prereq.join(" or ") +
+                                                    "-prerequisite"
+                                                }
+                                            >
+                                                {prereq.join(" or ")}
+                                            </li>
+                                        )
+                                    )}
+                                </ul>
+                            </div>
+                        )}
+                    </div>
                     {editing && (
                         <EditCourse
                             course={course}

@@ -45,9 +45,6 @@ export function ViewDegreePlansList({
         // Update the movies array to be the new version
         setDegreePlans(modifiedDegreePlansList);
     }
-    //add delete button
-    //add arrows to move up and down
-
     return (
         <div>
             <div>
@@ -165,22 +162,6 @@ export function ViewDegreePlansList({
                                             >
                                                 Download Plan as CSV
                                             </CSVLink>
-                                            {/** 
-                                    <Button
-                                        onClick={() => setViewReq(!viewReq)}
-                                        style={{
-                                            fontSize: "18px",
-                                            fontStyle: "900px",
-                                            marginBottom: "10px",
-                                            fontFamily: "Arial",
-                                            marginRight: "20px"
-                                        }}
-                                    >
-                                        {viewReq
-                                            ? "Close"
-                                            : "Attatch code for this to show/hide Reqs"}
-                                    </Button>
-                                    */}
                                             {editMode && (
                                                 <Button
                                                     style={{

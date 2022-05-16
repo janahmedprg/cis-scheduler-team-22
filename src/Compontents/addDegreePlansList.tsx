@@ -18,11 +18,8 @@ export function AddToDegreePlansList({
     nextId: number;
     setNextId: (id: number) => void;
 }): JSX.Element {
-    //const [degree, setDegree] = useState<Degree>();
     const [name, setName] = useState<string>("New Degree Plan");
     const [degree, setDegree] = useState<Degree>(EMPTY_DEGREE);
-    //const [semesters, setSemesters] = useState<Semester[]>([]);
-    //const [questionCount, setquestionCount] = useState<number>(0);
 
     function appendDegreePlanToList(
         degree: Degree,

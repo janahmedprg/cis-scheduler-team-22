@@ -25,6 +25,6 @@ describe("Import CSV Tests", () => {
         importButton.click();
         const uploadButton = screen.getByTestId("upload-button");
         uploadButton.click();
-        /*Test here the actual import of data from the CSV*/
+        /*Test here the actual import of data from the CSV when upload button is clicked and data added to degree plans list*/
     });
 });

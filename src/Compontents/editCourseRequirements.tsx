@@ -182,6 +182,7 @@ export function EditCourseRequirements({
         <div>
             Requirements: <br />
             <Form.Check
+                data-testid={"cah-check" + course.id}
                 style={{ marginLeft: "20px", marginRight: "20px" }}
                 type="checkbox"
                 id={"cah-check" + course.id}
@@ -190,6 +191,7 @@ export function EditCourseRequirements({
                 onChange={updateCAHBreadth}
             />
             <Form.Check
+                data-testid={"hcc-check" + course.id}
                 style={{ marginLeft: "20px", marginRight: "20px" }}
                 type="checkbox"
                 id={"hcc-check" + course.id}
@@ -198,6 +200,7 @@ export function EditCourseRequirements({
                 onChange={updateHCCBreadth}
             />
             <Form.Check
+                data-testid={"sbs-check" + course.id}
                 style={{ marginLeft: "20px", marginRight: "20px" }}
                 type="checkbox"
                 id={"sbs-check" + course.id}
@@ -206,6 +209,7 @@ export function EditCourseRequirements({
                 onChange={updateSBSBreadth}
             />
             <Form.Check
+                data-testid={"lang-check" + course.id}
                 style={{ marginLeft: "20px", marginRight: "20px" }}
                 type="checkbox"
                 id={"lang-check" + course.id}
@@ -214,6 +218,7 @@ export function EditCourseRequirements({
                 onChange={updateForeignLanguage}
             />
             <Form.Check
+                data-testid={"lab-check" + course.id}
                 style={{ marginLeft: "20px", marginRight: "20px" }}
                 type="checkbox"
                 id={"lab-check" + course.id}
@@ -222,6 +227,7 @@ export function EditCourseRequirements({
                 onChange={updateLabScience}
             />
             <Form.Check
+                data-testid={"core-check" + course.id}
                 style={{ marginLeft: "20px", marginRight: "20px" }}
                 type="checkbox"
                 id={"core-check" + course.id}
@@ -230,6 +236,7 @@ export function EditCourseRequirements({
                 onChange={updateCSCore}
             />
             <Form.Check
+                data-testid={"elec-check" + course.id}
                 style={{ marginLeft: "20px", marginRight: "20px" }}
                 type="checkbox"
                 id={"elec-check" + course.id}
@@ -238,6 +245,7 @@ export function EditCourseRequirements({
                 onChange={updateTechnicalElective}
             />
             <Form.Check
+                data-testid={"cap-check" + course.id}
                 style={{ marginLeft: "20px", marginRight: "20px" }}
                 type="checkbox"
                 id={"cap-check" + course.id}

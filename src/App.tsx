@@ -105,6 +105,7 @@ export function App(): JSX.Element {
                         marginLeft: "20px",
                         marginBottom: "5px"
                     }}
+                    data-testid="import-button"
                 >
                     {showImport ? "Close Import" : "Import Plan as CSV"}
                 </Button>{" "}

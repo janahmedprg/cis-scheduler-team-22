@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./App.css";
-import sketch from "./sketch.jpg";
 import UDHeader from "./UDHeader.jpg";
 import { DegreePlan, TEST_PLANS, EMPTY_PLAN } from "./interfaces/DegreePlan";
 import { ViewDegreePlansList } from "./Compontents/viewDegreePlansList";
@@ -9,14 +8,19 @@ import { Course } from "./interfaces/Course";
 import { Button } from "react-bootstrap";
 import { CSVImport } from "./Compontents/ImportCSV";
 
-/**
- * Importing Course Catalog
- * - use record nested within record
- * c:Record<string, Record<string, Course>> = "input";
- * c["Cisc"]["Cisc275"]
- */
+export function useTitle(title: string) {
+    useEffect(() => {
+        const prevTitle = document.title;
+        document.title = title;
+        return () => {
+            document.title = prevTitle;
+        };
+    });
+}
 
 export function App(): JSX.Element {
+    useTitle("Course Scheduler");
+
     let loadedDegreePlans = TEST_PLANS;
     let loadedSelectPlanId = 107;
     let loadedNextId = 1000;
@@ -44,13 +48,16 @@ export function App(): JSX.Element {
         useState<number>(loadedSelectPlanId);
     const [nextId, setNextId] = useState<number>(loadedNextId);
     const [coursePool, setCoursePool] = useState<Course[]>([]);
-    const [showSketch, setShowSketch] = useState<boolean>(false);
     const [showImport, setShowImport] = useState<boolean>(false);
 
     function findDegreePlan(id: number): DegreePlan {
         const foundPlan = degreePlans.find(
             (plan: DegreePlan): boolean => plan.id === id
         );
+        if (foundPlan === undefined && degreePlans.length > 0) {
+            setSelectedPlanId(degreePlans[0].id);
+            return degreePlans[0];
+        }
         if (foundPlan === undefined) {
             return EMPTY_PLAN;
         }
@@ -147,17 +154,13 @@ export function App(): JSX.Element {
             ) : (
                 <div></div>
             )}
+            <Button style={{ marginTop: "10px" }} onClick={saveData}>
+                Save Data
+            </Button>
             <hr />
             <div>Connor Nagle</div>
             <div>Brandon Aguiar</div>
             <div>Jan Ahmed</div>
-            <Button onClick={() => setShowSketch(!showSketch)}>
-                {showSketch ? "Hide" : "Show"} sketch
-            </Button>{" "}
-            <br />
-            {showSketch && <img src={sketch} alt="Sketch" />}
-            <br />
-            <Button onClick={saveData}>Save Data</Button>
         </div>
     );
 }

@@ -183,7 +183,9 @@ export function ListAllCourses({
     setNextId: (id: number) => void;
 }): JSX.Element {
     const [choice, setChoice] = useState<string>(
-        degreePlan.semesters[0].id.toString()
+        degreePlan.semesters.length !== 0
+            ? degreePlan.semesters[0].id.toString()
+            : "0"
     );
 
     function addCourse(id: string, addingCourse: Course) {
@@ -399,10 +401,9 @@ export function ListSingleCourse({
         setDegreePlans(newPlans);
     }
 
-    const searchedCourses = courseList.filter((course: ImportCourse): boolean =>
-        category === "ART"
-            ? category + " " === course.code.slice(0, 4)
-            : category === course.code.slice(0, 4)
+    const searchedCourses = courseList.filter(
+        (course: ImportCourse): boolean =>
+            category === course.code.split(" ")[0]
     );
 
     const numbers: string[] = searchedCourses.map(

@@ -148,7 +148,6 @@ export function ViewSemester({
                     </div>
                 )
             )}
-            {/* <Button onClick={() => addCourse()}>Add course</Button> */}
             <Button
                 style={{ backgroundColor: "#FFF9FF", color: "black" }}
                 onClick={() => clearSemester()}

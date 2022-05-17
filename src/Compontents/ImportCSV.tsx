@@ -9,9 +9,6 @@ import {
     SemesterSession
 } from "../interfaces/Semester";
 import { catalog } from "./readJSON";
-//import { DegreePlan } from "../interfaces/DegreePlan";
-//import the diff levels of state needed - or try all combined;
-//import { CSVToPlan } converter function;
 
 type ImportContentButtonProps = {
     plans: DegreePlan[];
@@ -126,7 +123,6 @@ function ImportContentButton({
             <Button
                 disabled={content === "" || content === "Data cannot be loaded"}
                 onClick={() => CSVToPlan()}
-                // onClick={() => console.log("hiiiiiii")}
             >
                 Upload Plan From CSV ⬆
             </Button>
@@ -145,7 +141,6 @@ export function CSVImport({
     nextId: number;
     setNextId: (newID: number) => void;
 }): JSX.Element {
-    //const { plans, setPlans } = usePlanContext();
     const [content, setContent] = useState<string>("");
 
     function uploadFile(event: React.ChangeEvent<HTMLInputElement>) {
@@ -169,7 +164,7 @@ export function CSVImport({
                 setContent(newContent as string);
             };
 
-            // Actually reads the file
+            // Reads in file
             reader.readAsText(file, "utf-8");
         }
     }

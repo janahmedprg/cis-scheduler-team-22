@@ -148,14 +148,22 @@ export function ViewCourse({
         >
             <b>{course.code}: </b>
             {course.name} <br />
-            <Form.Check
-                data-testid={"is-viewing-check" + course.id}
-                type="switch"
-                id={"is-viewing-check" + course.id}
-                label="View or Edit Course Information"
-                checked={viewing}
-                onChange={updateViewing}
-            />
+            <div style={{ marginBottom: "5px", marginTop: "3px" }}>
+                <Form.Check
+                    style={{
+                        display: "inline",
+                        marginRight: "10px"
+                    }}
+                    data-testid={"is-viewing-check" + course.id}
+                    type="switch"
+                    id={"is-viewing-check" + course.id}
+                    checked={viewing}
+                    onChange={updateViewing}
+                />
+                <div style={{ display: "inline" }}>
+                    View or Edit Course Information
+                </div>
+            </div>
             {!course.typ.includes(semester.session) && (
                 <div>
                     {course.typ.length > 0 && (
@@ -196,25 +204,27 @@ export function ViewCourse({
                     <b>Description: </b>
                     {course.descr} <br />
                     Credits: {course.credits}
-                    {course.prereqs.length > 0 && (
-                        <div>
-                            Prerequisites:{" "}
-                            <ul>
-                                {course.prereqs.map(
-                                    (prereq: string[]): JSX.Element => (
-                                        <li
-                                            key={
-                                                prereq.join(" or ") +
-                                                "-prerequisite"
-                                            }
-                                        >
-                                            {prereq.join(" or ")}
-                                        </li>
-                                    )
-                                )}
-                            </ul>
-                        </div>
-                    )}
+                    <div>
+                        {course.prereqs.length > 0 && (
+                            <div>
+                                Prerequisites:
+                                <ul>
+                                    {course.prereqs.map(
+                                        (prereq: string[]): JSX.Element => (
+                                            <li
+                                                key={
+                                                    prereq.join(" or ") +
+                                                    "-prerequisite"
+                                                }
+                                            >
+                                                {prereq.join(" or ")}
+                                            </li>
+                                        )
+                                    )}
+                                </ul>
+                            </div>
+                        )}
+                    </div>
                     {editing && (
                         <EditCourse
                             course={course}
@@ -224,18 +234,18 @@ export function ViewCourse({
                             setDegreePlans={setDegreePlans}
                         />
                     )}
-                    <p></p>
                     <Button
-                        style={{ backgroundColor: "red" }}
+                        style={{ backgroundColor: "#EC3B15", color: "white" }}
                         onClick={() => removeCourse()}
                     >
-                        Remove course
+                        🗑 Remove
                     </Button>
                     <Button
+                        style={{ backgroundColor: "#BAC9EB" }}
                         data-testid={"edit-course-button" + course.id}
                         onClick={() => setEditing(!editing)}
                     >
-                        {editing ? "Close" : "Edit"}
+                        {editing ? "Close" : "✏️ Edit"}
                     </Button>
                     <Button
                         onClick={() => addToPool()}

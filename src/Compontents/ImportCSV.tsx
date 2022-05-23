@@ -123,6 +123,7 @@ function ImportContentButton({
             <Button
                 disabled={content === "" || content === "Data cannot be loaded"}
                 onClick={() => CSVToPlan()}
+                data-testid="upload-button"
             >
                 Upload Plan From CSV ⬆
             </Button>

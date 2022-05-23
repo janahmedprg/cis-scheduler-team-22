@@ -36,7 +36,6 @@ export function ViewDegreePlansList({
 }): JSX.Element {
     const [editMode, setEditMode] = useState<boolean>(false);
     const [addingDegreePlan, setAddingDegreePlan] = useState<boolean>(false);
-    //const [viewReq, setViewReq] = useState<boolean>(false);
 
     function removeQuizByTitle(degreePlanId: number) {
         const modifiedDegreePlansList = degreePlansList.filter(
